@@ -24,8 +24,15 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
           {/* PawsMetric Brand Logo */}
           <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
-            <div className="w-8 h-8 rounded-lg bg-[#082C1B] text-[#8BF03B] flex items-center justify-center shadow-sm">
-              <Dog className="w-5 h-5" />
+            <div className="w-8 h-8 rounded-lg bg-[#082C1B] flex items-center justify-center shadow-sm">
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.5 8.5C8.2 7.5 6.2 9.5 6.2 13C6.2 16.2 8.2 17.5 9.8 17" stroke="#8BF03B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M21.5 8.5C23.8 7.5 25.8 9.5 25.8 13C25.8 16.2 23.8 17.5 22.2 17" stroke="#8BF03B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M10.2 11C12.2 9.5 19.8 9.5 21.8 11C23.2 15.5 22 23.5 16 23.5C10 23.5 8.8 15.5 10.2 11Z" stroke="#8BF03B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                <circle cx="13" cy="15.2" r="1.6" fill="#8BF03B" />
+                <circle cx="19" cy="15.2" r="1.6" fill="#8BF03B" />
+                <path d="M14.5 18.5C14.5 18.5 15.2 20 16 20C16.8 20 17.5 18.5 17.5 18.5Z" fill="#8BF03B" />
+              </svg>
             </div>
             <span className="text-xl font-black text-[#082C1B] tracking-tight">
               Paws<span className="text-[#8BF03B]">Metric</span>

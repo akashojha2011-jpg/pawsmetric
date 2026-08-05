@@ -23,21 +23,44 @@ export default function Icon() {
         }}
       >
         <svg
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+          viewBox="0 0 32 32"
           fill="none"
-          stroke="#8BF03B"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2 0-3.5 1.5-3.5 3.5 0 3 2.5 4 4.5 4" />
-          <path d="M20 4v5" />
-          <path d="M18 4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2z" />
-          <path d="M14 10h.01" />
-          <path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+          {/* Left Floppy Ear */}
+          <path
+            d="M10.5 8.5C8.2 7.5 6.2 9.5 6.2 13C6.2 16.2 8.2 17.5 9.8 17"
+            stroke="#8BF03B"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Right Floppy Ear */}
+          <path
+            d="M21.5 8.5C23.8 7.5 25.8 9.5 25.8 13C25.8 16.2 23.8 17.5 22.2 17"
+            stroke="#8BF03B"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Main Face Contour */}
+          <path
+            d="M10.2 11C12.2 9.5 19.8 9.5 21.8 11C23.2 15.5 22 23.5 16 23.5C10 23.5 8.8 15.5 10.2 11Z"
+            stroke="#8BF03B"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Left & Right Eyes */}
+          <circle cx="13" cy="15.2" r="1.6" fill="#8BF03B" />
+          <circle cx="19" cy="15.2" r="1.6" fill="#8BF03B" />
+          {/* Nose */}
+          <path
+            d="M14.5 18.5C14.5 18.5 15.2 20 16 20C16.8 20 17.5 18.5 17.5 18.5Z"
+            fill="#8BF03B"
+          />
         </svg>
       </div>
     ),
