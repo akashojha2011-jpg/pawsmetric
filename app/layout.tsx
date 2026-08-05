@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   description:
     'Instant, free dog calculators for age, calories, raw food, chocolate & xylitol toxicity, Benadryl dosage, crate sizes, and lifetime costs. Fact-checked by veterinarians.',
   metadataBase: new URL('https://pawsmetric.com'),
+  verification: {
+    google: 'zYf7QAqgZCcMuVgEayRf0sYcU1czQ6ZkW4hL56O1WZU',
+  },
   alternates: {
     canonical: './',
   },
