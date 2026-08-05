@@ -89,19 +89,30 @@ export function WidgetDispatcher({ widgetType, slug }: WidgetDispatcherProps) {
       return <DogAgeCalculatorWidget defaultBreedSize="large" presetBreedName="Golden Retriever" />;
     case 'FrenchBulldogAgeCalculator':
       return <DogAgeCalculatorWidget defaultBreedSize="small" presetBreedName="French Bulldog" />;
+    case 'ChihuahuaAgeCalculator':
+      return <DogAgeCalculatorWidget defaultBreedSize="small" presetBreedName="Chihuahua" />;
     case 'PoodleAgeCalculator':
       return <DogAgeCalculatorWidget defaultBreedSize="medium" presetBreedName="Poodle" />;
+    case 'SmallVsLargeBreedAgeCalculator':
+      return <SmallVsLargeBreedAgeWidget />;
 
     // Weight & Nutrition
     case 'DogWeightCalculator':
+      return <DogWeightCalculatorWidget />;
+    case 'DogBmiCalculator':
       return <DogWeightCalculatorWidget />;
     case 'DogCalorieCalculator':
       return <DogCalorieCalculatorWidget />;
     case 'DogFoodCalculator':
       return <DogFoodPortionWidget />;
+    case 'DogFoodPortionCalculator':
+      return <DogFoodPortionWidget />;
     case 'DogTreatCalorieCalculator':
       return <DogCalorieCalculatorWidget />;
+    case 'DogWeightLossCalculator':
+      return <DogCalorieCalculatorWidget />;
     case 'RawDogFoodCalculator':
+    case 'RawDietCalculator':
       return <RawDietCalculatorWidget />;
     case 'PuppyGrowthPredictor':
       return <PuppyGrowthPredictorWidget />;

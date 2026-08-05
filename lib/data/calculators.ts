@@ -2042,8 +2042,24 @@ export const CALCULATORS: CalculatorData[] = [
   }
 ];
 
+const CALCULATOR_SLUG_ALIASES: Record<string, string> = {
+  'puppy-growth-predictor': 'puppy-weight-predictor',
+  'puppy-growth-calculator': 'puppy-weight-predictor',
+  'puppy-growth-chart': 'puppy-weight-predictor',
+  'dog-food-calculator': 'dog-food-portion-calculator',
+  'dog-pregnancy-calculator': 'dog-pregnancy-due-date-calculator',
+  'dog-benadryl-calculator': 'dog-benadryl-dosage-calculator',
+  'dog-chocolate-calculator': 'dog-chocolate-toxicity-calculator',
+  'dog-crate-calculator': 'dog-crate-size-calculator',
+  'dog-water-calculator': 'dog-water-intake-calculator',
+  'dog-age': 'dog-age-calculator',
+  'dog-weight': 'dog-weight-calculator',
+  'dog-calories': 'dog-calorie-calculator',
+};
+
 export function getCalculatorBySlug(slug: string): CalculatorData | undefined {
-  return CALCULATORS.find((calc) => calc.slug === slug);
+  const targetSlug = CALCULATOR_SLUG_ALIASES[slug] || slug;
+  return CALCULATORS.find((calc) => calc.slug === targetSlug);
 }
 
 export function getCalculatorsByCategory(category: string): CalculatorData[] {

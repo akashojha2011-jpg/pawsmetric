@@ -36,7 +36,22 @@ export async function generateStaticParams() {
   const toolParams = CALCULATORS.map((calc) => ({
     slug: calc.slug,
   }));
-  return [...categoryParams, ...toolParams];
+  const aliasSlugs = [
+    'puppy-growth-predictor',
+    'puppy-growth-calculator',
+    'puppy-growth-chart',
+    'dog-food-calculator',
+    'dog-pregnancy-calculator',
+    'dog-benadryl-calculator',
+    'dog-chocolate-calculator',
+    'dog-crate-calculator',
+    'dog-water-calculator',
+    'dog-age',
+    'dog-weight',
+    'dog-calories',
+  ];
+  const aliasParams = aliasSlugs.map((slug) => ({ slug }));
+  return [...categoryParams, ...toolParams, ...aliasParams];
 }
 
 export async function generateMetadata({ params }: ToolOrCategoryPageProps): Promise<Metadata> {
