@@ -54,9 +54,9 @@ export const RESOURCES: ResourceArticle[] = [
       <section id="standard-dosage-rule">
         <h2>2. Standard Veterinary Benadryl Dosage Rule</h2>
         <div class="bg-[#054FB9] text-white p-6 rounded-2xl my-6 border border-[#0461CF]">
-          <div class="text-xs text-[#B3C7F7] font-extrabold uppercase tracking-wider mb-1">Golden Veterinary Rule</div>
-          <div class="text-xl sm:text-2xl font-black text-[#B3C7F7]">1 mg of Benadryl per 1 lb of Body Weight (2.2 mg/kg)</div>
-          <div class="text-xs text-[#A2B5AB] font-semibold mt-2">Administered orally every 8 to 12 hours (2 to 3 times daily) as recommended by your DVM.</div>
+          <div class="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider mb-1">Golden Veterinary Rule</div>
+          <div class="text-xl sm:text-2xl font-extrabold text-white">1 mg of Benadryl per 1 lb of Body Weight (2.2 mg/kg)</div>
+          <div class="text-xs text-[#EBF2FE] font-medium mt-2">Administered orally every 8 to 12 hours (2 to 3 times daily) as recommended by your DVM.</div>
         </div>
         <p>Unlike humans who take antihistamines based on age brackets, canine medication dosages are strictly computed by precise body weight. A 10 lb Chihuahua requires a drastically smaller milligram dose than a 90 lb Golden Retriever. Overdosing can lead to central nervous system depression or toxicity, while underdosing renders the medication ineffective.</p>
       </section>
@@ -65,27 +65,27 @@ export const RESOURCES: ResourceArticle[] = [
         <h2>3. Complete Benadryl Dosage Chart by Body Weight</h2>
         <p>Below is the official DVM dosing table for standard oral Diphenhydramine formulations:</p>
 
-        <div class="overflow-x-auto my-6 border border-[#E2E3D8] rounded-xl">
+        <div class="overflow-x-auto my-6 border border-[#D1E0FC] rounded-xl">
           <table class="w-full text-left text-xs">
-            <thead class="bg-[#082C1B] text-white font-extrabold uppercase">
+            <thead class="bg-[#054FB9] text-white font-bold uppercase">
               <tr>
-                <th class="p-3 border-b border-[#0d4028]">Dog Weight (lbs)</th>
-                <th class="p-3 border-b border-[#0d4028]">Weight (kg)</th>
-                <th class="p-3 border-b border-[#0d4028]">Target Mg Dose</th>
-                <th class="p-3 border-b border-[#0d4028]">25 mg Tablets</th>
-                <th class="p-3 border-b border-[#0d4028]">Children's Liquid (12.5mg/5mL)</th>
+                <th class="p-3 border-b border-[#0461CF]">Dog Weight (lbs)</th>
+                <th class="p-3 border-b border-[#0461CF]">Weight (kg)</th>
+                <th class="p-3 border-b border-[#0461CF]">Target Mg Dose</th>
+                <th class="p-3 border-b border-[#0461CF]">25 mg Tablets</th>
+                <th class="p-3 border-b border-[#0461CF]">Children's Liquid (12.5mg/5mL)</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-[#F0F1EA] bg-white font-semibold">
-              <tr><td class="p-3 font-bold text-[#082C1B]">5 lbs</td><td class="p-3">2.3 kg</td><td class="p-3 text-[#082C1B] font-bold">5 mg</td><td class="p-3">1/4 tablet</td><td class="p-3 font-bold text-[#082C1B]">2.0 mL</td></tr>
-              <tr class="bg-[#F0F1EA]/50"><td class="p-3 font-bold text-[#082C1B]">10 lbs</td><td class="p-3">4.5 kg</td><td class="p-3 text-[#082C1B] font-bold">10 mg</td><td class="p-3">1/2 tablet</td><td class="p-3 font-bold text-[#082C1B]">4.0 mL</td></tr>
-              <tr><td class="p-3 font-bold text-[#082C1B]">15 lbs</td><td class="p-3">6.8 kg</td><td class="p-3 text-[#082C1B] font-bold">15 mg</td><td class="p-3">1/2 tablet</td><td class="p-3 font-bold text-[#082C1B]">6.0 mL</td></tr>
-              <tr class="bg-[#F0F1EA]/50"><td class="p-3 font-bold text-[#082C1B]">20 lbs</td><td class="p-3">9.1 kg</td><td class="p-3 text-[#082C1B] font-bold">20 mg</td><td class="p-3">3/4 tablet</td><td class="p-3 font-bold text-[#082C1B]">8.0 mL</td></tr>
-              <tr><td class="p-3 font-bold text-[#082C1B]">25 lbs</td><td class="p-3">11.3 kg</td><td class="p-3 text-[#082C1B] font-bold">25 mg</td><td class="p-3 font-bold text-[#082C1B]">1 Full Tablet</td><td class="p-3">10.0 mL</td></tr>
-              <tr class="bg-[#F0F1EA]/50"><td class="p-3 font-bold text-[#082C1B]">35 lbs</td><td class="p-3">15.9 kg</td><td class="p-3 text-[#082C1B] font-bold">35 mg</td><td class="p-3">1.5 tablets</td><td class="p-3">14.0 mL</td></tr>
-              <tr><td class="p-3 font-bold text-[#082C1B]">50 lbs</td><td class="p-3">22.7 kg</td><td class="p-3 text-[#082C1B] font-bold">50 mg</td><td class="p-3 font-bold text-[#082C1B]">2 Full Tablets</td><td class="p-3">20.0 mL</td></tr>
-              <tr class="bg-[#F0F1EA]/50"><td class="p-3 font-bold text-[#082C1B]">75 lbs</td><td class="p-3">34.0 kg</td><td class="p-3 text-[#082C1B] font-bold">75 mg</td><td class="p-3 font-bold text-[#082C1B]">3 Full Tablets</td><td class="p-3">30.0 mL</td></tr>
-              <tr><td class="p-3 font-bold text-[#082C1B]">100 lbs</td><td class="p-3">45.4 kg</td><td class="p-3 text-[#082C1B] font-bold">100 mg</td><td class="p-3 font-bold text-[#082C1B]">4 Full Tablets</td><td class="p-3">40.0 mL</td></tr>
+            <tbody class="divide-y divide-[#D1E0FC] bg-white font-medium text-slate-800">
+              <tr><td class="p-3 font-bold text-[#054FB9]">5 lbs</td><td class="p-3">2.3 kg</td><td class="p-3 text-[#054FB9] font-bold">5 mg</td><td class="p-3">1/4 tablet</td><td class="p-3 font-bold text-[#054FB9]">2.0 mL</td></tr>
+              <tr class="bg-[#F4F7FC]/60"><td class="p-3 font-bold text-[#054FB9]">10 lbs</td><td class="p-3">4.5 kg</td><td class="p-3 text-[#054FB9] font-bold">10 mg</td><td class="p-3">1/2 tablet</td><td class="p-3 font-bold text-[#054FB9]">4.0 mL</td></tr>
+              <tr><td class="p-3 font-bold text-[#054FB9]">15 lbs</td><td class="p-3">6.8 kg</td><td class="p-3 text-[#054FB9] font-bold">15 mg</td><td class="p-3">1/2 tablet</td><td class="p-3 font-bold text-[#054FB9]">6.0 mL</td></tr>
+              <tr class="bg-[#F4F7FC]/60"><td class="p-3 font-bold text-[#054FB9]">20 lbs</td><td class="p-3">9.1 kg</td><td class="p-3 text-[#054FB9] font-bold">20 mg</td><td class="p-3">3/4 tablet</td><td class="p-3 font-bold text-[#054FB9]">8.0 mL</td></tr>
+              <tr><td class="p-3 font-bold text-[#054FB9]">25 lbs</td><td class="p-3">11.3 kg</td><td class="p-3 text-[#054FB9] font-bold">25 mg</td><td class="p-3 font-bold text-[#054FB9]">1 Full Tablet</td><td class="p-3">10.0 mL</td></tr>
+              <tr class="bg-[#F4F7FC]/60"><td class="p-3 font-bold text-[#054FB9]">35 lbs</td><td class="p-3">15.9 kg</td><td class="p-3 text-[#054FB9] font-bold">35 mg</td><td class="p-3">1.5 tablets</td><td class="p-3">14.0 mL</td></tr>
+              <tr><td class="p-3 font-bold text-[#054FB9]">50 lbs</td><td class="p-3">22.7 kg</td><td class="p-3 text-[#054FB9] font-bold">50 mg</td><td class="p-3 font-bold text-[#054FB9]">2 Full Tablets</td><td class="p-3">20.0 mL</td></tr>
+              <tr class="bg-[#F4F7FC]/60"><td class="p-3 font-bold text-[#054FB9]">75 lbs</td><td class="p-3">34.0 kg</td><td class="p-3 text-[#054FB9] font-bold">75 mg</td><td class="p-3 font-bold text-[#054FB9]">3 Full Tablets</td><td class="p-3">30.0 mL</td></tr>
+              <tr><td class="p-3 font-bold text-[#054FB9]">100 lbs</td><td class="p-3">45.4 kg</td><td class="p-3 text-[#054FB9] font-bold">100 mg</td><td class="p-3 font-bold text-[#054FB9]">4 Full Tablets</td><td class="p-3">40.0 mL</td></tr>
             </tbody>
           </table>
         </div>
@@ -93,11 +93,11 @@ export const RESOURCES: ResourceArticle[] = [
 
       <section id="50-lb-dog-dosage">
         <h2>4. How Much Benadryl to Give a 50 lb Dog?</h2>
-        <div class="bg-[#F0F1EA] p-6 rounded-2xl border border-[#E2E3D8] my-6 space-y-3">
-          <div class="text-xs font-black text-[#082C1B] uppercase tracking-wider">Clinical Scenario Breakdown</div>
-          <h3 class="text-lg font-black text-[#082C1B]">Dosing a 50 lb (22.7 kg) Labrador or Australian Shepherd</h3>
-          <p class="text-xs text-[#4D534E]">Applying the 1 mg/lb rule: <strong>50 lbs × 1 mg/lb = 50 mg of Diphenhydramine</strong>.</p>
-          <ul class="list-disc pl-5 text-xs text-[#082C1B] space-y-1">
+        <div class="bg-[#F4F7FC] p-6 rounded-2xl border border-[#D1E0FC] my-6 space-y-3">
+          <div class="text-xs font-bold text-[#0461CF] uppercase tracking-wider">Clinical Scenario Breakdown</div>
+          <h3 class="text-lg font-bold text-[#054FB9]">Dosing a 50 lb (22.7 kg) Labrador or Australian Shepherd</h3>
+          <p class="text-xs sm:text-sm text-slate-700 font-normal">Applying the 1 mg/lb rule: <strong>50 lbs × 1 mg/lb = 50 mg of Diphenhydramine</strong>.</p>
+          <ul class="list-disc pl-5 text-xs sm:text-sm text-slate-700 space-y-1 font-normal">
             <li><strong>Tablet Option:</strong> 2 standard adult 25 mg Benadryl tablets.</li>
             <li><strong>Children's Liquid Option:</strong> 20 mL of Children's Benadryl (12.5 mg / 5 mL concentration).</li>
             <li><strong>Dosing Frequency:</strong> Every 8 hours (maximum 3 times per 24-hour period).</li>
@@ -117,13 +117,13 @@ export const RESOURCES: ResourceArticle[] = [
 
       <section id="dangerous-ingredients-warning">
         <h2>6. CRITICAL WARNING: Ingredients That Are Fatal to Dogs</h2>
-        <div class="bg-[#082C1B] p-6 rounded-2xl my-6 border border-[#0d4028] space-y-2">
-          <div class="text-xs font-extrabold text-[#B3C7F7] uppercase tracking-wider">Veterinary Emergency Alert</div>
-          <h3 class="text-lg font-black text-white">Always Inspect Active & Inactive Ingredients!</h3>
-          <p class="text-xs text-[#A2B5AB] leading-relaxed">
+        <div class="bg-[#054FB9] text-white p-6 rounded-2xl my-6 border border-[#0461CF] space-y-3">
+          <div class="text-xs font-bold text-[#B3C7F7] uppercase tracking-wider">Veterinary Safety Alert</div>
+          <h3 class="text-lg font-bold text-white">Always Inspect Active & Inactive Ingredients!</h3>
+          <p class="text-xs sm:text-sm text-[#EBF2FE] leading-relaxed font-normal">
             Many human cold, sinus, and allergy combination products contain secondary active ingredients that are <strong>lethal to dogs</strong>:
           </p>
-          <ul class="list-disc pl-5 text-xs text-[#B3C7F7] space-y-1 font-semibold pt-1">
+          <ul class="list-disc pl-5 text-xs sm:text-sm text-white space-y-1 font-medium">
             <li><strong>Decongestants (Pseudoephedrine & Phenylephrine):</strong> Causes severe hypertension, tachycardia, hyperthermia, and fatal seizures.</li>
             <li><strong>Pain Relievers (Tylenol / Acetaminophen):</strong> Causes acute methemoglobinemia and acute liver toxicity in dogs.</li>
             <li><strong>Xylitol / Birch Sugar (E967):</strong> Triggers rapid insulin release, leading to severe hypoglycemia and acute hepatic necrosis.</li>
@@ -157,17 +157,17 @@ export const RESOURCES: ResourceArticle[] = [
       <section id="frequently-asked-questions">
         <h2>9. Frequently Asked Questions (FAQ)</h2>
         <div class="space-y-4 my-6">
-          <div class="bg-[#F0F1EA] p-5 rounded-xl border border-[#E2E3D8]">
-            <h3 className="font-black text-[#082C1B] text-base">Can I give my dog human Benadryl?</h3>
-            <p className="text-xs text-[#4D534E] font-semibold mt-1">Yes, provided the ONLY active ingredient is Diphenhydramine HCl 25 mg, and it contains no decongestants, pain relievers, or xylitol sweeteners.</p>
+          <div class="bg-[#F4F7FC] p-5 rounded-xl border border-[#D1E0FC]">
+            <h3 class="font-bold text-[#054FB9] text-base">Can I give my dog human Benadryl?</h3>
+            <p class="text-xs sm:text-sm text-slate-700 font-normal mt-1">Yes, provided the ONLY active ingredient is Diphenhydramine HCl 25 mg, and it contains no decongestants, pain relievers, or xylitol sweeteners.</p>
           </div>
-          <div class="bg-[#F0F1EA] p-5 rounded-xl border border-[#E2E3D8]">
-            <h3 className="font-black text-[#082C1B] text-base">How long does it take for Benadryl to start working in dogs?</h3>
-            <p className="text-xs text-[#4D534E] font-semibold mt-1">Oral Benadryl takes effect within 30 to 60 minutes after ingestion, reaching peak plasma concentration in 1 to 2 hours.</p>
+          <div class="bg-[#F4F7FC] p-5 rounded-xl border border-[#D1E0FC]">
+            <h3 class="font-bold text-[#054FB9] text-base">How long does it take for Benadryl to start working in dogs?</h3>
+            <p class="text-xs sm:text-sm text-slate-700 font-normal mt-1">Oral Benadryl takes effect within 30 to 60 minutes after ingestion, reaching peak plasma concentration in 1 to 2 hours.</p>
           </div>
-          <div class="bg-[#F0F1EA] p-5 rounded-xl border border-[#E2E3D8]">
-            <h3 className="font-black text-[#082C1B] text-base">How much Benadryl can I give a 25 lb dog?</h3>
-            <p className="text-xs text-[#4D534E] font-semibold mt-1">A 25 lb dog receives 25 mg of Benadryl (exactly 1 standard adult 25mg tablet) every 8 to 12 hours.</p>
+          <div class="bg-[#F4F7FC] p-5 rounded-xl border border-[#D1E0FC]">
+            <h3 class="font-bold text-[#054FB9] text-base">How much Benadryl can I give a 25 lb dog?</h3>
+            <p class="text-xs sm:text-sm text-slate-700 font-normal mt-1">A 25 lb dog receives 25 mg of Benadryl (exactly 1 standard adult 25mg tablet) every 8 to 12 hours.</p>
           </div>
         </div>
 
@@ -214,9 +214,9 @@ export const RESOURCES: ResourceArticle[] = [
 
       <section id="5-steps-to-stop-shedding">
         <h2>3. 5 Veterinary-Approved Steps to Stop Dog Shedding</h2>
-        <div class="bg-[#F0F1EA] p-6 rounded-2xl border border-[#E2E3D8] my-6 space-y-4">
-          <h3 class="text-lg font-black text-[#082C1B]">The 5-Step Deshedding Protocol</h3>
-          <ol class="list-decimal pl-5 space-y-2 text-xs text-[#082C1B] font-semibold">
+        <div class="bg-[#F4F7FC] p-6 rounded-2xl border border-[#D1E0FC] my-6 space-y-3">
+          <h3 class="text-lg font-bold text-[#054FB9]">The 5-Step Deshedding Protocol</h3>
+          <ol class="list-decimal pl-5 space-y-2 text-xs sm:text-sm text-slate-700 font-normal">
             <li><strong>Daily Undercoat Raking:</strong> Use a dual-length stainless steel undercoat rake 3x weekly to remove loose Telogen undercoat fur before it drops onto your carpet.</li>
             <li><strong>High-Velocity Force Drying:</strong> After bathing, use a high-velocity pet dryer (without heat) to blow out trapped undercoat fur.</li>
             <li><strong>Omega-3 Salmon Oil Supplementation:</strong> Add 75-100 mg EPA/DHA per kg body weight to strengthen follicle root attachment.</li>
@@ -240,9 +240,9 @@ export const RESOURCES: ResourceArticle[] = [
         <h2>5. Nutrition & Omega-3 Fatty Acid Dosing for Coat Health</h2>
         <p>Diet is the foundation of coat integrity. Essential Fatty Acids (EFAs), specifically Eicosapentaenoic Acid (EPA) and Docosahexaenoic Acid (DHA), decrease systemic inflammatory cytokines (PGE2) in the dermis.</p>
         <div class="bg-[#054FB9] text-white p-6 rounded-2xl my-6 border border-[#0461CF]">
-          <div class="text-xs text-[#B3C7F7] font-extrabold uppercase">DVM EFA Dosing Formula</div>
-          <div class="text-xl font-black text-[#B3C7F7] mt-1">75 to 100 mg Combined EPA + DHA per kg Body Weight</div>
-          <div class="text-xs text-[#A2B5AB] mt-1">Example: A 50 lb (22.7 kg) dog requires ~1,700 mg of combined EPA/DHA daily.</div>
+          <div class="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">DVM EFA Dosing Formula</div>
+          <div class="text-xl font-bold text-white mt-1">75 to 100 mg Combined EPA + DHA per kg Body Weight</div>
+          <div class="text-xs text-[#EBF2FE] mt-1">Example: A 50 lb (22.7 kg) dog requires ~1,700 mg of combined EPA/DHA daily.</div>
         </div>
       </section>
 
@@ -251,21 +251,21 @@ export const RESOURCES: ResourceArticle[] = [
         <p>Struggling with pet hair embedded in your laundry and couches? Here are 4 proven hacks to remove dog hair from clothes effortlessly:</p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-          <div class="bg-white p-5 rounded-xl border border-[#E2E3D8] shadow-paid space-y-2">
-            <h3 class="font-black text-[#082C1B] text-base">Hack 1: Pre-Wash Dryer Cycle</h3>
-            <p class="text-xs text-[#4D534E] font-medium leading-relaxed">Tumble dry hair-covered clothes on 'Air Fluff' (no heat) with 2 microfiber towels for 10 minutes BEFORE washing. Static release pulls fur into the lint trap.</p>
+          <div class="bg-white p-5 rounded-xl border border-[#D1E0FC] shadow-xs space-y-2">
+            <h3 class="font-bold text-[#054FB9] text-base">Hack 1: Pre-Wash Dryer Cycle</h3>
+            <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">Tumble dry hair-covered clothes on 'Air Fluff' (no heat) with 2 microfiber towels for 10 minutes BEFORE washing. Static release pulls fur into the lint trap.</p>
           </div>
-          <div class="bg-white p-5 rounded-xl border border-[#E2E3D8] shadow-paid space-y-2">
-            <h3 class="font-black text-[#082C1B] text-base">Hack 2: Damp Rubber Dishwashing Gloves</h3>
-            <p class="text-xs text-[#4D534E] font-medium leading-relaxed">Dampen yellow rubber dishwashing gloves with tap water and wipe your hands across fabric sofas or pants. Friction rolls hair into tight, easily pickable rolls.</p>
+          <div class="bg-white p-5 rounded-xl border border-[#D1E0FC] shadow-xs space-y-2">
+            <h3 class="font-bold text-[#054FB9] text-base">Hack 2: Damp Rubber Dishwashing Gloves</h3>
+            <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">Dampen yellow rubber dishwashing gloves with tap water and wipe your hands across fabric sofas or pants. Friction rolls hair into tight, easily pickable rolls.</p>
           </div>
-          <div class="bg-white p-5 rounded-xl border border-[#E2E3D8] shadow-paid space-y-2">
-            <h3 class="font-black text-[#082C1B] text-base">Hack 3: Laundry Vinegar Additive</h3>
-            <p class="text-xs text-[#4D534E] font-medium leading-relaxed">Add 1/2 cup of distilled white vinegar to your washing machine rinse cycle. Vinegar relaxes fabric fibers, releasing trapped pet hair during spin cycles.</p>
+          <div class="bg-white p-5 rounded-xl border border-[#D1E0FC] shadow-xs space-y-2">
+            <h3 class="font-bold text-[#054FB9] text-base">Hack 3: Laundry Vinegar Additive</h3>
+            <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">Add 1/2 cup of distilled white vinegar to your washing machine rinse cycle. Vinegar relaxes fabric fibers, releasing trapped pet hair during spin cycles.</p>
           </div>
-          <div class="bg-white p-5 rounded-xl border border-[#E2E3D8] shadow-paid space-y-2">
-            <h3 class="font-black text-[#082C1B] text-base">Hack 4: Silicone Pet Hair Squeegee</h3>
-            <p class="text-xs text-[#4D534E] font-medium leading-relaxed">For woven carpets and car interiors, scrape firmly with a silicone edge squeegee to lift deeply woven undercoat hairs.</p>
+          <div class="bg-white p-5 rounded-xl border border-[#D1E0FC] shadow-xs space-y-2">
+            <h3 class="font-bold text-[#054FB9] text-base">Hack 4: Silicone Pet Hair Squeegee</h3>
+            <p class="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">For woven carpets and car interiors, scrape firmly with a silicone edge squeegee to lift deeply woven undercoat hairs.</p>
           </div>
         </div>
       </section>
@@ -273,13 +273,13 @@ export const RESOURCES: ResourceArticle[] = [
       <section id="frequently-asked-questions">
         <h2>7. Frequently Asked Questions (FAQ)</h2>
         <div class="space-y-4 my-6">
-          <div class="bg-[#F0F1EA] p-5 rounded-xl border border-[#E2E3D8]">
-            <h3 className="font-black text-[#082C1B] text-base">Why is my dog shedding so much suddenly?</h3>
-            <p className="text-xs text-[#4D534E] font-semibold mt-1">Sudden excessive shedding can stem from seasonal photoperiod changes, stress, dietary deficiencies, or medical triggers like hypothyroidism and skin allergies.</p>
+          <div class="bg-[#F4F7FC] p-5 rounded-xl border border-[#D1E0FC]">
+            <h3 class="font-bold text-[#054FB9] text-base">Why is my dog shedding so much suddenly?</h3>
+            <p class="text-xs sm:text-sm text-slate-700 font-normal mt-1">Sudden excessive shedding can stem from seasonal photoperiod changes, stress, dietary deficiencies, or medical triggers like hypothyroidism and skin allergies.</p>
           </div>
-          <div class="bg-[#F0F1EA] p-5 rounded-xl border border-[#E2E3D8]">
-            <h3 className="font-black text-[#082C1B] text-base">Does shaving a double-coated dog stop shedding?</h3>
-            <p className="text-xs text-[#4D534E] font-semibold mt-1">NO! Shaving double-coated breeds (Huskies, Labs, Shepherds) damages the hair follicle structure, causes coat alopecia, and impairs thermal regulation.</p>
+          <div class="bg-[#F4F7FC] p-5 rounded-xl border border-[#D1E0FC]">
+            <h3 class="font-bold text-[#054FB9] text-base">Does shaving a double-coated dog stop shedding?</h3>
+            <p class="text-xs sm:text-sm text-slate-700 font-normal mt-1">NO! Shaving double-coated breeds (Huskies, Labs, Shepherds) damages the hair follicle structure, causes coat alopecia, and impairs thermal regulation.</p>
           </div>
         </div>
       </section>
@@ -318,9 +318,9 @@ export const RESOURCES: ResourceArticle[] = [
 
       <section id="step-by-step-trimming">
         <h2>3. Step-by-Step Guide: How to Cut Dog Nails</h2>
-        <div class="bg-[#F0F1EA] p-6 rounded-2xl border border-[#E2E3D8] my-6 space-y-3">
-          <h3 class="text-lg font-black text-[#082C1B]">4-Step Safe Trimming Method</h3>
-          <ol class="list-decimal pl-5 space-y-2 text-xs text-[#082C1B] font-semibold">
+        <div class="bg-[#F4F7FC] p-6 rounded-2xl border border-[#D1E0FC] my-6 space-y-3">
+          <h3 class="text-lg font-bold text-[#054FB9]">4-Step Safe Trimming Method</h3>
+          <ol class="list-decimal pl-5 space-y-2 text-xs sm:text-sm text-slate-700 font-normal">
             <li><strong>Isolate the Paw:</strong> Hold your dog's paw firmly but gently. Isolate one toe by pushing hair away.</li>
             <li><strong>Identify 45-Degree Angle:</strong> Position clippers at a 45-degree angle pointing outward away from the foot pad.</li>
             <li><strong>Make Small Shaves:</strong> Clip small 1-2 mm slivers rather than taking off large chunks.</li>
@@ -336,10 +336,10 @@ export const RESOURCES: ResourceArticle[] = [
 
       <section id="emergency-bleeding-protocol">
         <h2>5. What to Do If You Hit the Quick (Styptic Protocol)</h2>
-        <div class="bg-[#082C1B] p-6 rounded-2xl my-6 border border-[#0d4028] space-y-2">
-          <div class="text-xs font-extrabold text-[#B3C7F7] uppercase">Emergency Quick Bleeding Protocol</div>
-          <h3 class="text-lg font-black text-white">Don't Panic! Follow These 3 Steps:</h3>
-          <ol class="list-decimal pl-5 text-xs text-[#A2B5AB] space-y-1 font-semibold">
+        <div class="bg-[#054FB9] text-white p-6 rounded-2xl my-6 border border-[#0461CF] space-y-3">
+          <div class="text-xs font-bold text-[#B3C7F7] uppercase tracking-wider">Emergency Quick Bleeding Protocol</div>
+          <h3 class="text-lg font-bold text-white">Don't Panic! Follow These 3 Steps:</h3>
+          <ol class="list-decimal pl-5 text-xs sm:text-sm text-white space-y-1 font-medium">
             <li>Dip the bleeding nail directly into <strong>Styptic Powder (Kwik Stop)</strong> or cornstarch.</li>
             <li>Apply firm, continuous pressure with a clean tissue for 60 seconds.</li>
             <li>Keep the dog calm and off hard wood floors for 10 minutes until clotting seals.</li>
@@ -390,11 +390,11 @@ export const RESOURCES: ResourceArticle[] = [
 
       <section id="how-to-make-dog-throw-up">
         <h2>3. How to Make a Dog Throw Up (3% Hydrogen Peroxide Protocol)</h2>
-        <div class="bg-[#082C1B] p-6 rounded-2xl my-6 border border-[#0d4028] space-y-3">
-          <div class="text-xs font-extrabold text-[#B3C7F7] uppercase">DVM Emergency Peroxide Protocol</div>
-          <h3 class="text-lg font-black text-white">1 mL of 3% Hydrogen Peroxide per 1 lb Body Weight</h3>
-          <p className="text-xs text-[#A2B5AB]">Example: A 30 lb dog receives 30 mL (2 tablespoons) of 3% hydrogen peroxide orally.</p>
-          <ul class="list-disc pl-5 text-xs text-[#B3C7F7] space-y-1 font-semibold">
+        <div class="bg-[#054FB9] text-white p-6 rounded-2xl my-6 border border-[#0461CF] space-y-3">
+          <div class="text-xs font-bold text-[#B3C7F7] uppercase tracking-wider">DVM Emergency Peroxide Protocol</div>
+          <h3 class="text-lg font-bold text-white">1 mL of 3% Hydrogen Peroxide per 1 lb Body Weight</h3>
+          <p class="text-xs text-[#EBF2FE]">Example: A 30 lb dog receives 30 mL (2 tablespoons) of 3% hydrogen peroxide orally.</p>
+          <ul class="list-disc pl-5 text-xs sm:text-sm text-white space-y-1 font-medium">
             <li>Administer within 2 hours of toxin ingestion.</li>
             <li>Maximum safety cap: Never exceed 45 mL (3 tablespoons) total regardless of weight.</li>
             <li>Walk the dog for 5-10 minutes to trigger stomach irritation. Vomiting occurs in 10-15 minutes.</li>
@@ -404,9 +404,9 @@ export const RESOURCES: ResourceArticle[] = [
 
       <section id="when-NOT-to-induce-vomiting">
         <h2>4. CRITICAL CONTRAINDICATIONS: When NOT to Induce Vomiting</h2>
-        <div class="bg-[#F0F1EA] p-6 rounded-2xl border border-[#E2E3D8] my-6 space-y-2">
-          <h3 class="text-lg font-black text-[#082C1B]">NEVER Induce Vomiting If:</h3>
-          <ul class="list-disc pl-5 text-xs text-[#082C1B] font-bold space-y-1">
+        <div class="bg-[#F4F7FC] p-6 rounded-2xl border border-[#D1E0FC] my-6 space-y-3">
+          <h3 class="text-lg font-bold text-[#054FB9]">NEVER Induce Vomiting If:</h3>
+          <ul class="list-disc pl-5 text-xs sm:text-sm text-slate-700 font-normal space-y-1">
             <li>More than 2 hours have passed since ingestion (toxins have passed into the small intestine).</li>
             <li>The dog ingested caustic chemicals, bleach, drain cleaner, or petroleum distillates (will burn esophagus coming back up).</li>
             <li>The dog ingested sharp objects, glass, or batteries.</li>

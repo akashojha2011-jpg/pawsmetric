@@ -83,7 +83,7 @@
 }
 
 .prose strong {
-  color: #054FB9;
+  color: inherit;
   font-weight: 700;
 }
 
