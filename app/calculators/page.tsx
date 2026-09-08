@@ -17,15 +17,15 @@ export const metadata: Metadata = {
 
 export default function AllCalculatorsPage() {
   return (
-    <div className="bg-slate-50 min-h-screen py-10">
+    <div className="bg-[#F4F7FC] min-h-screen py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <Breadcrumbs items={[{ label: 'Calculators', url: '/calculators' }]} />
 
-        <div className="space-y-3 border-b border-slate-200 pb-6">
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-600">
+        <div className="space-y-3 border-b border-[#D1E0FC] pb-6">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#0073E6]">
             Calculators Directory ({CALCULATORS.length} Tools)
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#054FB9] tracking-tight">
             Veterinary Canine Tools
           </h1>
           <p className="text-base text-slate-600 max-w-3xl leading-relaxed font-normal">
@@ -34,11 +34,11 @@ export default function AllCalculatorsPage() {
         </div>
 
         {/* Category Filter Pills Bar */}
-        <div className="flex flex-wrap items-center gap-2 pb-4 border-b border-slate-200">
+        <div className="flex flex-wrap items-center gap-2 pb-4 border-b border-[#D1E0FC]">
           <span className="text-xs font-semibold text-slate-500 mr-2">Category:</span>
           <Link
             href="/calculators"
-            className="px-3.5 py-1.5 rounded-lg bg-slate-900 text-white font-semibold text-xs shadow-xs"
+            className="px-3.5 py-1.5 rounded-lg bg-[#054FB9] text-white font-semibold text-xs shadow-xs"
           >
             All ({CALCULATORS.length})
           </Link>
@@ -46,7 +46,7 @@ export default function AllCalculatorsPage() {
             <Link
               key={cat.id}
               href={`/calculators/${cat.slug}`}
-              className="px-3.5 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 font-medium text-xs border border-slate-200 transition-colors"
+              className="px-3.5 py-1.5 rounded-lg bg-white hover:bg-[#EBF2FE] text-slate-700 font-medium text-xs border border-[#D1E0FC] transition-colors"
             >
               {cat.name}
             </Link>
@@ -63,15 +63,15 @@ export default function AllCalculatorsPage() {
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-semibold px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-100">
+                  <span className="text-[11px] font-semibold px-2.5 py-1 rounded-md bg-[#EBF2FE] text-[#054FB9] border border-[#D1E0FC]">
                     {calc.categoryName}
                   </span>
                   <span className="text-[11px] font-medium text-slate-400 flex items-center gap-1">
-                    <Clock className="w-3 h-3 text-slate-400" /> ~1 min
+                    <Clock className="w-3 h-3 text-[#0073E6]" /> ~1 min
                   </span>
                 </div>
 
-                <h2 className="text-base font-bold text-slate-900 group-hover:text-emerald-600 leading-snug">
+                <h2 className="text-base font-bold text-[#0F172A] group-hover:text-[#0073E6] leading-snug">
                   {calc.title}
                 </h2>
 
@@ -82,7 +82,7 @@ export default function AllCalculatorsPage() {
 
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
                 <span>Updated {calc.lastUpdated}</span>
-                <span className="font-semibold text-slate-900 group-hover:text-emerald-600">Open Tool →</span>
+                <span className="font-semibold text-[#054FB9] group-hover:text-[#0073E6]">Open Tool →</span>
               </div>
             </Link>
           ))}

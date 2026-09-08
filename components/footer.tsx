@@ -6,20 +6,20 @@ import { CATEGORIES } from '@/lib/data/categories';
 
 export function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300 border-t border-slate-800">
+    <footer className="bg-[#054FB9] text-white border-t border-[#0461CF]">
       {/* Ready to get started banner */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8 border-b border-slate-800">
-        <div className="bg-slate-950 rounded-2xl p-6 sm:p-8 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8 border-b border-[#0461CF]">
+        <div className="bg-[#0461CF] rounded-2xl p-6 sm:p-8 border border-[#0073E6] flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center sm:text-left">
             <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">Science-backed canine calculations</h2>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-[#B3C7F7]">
               Free, accurate tools for biological age, nutrition, medication dosage, and toxicity safety.
             </p>
           </div>
 
           <Link
             href="/calculators"
-            className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs px-5 py-2.5 rounded-lg transition-colors shadow-sm flex items-center gap-2 whitespace-nowrap"
+            className="bg-[#0073E6] hover:bg-[#054FB9] text-white font-bold text-xs px-5 py-2.5 rounded-lg transition-colors shadow-sm flex items-center gap-2 whitespace-nowrap border border-[#8BABF1]/30"
           >
             Explore All Tools <ArrowRight className="w-4 h-4" />
           </Link>
@@ -40,21 +40,21 @@ export function Footer() {
                 className="w-7 h-7 rounded-md object-contain"
               />
               <span className="text-lg font-extrabold text-white tracking-tight">
-                Paws<span className="text-emerald-400">Metric</span>
+                Paws<span className="text-[#B3C7F7]">Metric</span>
               </span>
             </Link>
-            <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
+            <p className="text-xs text-[#B3C7F7] leading-relaxed max-w-sm">
               Companion animal health calculation engines built around published veterinary research (AAHA, WSAVA, NRC 2006). Zero paywalls or account sign-ups.
             </p>
-            <div className="inline-flex items-center gap-1.5 text-[11px] text-emerald-400 font-medium bg-slate-950 px-2.5 py-1 rounded border border-slate-800">
-              <ShieldCheck className="w-3.5 h-3.5" /> Medical Review Board Verified
+            <div className="inline-flex items-center gap-1.5 text-[11px] text-[#B3C7F7] font-medium bg-[#0461CF] px-2.5 py-1 rounded border border-[#0073E6]">
+              <ShieldCheck className="w-3.5 h-3.5 text-white" /> Medical Review Board Verified
             </div>
           </div>
 
           {/* Categories */}
           <div>
-            <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-400 mb-3">Tool Categories</div>
-            <ul className="space-y-2 text-xs font-normal text-slate-400">
+            <div className="text-[11px] font-bold uppercase tracking-wider text-[#B3C7F7] mb-3">Tool Categories</div>
+            <ul className="space-y-2 text-xs font-normal text-[#8BABF1]">
               {CATEGORIES.map((cat) => (
                 <li key={cat.id}>
                   <Link href={`/calculators/${cat.slug}`} className="hover:text-white transition-colors">
@@ -67,8 +67,8 @@ export function Footer() {
 
           {/* Top Tools */}
           <div>
-            <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-400 mb-3">Popular Calculators</div>
-            <ul className="space-y-2 text-xs font-normal text-slate-400">
+            <div className="text-[11px] font-bold uppercase tracking-wider text-[#B3C7F7] mb-3">Popular Calculators</div>
+            <ul className="space-y-2 text-xs font-normal text-[#8BABF1]">
               <li><Link href="/calculators/dog-age-calculator" className="hover:text-white transition-colors">Dog Age Calculator</Link></li>
               <li><Link href="/calculators/dog-calorie-calculator" className="hover:text-white transition-colors">Daily Calorie & Portion</Link></li>
               <li><Link href="/calculators/dog-chocolate-toxicity-calculator" className="hover:text-white transition-colors">Chocolate Toxicity Risk</Link></li>
@@ -79,8 +79,8 @@ export function Footer() {
 
           {/* Company / Legal */}
           <div>
-            <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-400 mb-3">Resources & Legal</div>
-            <ul className="space-y-2 text-xs font-normal text-slate-400">
+            <div className="text-[11px] font-bold uppercase tracking-wider text-[#B3C7F7] mb-3">Resources & Legal</div>
+            <ul className="space-y-2 text-xs font-normal text-[#8BABF1]">
               <li><Link href="/team" className="hover:text-white transition-colors">Veterinary Team</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About PawsMetric</Link></li>
               <li><Link href="/editorial-guidelines" className="hover:text-white transition-colors">Editorial Guidelines</Link></li>
@@ -91,7 +91,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-6 border-t border-slate-800 text-[11px] text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="pt-6 border-t border-[#0461CF] text-[11px] text-[#8BABF1] flex flex-col sm:flex-row items-center justify-between gap-3">
           <div>© {new Date().getFullYear()} PawsMetric. All rights reserved.</div>
           <div>Calculations are for educational reference and do not replace professional veterinary consultation.</div>
         </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Coins, DollarSign, Wallet, ShieldCheck, ShoppingBag, PiggyBank } from 'lucide-react';
+import { Coins } from 'lucide-react';
 import { formatCurrency } from '@/lib/utils';
 
 export function LifetimeCostCalculatorWidget() {
@@ -26,24 +26,24 @@ export function LifetimeCostCalculatorWidget() {
   const lifetimeTotal = initialCost + annualCost * lifespan + 2000;
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid max-w-3xl mx-auto my-6 space-y-6">
-      <div className="flex items-center gap-3 pb-4 border-b border-[#F0F1EA]">
-        <div className="w-10 h-10 rounded-xl bg-[#082C1B] text-[#8BF03B] flex items-center justify-center font-black">
+    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
+      <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
+        <div className="w-10 h-10 rounded-xl bg-[#0073E6] text-white flex items-center justify-center font-bold">
           <Coins className="w-5 h-5" />
         </div>
         <div>
-          <h3 className="text-xl font-black text-[#082C1B]">Dog Lifetime Cost of Ownership</h3>
-          <p className="text-xs font-semibold text-[#4D534E]">Forecast complete lifetime financial investment</p>
+          <h3 className="text-lg font-bold text-slate-900">Dog Lifetime Cost of Ownership</h3>
+          <p className="text-xs text-slate-500">Forecast complete lifetime financial investment</p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Breed Size</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Breed Size</label>
           <select
             value={sizeClass}
             onChange={(e) => setSizeClass(e.target.value as any)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
           >
             <option value="small">Small (&lt; 20 lbs)</option>
             <option value="medium">Medium (21 - 50 lbs)</option>
@@ -53,11 +53,11 @@ export function LifetimeCostCalculatorWidget() {
         </div>
 
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Care Tier Standard</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Care Tier Standard</label>
           <select
             value={tier}
             onChange={(e) => setTier(e.target.value as any)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
           >
             <option value="budget">Budget-Conscious</option>
             <option value="average">Standard / Average</option>
@@ -66,37 +66,37 @@ export function LifetimeCostCalculatorWidget() {
         </div>
 
         <div className="flex items-center pt-6">
-          <label className="flex items-center gap-2 text-xs font-bold text-[#082C1B] cursor-pointer">
+          <label className="flex items-center gap-2 text-xs font-bold text-slate-800 cursor-pointer">
             <input
               type="checkbox"
               checked={includeInsurance}
               onChange={(e) => setIncludeInsurance(e.target.checked)}
-              className="w-4 h-4 text-[#082C1B] rounded focus:ring-[#8BF03B]"
+              className="w-4 h-4 text-[#0073E6] rounded focus:ring-[#0073E6]"
             />
             Include Pet Insurance (~$50/mo)
           </label>
         </div>
       </div>
 
-      <div className="bg-[#082C1B] text-white p-6 md:p-8 rounded-2xl border border-[#0d4028]">
-        <div className="text-center pb-4 mb-4 border-b border-[#0d4028]">
-          <div className="text-xs text-[#A2B5AB] font-extrabold uppercase tracking-wider">Total Estimated Lifetime Cost</div>
-          <div className="text-4xl font-black text-[#8BF03B] mt-1">{formatCurrency(lifetimeTotal)}</div>
-          <div className="text-xs text-[#A2B5AB] font-semibold mt-1">Over expected {lifespan}-year lifespan (~{formatCurrency(lifetimeTotal / (lifespan * 12))}/month)</div>
+      <div className="bg-[#054FB9] text-white p-6 md:p-8 rounded-2xl border border-[#0461CF] space-y-4">
+        <div className="text-center pb-4 border-b border-[#0461CF]">
+          <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">Total Estimated Lifetime Cost</div>
+          <div className="text-4xl font-extrabold text-[#B3C7F7] mt-1">{formatCurrency(lifetimeTotal)}</div>
+          <div className="text-xs text-blue-100 font-medium mt-1">Over expected {lifespan}-year lifespan (~{formatCurrency(lifetimeTotal / (lifespan * 12))}/month)</div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center text-xs">
-          <div className="bg-[#041B10] p-3 rounded-xl border border-[#0d4028]">
-            <div className="text-[#A2B5AB] font-semibold">1st Year Setup</div>
-            <div className="text-lg font-black text-white mt-0.5">{formatCurrency(initialCost)}</div>
+          <div className="bg-[#0461CF]/60 p-3 rounded-xl border border-[#8BABF1]/30">
+            <div className="text-blue-100 font-medium">1st Year Setup</div>
+            <div className="text-lg font-bold text-white mt-0.5">{formatCurrency(initialCost)}</div>
           </div>
-          <div className="bg-[#041B10] p-3 rounded-xl border border-[#0d4028]">
-            <div className="text-[#A2B5AB] font-semibold">Annual Recurring</div>
-            <div className="text-lg font-black text-white mt-0.5">{formatCurrency(annualCost)} / yr</div>
+          <div className="bg-[#0461CF]/60 p-3 rounded-xl border border-[#8BABF1]/30">
+            <div className="text-blue-100 font-medium">Annual Recurring</div>
+            <div className="text-lg font-bold text-white mt-0.5">{formatCurrency(annualCost)} / yr</div>
           </div>
-          <div className="bg-[#041B10] p-3 rounded-xl border border-[#0d4028]">
-            <div className="text-[#A2B5AB] font-semibold">Senior Care Reserve</div>
-            <div className="text-lg font-black text-[#8BF03B] mt-0.5">$2,000</div>
+          <div className="bg-[#0461CF]/60 p-3 rounded-xl border border-[#8BABF1]/30">
+            <div className="text-blue-100 font-medium">Senior Care Reserve</div>
+            <div className="text-lg font-bold text-[#B3C7F7] mt-0.5">$2,000</div>
           </div>
         </div>
       </div>
@@ -116,51 +116,51 @@ export function FoodCostCalculatorWidget() {
   const annualCost = dailyCost * 365;
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid max-w-3xl mx-auto my-6 space-y-6">
-      <h3 className="text-xl font-black text-[#082C1B]">Dog Food Expense & Budget Estimator</h3>
+    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
+      <h3 className="text-lg font-bold text-slate-900">Dog Food Expense & Budget Estimator</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Bag Price ($)</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Bag Price ($)</label>
           <input
             type="number"
             value={bagPrice}
             onChange={(e) => setBagPrice(parseFloat(e.target.value) || 0)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Bag Weight (lbs)</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Bag Weight (lbs)</label>
           <input
             type="number"
             value={bagLbs}
             onChange={(e) => setBagLbs(parseFloat(e.target.value) || 1)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Daily Intake (Cups)</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Daily Intake (Cups)</label>
           <input
             type="number"
             step="0.25"
             value={cupsPerDay}
             onChange={(e) => setCupsPerDay(parseFloat(e.target.value) || 0)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
           />
         </div>
       </div>
 
-      <div className="bg-[#082C1B] text-white p-6 rounded-2xl border border-[#0d4028] grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+      <div className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
         <div>
-          <div className="text-xs text-[#A2B5AB] font-extrabold uppercase">Daily Cost</div>
-          <div className="text-2xl font-black text-white mt-1">{formatCurrency(dailyCost)} / day</div>
+          <div className="text-xs text-[#B3C7F7] font-bold uppercase">Daily Cost</div>
+          <div className="text-2xl font-extrabold text-white mt-1">{formatCurrency(dailyCost)} / day</div>
         </div>
         <div>
-          <div className="text-xs text-[#8BF03B] font-extrabold uppercase">Monthly Expense</div>
-          <div className="text-3xl font-black text-[#8BF03B] mt-1">{formatCurrency(monthlyCost)} / mo</div>
+          <div className="text-xs text-[#B3C7F7] font-bold uppercase">Monthly Expense</div>
+          <div className="text-3xl font-extrabold text-[#B3C7F7] mt-1">{formatCurrency(monthlyCost)} / mo</div>
         </div>
         <div>
-          <div className="text-xs text-[#A2B5AB] font-extrabold uppercase">Annual Total</div>
-          <div className="text-2xl font-black text-white mt-1">{formatCurrency(annualCost)} / yr</div>
+          <div className="text-xs text-[#B3C7F7] font-bold uppercase">Annual Budget</div>
+          <div className="text-2xl font-extrabold text-white mt-1">{formatCurrency(annualCost)} / yr</div>
         </div>
       </div>
     </div>
@@ -168,61 +168,47 @@ export function FoodCostCalculatorWidget() {
 }
 
 export function InsuranceCostEstimatorWidget() {
-  const [age, setAge] = useState<number>(3);
-  const [riskFactor, setRiskFactor] = useState<number>(1.2);
-  const [deductible, setDeductible] = useState<number>(250);
+  const [ageYears, setAgeYears] = useState<number>(3);
+  const [breedRisk, setBreedRisk] = useState<'low' | 'medium' | 'high'>('medium');
 
-  const base = 35;
-  const ageMult = 1 + (age || 0) * 0.08;
-  const dedMult = deductible === 100 ? 1.3 : deductible === 250 ? 1.0 : 0.75;
-  const monthlyEst = base * riskFactor * ageMult * dedMult;
+  const baseRate = 35;
+  const ageFactor = 1 + ageYears * 0.08;
+  const riskFactor = breedRisk === 'low' ? 0.85 : breedRisk === 'medium' ? 1.1 : 1.45;
+  const monthlyEst = baseRate * ageFactor * riskFactor;
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid max-w-3xl mx-auto my-6 space-y-6">
-      <h3 className="text-xl font-black text-[#082C1B]">Dog Pet Insurance Cost Estimator</h3>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
+      <h3 className="text-lg font-bold text-slate-900">Pet Insurance Monthly Premium Estimator</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Dog Age (Years)</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Dog Age (Years)</label>
           <input
             type="number"
             min="0"
-            max="15"
-            value={age}
-            onChange={(e) => setAge(parseInt(e.target.value) || 0)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            max="16"
+            value={ageYears}
+            onChange={(e) => setAgeYears(parseInt(e.target.value) || 0)}
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Breed Risk Tier</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Breed Genetic Health Risk</label>
           <select
-            value={riskFactor}
-            onChange={(e) => setRiskFactor(parseFloat(e.target.value))}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            value={breedRisk}
+            onChange={(e) => setBreedRisk(e.target.value as any)}
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm"
           >
-            <option value={0.9}>Low Risk (Mixed Breeds, Chihuahuas)</option>
-            <option value={1.2}>Moderate Risk (Beagle, Australian Shepherd)</option>
-            <option value={1.5}>High Risk (Labrador, Golden Retriever)</option>
-            <option value={2.0}>Critical Risk (Frenchie, Great Dane)</option>
-          </select>
-        </div>
-        <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Annual Deductible</label>
-          <select
-            value={deductible}
-            onChange={(e) => setDeductible(parseInt(e.target.value))}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
-          >
-            <option value={100}>$100 Deductible (Higher Premium)</option>
-            <option value={250}>$250 Deductible (Standard)</option>
-            <option value={500}>$500 Deductible (Lower Premium)</option>
+            <option value="low">Low Risk (Mixed Breeds, Australian Cattle Dog)</option>
+            <option value="medium">Standard Risk (Labrador, Golden Retriever)</option>
+            <option value="high">High Risk (French Bulldog, Great Dane, Bernese)</option>
           </select>
         </div>
       </div>
 
-      <div className="bg-[#082C1B] text-white p-6 rounded-2xl text-center border border-[#0d4028]">
-        <div className="text-xs text-[#A2B5AB] font-extrabold uppercase">Estimated Monthly Insurance Premium</div>
-        <div className="text-4xl font-black text-[#8BF03B] my-2">{formatCurrency(monthlyEst)} / month</div>
-        <p className="text-xs text-[#A2B5AB] font-semibold">Estimated Range: {formatCurrency(monthlyEst * 0.85)} - {formatCurrency(monthlyEst * 1.15)} / mo</p>
+      <div className="bg-[#054FB9] text-white p-6 rounded-2xl text-center border border-[#0461CF] space-y-2">
+        <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">Estimated Monthly Premium</div>
+        <div className="text-4xl font-extrabold text-[#B3C7F7]">{formatCurrency(monthlyEst)} / mo</div>
+        <p className="text-xs text-blue-100 font-medium">Based on 80% reimbursement with a $250 annual deductible.</p>
       </div>
     </div>
   );
@@ -230,148 +216,144 @@ export function InsuranceCostEstimatorWidget() {
 
 export function PuppyFirstYearCostCalculatorWidget() {
   const [adoptionFee, setAdoptionFee] = useState<number>(350);
-  const [gear, setGear] = useState<number>(300);
-  const [vetVaccines, setVetVaccines] = useState<number>(450);
-  const [training, setTraining] = useState<number>(200);
+  const [spayNeuter, setSpayNeuter] = useState<number>(300);
+  const [supplies, setSupplies] = useState<number>(400);
+  const [vaccines, setVaccines] = useState<number>(250);
 
-  const totalFirstYear = (adoptionFee || 0) + (gear || 0) + (vetVaccines || 0) + (training || 0) + 600;
+  const initialTotal = (adoptionFee || 0) + (spayNeuter || 0) + (supplies || 0) + (vaccines || 0);
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid max-w-3xl mx-auto my-6 space-y-6">
-      <h3 className="text-xl font-black text-[#082C1B]">Puppy First-Year Expense Estimator</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
+      <h3 className="text-lg font-bold text-slate-900">First-Year Puppy Cost Estimator</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Acquisition Fee ($)</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Adoption / Breeder Fee ($)</label>
           <input
             type="number"
             value={adoptionFee}
-            onChange={(e) => setAdoptionFee(parseInt(e.target.value) || 0)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            onChange={(e) => setAdoptionFee(parseFloat(e.target.value) || 0)}
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-bold text-sm"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Puppy Vaccine Series ($)</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Spay / Neuter Surgery ($)</label>
           <input
             type="number"
-            value={vetVaccines}
-            onChange={(e) => setVetVaccines(parseInt(e.target.value) || 0)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            value={spayNeuter}
+            onChange={(e) => setSpayNeuter(parseFloat(e.target.value) || 0)}
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-bold text-sm"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Crate, Bed & Gear ($)</label>
+          <input
+            type="number"
+            value={supplies}
+            onChange={(e) => setSupplies(parseFloat(e.target.value) || 0)}
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-bold text-sm"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Puppy Shots & Vet ($)</label>
+          <input
+            type="number"
+            value={vaccines}
+            onChange={(e) => setVaccines(parseFloat(e.target.value) || 0)}
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-bold text-sm"
           />
         </div>
       </div>
 
-      <div className="bg-[#082C1B] text-white p-6 rounded-2xl text-center border border-[#0d4028]">
-        <div className="text-xs text-[#A2B5AB] font-extrabold uppercase">Total First-Year Investment</div>
-        <div className="text-4xl font-black text-[#8BF03B] my-2">{formatCurrency(totalFirstYear)}</div>
-        <p className="text-xs text-[#A2B5AB] font-semibold">Includes supplies, vaccines, spay/neuter, training, and 1 year puppy food.</p>
+      <div className="bg-[#054FB9] text-white p-6 rounded-2xl text-center border border-[#0461CF] space-y-2">
+        <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">Estimated First-Year Upfront Cost</div>
+        <div className="text-4xl font-extrabold text-[#B3C7F7]">{formatCurrency(initialTotal)}</div>
+        <p className="text-xs text-blue-100 font-medium">Excludes recurring monthly food & routine medication.</p>
       </div>
     </div>
   );
 }
 
 export function BreedingCostCalculatorWidget() {
-  const [puppyCount, setPuppyCount] = useState<number>(6);
-  const [puppyPrice, setPuppyPrice] = useState<number>(1800);
-  const [csectionReserve, setCsectionReserve] = useState<boolean>(true);
+  const [healthTesting, setHealthTesting] = useState<number>(600);
+  const [studFee, setStudFee] = useState<number>(1000);
+  const [ultrasound, setUltrasound] = useState<number>(350);
+  const [litterShots, setLitterShots] = useState<number>(450);
 
-  const grossRevenue = (puppyCount || 0) * (puppyPrice || 0);
-  const fixedExpenses = 1500 + 1200 + 600 + (csectionReserve ? 3000 : 0);
-  const netProfit = grossRevenue - fixedExpenses;
+  const total = healthTesting + studFee + ultrasound + litterShots;
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid max-w-3xl mx-auto my-6 space-y-6">
-      <h3 className="text-xl font-black text-[#082C1B]">Litter Breeding Cost & Profit Estimator</h3>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
+      <h3 className="text-lg font-bold text-slate-900">Dog Breeding & Litter Cost Estimator</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Expected Puppies</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">OFAS / Health Tests ($)</label>
           <input
             type="number"
-            value={puppyCount}
-            onChange={(e) => setPuppyCount(parseInt(e.target.value) || 0)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            value={healthTesting}
+            onChange={(e) => setHealthTesting(parseFloat(e.target.value) || 0)}
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-bold text-sm"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Price per Puppy ($)</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Stud Fee ($)</label>
           <input
             type="number"
-            value={puppyPrice}
-            onChange={(e) => setPuppyPrice(parseInt(e.target.value) || 0)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            value={studFee}
+            onChange={(e) => setStudFee(parseFloat(e.target.value) || 0)}
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-bold text-sm"
           />
         </div>
-        <div className="flex items-center pt-6">
-          <label className="flex items-center gap-2 text-xs font-bold text-[#082C1B] cursor-pointer">
-            <input
-              type="checkbox"
-              checked={csectionReserve}
-              onChange={(e) => setCsectionReserve(e.target.checked)}
-              className="w-4 h-4 text-[#082C1B] rounded focus:ring-[#8BF03B]"
-            />
-            Include C-Section Reserve ($3k)
-          </label>
+        <div>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Ultrasound / X-Rays ($)</label>
+          <input
+            type="number"
+            value={ultrasound}
+            onChange={(e) => setUltrasound(parseFloat(e.target.value) || 0)}
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-bold text-sm"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Puppy Care & Shots ($)</label>
+          <input
+            type="number"
+            value={litterShots}
+            onChange={(e) => setLitterShots(parseFloat(e.target.value) || 0)}
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-900 font-bold text-sm"
+          />
         </div>
       </div>
 
-      <div className="bg-[#082C1B] text-white p-6 rounded-2xl border border-[#0d4028] grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-        <div>
-          <div className="text-xs text-[#A2B5AB] font-extrabold uppercase">Gross Revenue</div>
-          <div className="text-2xl font-black text-white mt-1">{formatCurrency(grossRevenue)}</div>
-        </div>
-        <div>
-          <div className="text-xs text-[#A2B5AB] font-extrabold uppercase">Estimated Expenses</div>
-          <div className="text-2xl font-black text-[#A2B5AB] mt-1">{formatCurrency(fixedExpenses)}</div>
-        </div>
-        <div>
-          <div className="text-xs text-[#8BF03B] font-extrabold uppercase">Net Return</div>
-          <div className="text-3xl font-black text-[#8BF03B] mt-1">{formatCurrency(netProfit)}</div>
-        </div>
+      <div className="bg-[#054FB9] text-white p-6 rounded-2xl text-center border border-[#0461CF] space-y-2">
+        <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">Estimated Total Breeding Investment</div>
+        <div className="text-4xl font-extrabold text-[#B3C7F7]">{formatCurrency(total)}</div>
+        <p className="text-xs text-blue-100 font-medium">Excludes potential emergency C-section reserves (~$2,500).</p>
       </div>
     </div>
   );
 }
 
 export function VetEmergencyFundCalculatorWidget() {
-  const [metro, setMetro] = useState<'low' | 'med' | 'high'>('med');
-  const [hasInsurance, setHasInsurance] = useState<boolean>(false);
-
-  const factor = metro === 'low' ? 0.8 : metro === 'med' ? 1.0 : 1.3;
-  const baseTarget = 4500 * factor;
-  const finalTarget = hasInsurance ? 1200 : baseTarget;
+  const [monthlySavings, setMonthlySavings] = useState<number>(75);
+  const targetReserve = 3000;
+  const monthsToTarget = Math.ceil(targetReserve / (monthlySavings || 1));
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid max-w-3xl mx-auto my-6 space-y-6">
-      <h3 className="text-xl font-black text-[#082C1B]">Vet Emergency Fund Target Estimator</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Area Cost of Living</label>
-          <select
-            value={metro}
-            onChange={(e) => setMetro(e.target.value as any)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
-          >
-            <option value="low">Suburban / Small Town</option>
-            <option value="med">Standard City / Metro</option>
-            <option value="high">High Cost Major Metropolitan</option>
-          </select>
-        </div>
-        <div className="flex items-center pt-6">
-          <label className="flex items-center gap-2 text-xs font-bold text-[#082C1B] cursor-pointer">
-            <input
-              type="checkbox"
-              checked={hasInsurance}
-              onChange={(e) => setHasInsurance(e.target.checked)}
-              className="w-4 h-4 text-[#082C1B] rounded focus:ring-[#8BF03B]"
-            />
-            Pet Insurance Active (Covers 80%)
-          </label>
-        </div>
+    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
+      <h3 className="text-lg font-bold text-slate-900">Veterinary Emergency Reserve Fund Calculator</h3>
+      <div>
+        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Monthly Emergency Savings ($)</label>
+        <input
+          type="number"
+          value={monthlySavings}
+          onChange={(e) => setMonthlySavings(parseFloat(e.target.value) || 1)}
+          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
+        />
       </div>
 
-      <div className="bg-[#082C1B] text-white p-6 rounded-2xl text-center border border-[#0d4028]">
-        <div className="text-xs text-[#A2B5AB] font-extrabold uppercase">Recommended Emergency Fund Reserve</div>
-        <div className="text-4xl font-black text-[#8BF03B] my-2">{formatCurrency(finalTarget)}</div>
-        <p className="text-xs text-[#A2B5AB] font-semibold">Protects against unexpected surgery, bloat, ACL tears & toxicities.</p>
+      <div className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] space-y-2 text-center">
+        <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">Emergency Reserve Target ($3,000)</div>
+        <div className="text-4xl font-extrabold text-[#B3C7F7]">{monthsToTarget} Months</div>
+        <p className="text-xs text-blue-100 font-medium">Recommended target covers major emergency ER visits and diagnostic imaging.</p>
       </div>
     </div>
   );

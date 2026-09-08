@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#082C1B',
+  themeColor: '#054FB9',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -64,7 +64,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} font-sans scroll-smooth`}>
-      <body className="flex flex-col min-h-screen bg-[#F0F1EA] text-[#082C1B] antialiased overflow-x-hidden">
+      <body className="flex flex-col min-h-screen bg-slate-50 text-slate-900 antialiased overflow-x-hidden">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

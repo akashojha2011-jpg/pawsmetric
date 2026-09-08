@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { ShieldCheck, AlertTriangle, Scale, FileText } from 'lucide-react';
+import { AlertTriangle } from 'lucide-react';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 
 export const metadata: Metadata = {
@@ -10,72 +10,72 @@ export const metadata: Metadata = {
 
 export default function TermsOfServicePage() {
   return (
-    <div className="bg-[#F0F1EA] min-h-screen py-10">
+    <div className="bg-slate-50 min-h-screen py-10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <Breadcrumbs items={[{ label: 'Terms of Service', url: '/terms-of-service' }]} />
 
-        <div className="space-y-4 border-b border-[#E2E3D8] pb-6">
-          <span className="bg-[#8BF03B] text-[#082C1B] text-xs font-black uppercase px-3 py-1 rounded">
+        <div className="space-y-3 border-b border-slate-200 pb-6">
+          <span className="bg-blue-50 text-[#0461CF] border border-[#8BABF1]/30 text-xs font-bold uppercase px-3 py-1 rounded-full inline-block">
             TERMS & VETERINARY DISCLAIMERS
           </span>
-          <h1 className="text-3xl sm:text-4xl font-black text-[#082C1B] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             PawsMetric Terms of Service
           </h1>
-          <p className="text-sm text-[#4D534E] font-semibold">Effective Date: August 4, 2026 | Last Updated: August 2026</p>
+          <p className="text-xs font-semibold text-slate-500">Effective Date: August 4, 2026 | Last Updated: September 2026</p>
         </div>
 
-        <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-10 shadow-paid space-y-8 text-[#082C1B] text-sm leading-relaxed font-semibold">
+        <div className="clean-card p-6 md:p-10 space-y-8 text-slate-800 text-sm leading-relaxed font-normal">
           <section className="space-y-3">
-            <h2 className="text-xl font-black text-[#082C1B]">1. Acceptance of Terms</h2>
-            <p className="text-[#4D534E]">
-              By accessing, browsing, or using PawsMetric (<a href="https://www.pawsmetric.com" className="text-[#082C1B] underline font-bold">https://www.pawsmetric.com</a>), you acknowledge that you have read, understood, and agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you must discontinue use of our website immediately.
+            <h2 className="text-xl font-bold text-slate-900">1. Acceptance of Terms</h2>
+            <p className="text-slate-600">
+              By accessing, browsing, or using PawsMetric (<a href="https://www.pawsmetric.com" className="text-[#0073E6] hover:underline font-bold">https://www.pawsmetric.com</a>), you acknowledge that you have read, understood, and agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you must discontinue use of our website immediately.
             </p>
           </section>
 
           {/* VETERINARY MEDICAL DISCLAIMER BOX */}
-          <section className="bg-[#082C1B] text-white p-6 rounded-2xl border border-[#0d4028] space-y-3">
-            <div className="flex items-center gap-2 text-[#8BF03B] font-extrabold uppercase text-xs">
+          <section className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] space-y-3">
+            <div className="flex items-center gap-2 text-[#B3C7F7] font-bold uppercase text-xs">
               <AlertTriangle className="w-5 h-5 flex-shrink-0" />
               <span>2. CRITICAL VETERINARY MEDICAL DISCLAIMER</span>
             </div>
-            <h3 className="text-lg font-black text-white">Educational & Informational Reference Only</h3>
-            <p className="text-xs text-[#A2B5AB] leading-relaxed">
+            <h3 className="text-lg font-extrabold text-white">Educational & Informational Reference Only</h3>
+            <p className="text-xs text-blue-100 leading-relaxed font-medium">
               All tools, calculators, dosage algorithms, toxicological risk models, and articles published on PawsMetric are provided strictly for <strong>educational reference and informational purposes</strong>. They do NOT constitute formal veterinary diagnosis, medical treatment, prescription, or clinical advice.
             </p>
-            <ul className="list-disc pl-5 text-xs text-[#8BF03B] space-y-1 font-semibold pt-1">
+            <ul className="list-disc pl-5 text-xs text-[#B3C7F7] space-y-1 font-semibold pt-1">
               <li>PawsMetric tools do not replace hands-on evaluation by a licensed Doctor of Veterinary Medicine (DVM).</li>
               <li>In emergency toxicity situations (e.g., chocolate, xylitol, or rat poison ingestion), contact an emergency veterinary clinic or call ASPCA Animal Poison Control (888-426-4435) immediately.</li>
               <li>Never delay seeking professional veterinary care based on mathematical outputs generated by our software.</li>
             </ul>
           </section>
 
-          <section className="space-y-3 border-t border-[#F0F1EA] pt-6">
-            <h2 className="text-xl font-black text-[#082C1B]">3. Calculator Accuracy & User Input Responsibilities</h2>
-            <p className="text-[#4D534E]">
+          <section className="space-y-3 border-t border-slate-100 pt-6">
+            <h2 className="text-xl font-bold text-slate-900">3. Calculator Accuracy & User Input Responsibilities</h2>
+            <p className="text-slate-600">
               PawsMetric algorithms apply peer-reviewed clinical mathematical models (such as the 2020 UCSD Epigenetic Clock equation and NRC caloric energy equations). However, mathematical outputs depend entirely on the accuracy of user-entered inputs (e.g., exact body weight, age, and food caloric density).
             </p>
-            <p className="text-[#4D534E]">
+            <p className="text-slate-600">
               Individual canine metabolic rates vary based on spay/neuter status, thyroid health, muscle mass, and daily activity. PawsMetric cannot guarantee that calculated caloric portions or dosage estimates fit every individual animal's exact physiological needs.
             </p>
           </section>
 
-          <section className="space-y-3 border-t border-[#F0F1EA] pt-6">
-            <h2 className="text-xl font-black text-[#082C1B]">4. Intellectual Property Rights</h2>
-            <p className="text-[#4D534E]">
+          <section className="space-y-3 border-t border-slate-100 pt-6">
+            <h2 className="text-xl font-bold text-slate-900">4. Intellectual Property Rights</h2>
+            <p className="text-slate-600">
               All text content, custom mathematical algorithms, interactive widget code, graphics, branding logos, and UI designs hosted on PawsMetric are the intellectual property of PawsMetric. You are granted a limited, revocable, non-exclusive license to use our tools for non-commercial personal pet care. Scraping, copying, or reverse-engineering our code for commercial duplication is strictly prohibited.
             </p>
           </section>
 
-          <section className="space-y-3 border-t border-[#F0F1EA] pt-6">
-            <h2 className="text-xl font-black text-[#082C1B]">5. Limitation of Liability</h2>
-            <p className="text-[#4D534E]">
+          <section className="space-y-3 border-t border-slate-100 pt-6">
+            <h2 className="text-xl font-bold text-slate-900">5. Limitation of Liability</h2>
+            <p className="text-slate-600">
               To the maximum extent permitted by applicable law, PawsMetric, its officers, DVM medical board members, employees, and software engineers shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of or reliance on any calculator, dosage chart, or guide published on this site.
             </p>
           </section>
 
-          <section className="space-y-3 border-t border-[#F0F1EA] pt-6">
-            <h2 className="text-xl font-black text-[#082C1B]">6. Governing Law & Dispute Resolution</h2>
-            <p className="text-[#4D534E]">
+          <section className="space-y-3 border-t border-slate-100 pt-6">
+            <h2 className="text-xl font-bold text-slate-900">6. Governing Law & Dispute Resolution</h2>
+            <p className="text-slate-600">
               These Terms shall be governed by and construed in accordance with applicable state and federal laws. Any legal disputes arising out of these Terms shall be resolved through binding arbitration.
             </p>
           </section>

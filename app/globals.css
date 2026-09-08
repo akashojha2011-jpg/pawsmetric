@@ -1,16 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&display=swap');
 @import "tailwindcss";
 
+:root {
+  --blue-light-1: #B3C7F7;
+  --blue-light-2: #8BABF1;
+  --blue-primary: #0073E6;
+  --blue-dark-1: #0461CF;
+  --blue-dark-2: #054FB9;
+  --bg-canvas: #F4F7FC;
+  --text-main: #0F172A;
+  --text-muted: #475569;
+}
+
 @layer base {
   body {
-    background-color: #F8FAFC;
-    color: #0F172A;
+    background-color: var(--bg-canvas);
+    color: var(--text-main);
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: #0F172A;
+    color: var(--text-main);
     font-weight: 700;
     letter-spacing: -0.02em;
   }
@@ -25,11 +36,11 @@
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 800;
-  color: #0F172A;
+  color: #054FB9;
   margin-top: 2rem;
   margin-bottom: 0.875rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid #E2E8F0;
+  border-bottom: 1px solid #D1E0FC;
   letter-spacing: -0.02em;
 }
 
@@ -44,7 +55,7 @@
   font-size: 1.2rem;
   line-height: 1.6rem;
   font-weight: 700;
-  color: #0F172A;
+  color: #0461CF;
   margin-top: 1.5rem;
   margin-bottom: 0.625rem;
 }
@@ -52,7 +63,7 @@
 .prose p {
   font-size: 0.95rem;
   line-height: 1.7rem;
-  color: #475569;
+  color: #334155;
   font-weight: 450;
   margin-bottom: 1.25rem;
 }
@@ -60,7 +71,7 @@
 .prose ul, .prose ol {
   font-size: 0.95rem;
   line-height: 1.7rem;
-  color: #475569;
+  color: #334155;
   font-weight: 450;
   margin-top: 0.5rem;
   margin-bottom: 1.25rem;
@@ -72,12 +83,12 @@
 }
 
 .prose strong {
-  color: #0F172A;
+  color: #054FB9;
   font-weight: 700;
 }
 
 .prose a {
-  color: #059669;
+  color: #0073E6;
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -85,32 +96,32 @@
 }
 
 .prose a:hover {
-  color: #047857;
+  color: #054FB9;
 }
 
 .prose blockquote {
-  border-left: 3px solid #10B981;
-  background-color: #F1F5F9;
+  border-left: 4px solid #0073E6;
+  background-color: #EBF2FE;
   padding: 1rem 1.25rem;
   border-radius: 0.5rem;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-  color: #1E293B;
+  color: #054FB9;
   font-weight: 600;
 }
 
 /* Custom UI cards */
 .clean-card {
   background-color: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #D1E0FC;
   border-radius: 0.875rem;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 1px 3px rgba(5, 79, 185, 0.05);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .clean-card:hover {
-  border-color: #CBD5E1;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+  border-color: #8BABF1;
+  box-shadow: 0 6px 16px rgba(0, 115, 230, 0.08);
   transform: translateY(-1px);
 }
 
@@ -120,14 +131,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #F8FAFC;
+  background: #F4F7FC;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #8BABF1;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: #0073E6;
 }

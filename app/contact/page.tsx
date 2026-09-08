@@ -10,56 +10,56 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="bg-[#F0F1EA] min-h-screen py-10">
+    <div className="bg-slate-50 min-h-screen py-10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <Breadcrumbs items={[{ label: 'Contact Us', url: '/contact' }]} />
 
-        <div className="space-y-4">
-          <span className="bg-[#8BF03B] text-[#082C1B] text-xs font-black uppercase px-3 py-1 rounded">
+        <div className="space-y-3 border-b border-slate-200 pb-6">
+          <span className="bg-blue-50 text-[#0461CF] border border-[#8BABF1]/30 text-xs font-bold uppercase px-3 py-1 rounded-full inline-block">
             GET IN TOUCH
           </span>
-          <h1 className="text-3xl sm:text-4xl font-black text-[#082C1B] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             Contact PawsMetric
           </h1>
-          <p className="text-base text-[#4D534E] leading-relaxed font-semibold">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
             Have feedback on a calculator, a tool request, or a veterinary editorial inquiry? We'd love to hear from you.
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl border border-[#E2E3D8] p-8 shadow-paid space-y-6">
+        <div className="clean-card p-8 space-y-6">
           <form className="space-y-4">
             <div>
-              <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Your Name</label>
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Your Name</label>
               <input
                 type="text"
                 placeholder="Jane Doe"
-                className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-4 py-2.5 text-[#082C1B] font-bold text-sm"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
                 required
               />
             </div>
             <div>
-              <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Email Address</label>
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Email Address</label>
               <input
                 type="email"
                 placeholder="jane@example.com"
-                className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-4 py-2.5 text-[#082C1B] font-bold text-sm"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
                 required
               />
             </div>
             <div>
-              <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Message / Suggestion</label>
+              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Message / Suggestion</label>
               <textarea
                 rows={4}
                 placeholder="How can we improve PawsMetric tools for your dog?"
-                className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-4 py-2.5 text-[#082C1B] font-bold text-sm"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
                 required
               ></textarea>
             </div>
             <button
               type="button"
-              className="bg-[#082C1B] hover:bg-[#0d4028] text-white font-extrabold text-xs uppercase tracking-wider px-6 py-3 rounded-xl shadow-paid transition-all flex items-center gap-2"
+              className="bg-[#0073E6] hover:bg-[#0461CF] text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl transition-all shadow-xs flex items-center gap-2"
             >
-              <Send className="w-4 h-4 text-[#8BF03B]" /> Send Message
+              <Send className="w-4 h-4 text-[#B3C7F7]" /> Send Message
             </button>
           </form>
         </div>

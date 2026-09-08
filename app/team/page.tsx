@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Metadata } from 'next';
-import { ShieldCheck, Award, GraduationCap, CheckCircle2, Code, FileText, BarChart3 } from 'lucide-react';
+import { Award, GraduationCap, CheckCircle2 } from 'lucide-react';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 
 export const metadata: Metadata = {
@@ -92,27 +92,27 @@ export const TEAM_MEMBERS = [
 
 export default function TeamPage() {
   return (
-    <div className="bg-[#F0F1EA] min-h-screen py-10">
+    <div className="bg-slate-50 min-h-screen py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <Breadcrumbs items={[{ label: 'Veterinary Team', url: '/team' }]} />
 
-        <div className="space-y-4 border-b border-[#E2E3D8] pb-6">
-          <span className="bg-[#8BF03B] text-[#082C1B] text-xs font-black uppercase px-3 py-1 rounded">
+        <div className="space-y-3 border-b border-slate-200 pb-6">
+          <span className="bg-blue-50 text-[#0461CF] border border-[#8BABF1]/30 text-xs font-bold uppercase px-3 py-1 rounded-full inline-block">
             EXECUTIVE & MEDICAL REVIEW BOARD
           </span>
-          <h1 className="text-3xl sm:text-4xl font-black text-[#082C1B] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             Meet Our Leadership, Engineering & Veterinary Team
           </h1>
-          <p className="text-base text-[#4D534E] max-w-3xl leading-relaxed font-semibold">
+          <p className="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
             PawsMetric brings together licensed Doctors of Veterinary Medicine (DVMs), software engineers, medical editors, and biostatisticians to deliver accurate, science-backed pet tools.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {TEAM_MEMBERS.map((member) => (
-            <div key={member.name} className="bg-white rounded-2xl border border-[#E2E3D8] p-6 shadow-paid flex flex-col justify-between space-y-6 group hover:border-[#082C1B] transition-all">
+            <div key={member.name} className="clean-card p-6 flex flex-col justify-between space-y-6 group hover:border-[#0073E6] transition-all">
               <div className="space-y-4">
-                <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-[#F0F1EA] border border-[#E2E3D8]">
+                <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -123,31 +123,31 @@ export default function TeamPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-xl font-black text-[#082C1B]">{member.name}</h2>
-                  <div className="text-xs font-bold text-[#4D534E] mt-0.5">{member.role}</div>
+                  <h2 className="text-lg font-bold text-slate-900">{member.name}</h2>
+                  <div className="text-xs font-bold text-[#0461CF] mt-0.5">{member.role}</div>
                 </div>
 
-                <div className="space-y-2 text-xs text-[#4D534E] pt-2 border-t border-[#F0F1EA] font-semibold">
-                  <div className="flex items-center gap-1.5 text-[#082C1B]">
-                    <GraduationCap className="w-4 h-4 text-[#082C1B] flex-shrink-0" />
+                <div className="space-y-2 text-xs text-slate-600 pt-2 border-t border-slate-100 font-medium">
+                  <div className="flex items-center gap-1.5 text-slate-900">
+                    <GraduationCap className="w-4 h-4 text-[#0073E6] flex-shrink-0" />
                     <span>{member.education}</span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-[#082C1B]">
-                    <Award className="w-4 h-4 text-[#8BF03B] flex-shrink-0" />
+                  <div className="flex items-center gap-1.5 text-slate-900">
+                    <Award className="w-4 h-4 text-[#0073E6] flex-shrink-0" />
                     <span>{member.specialty}</span>
                   </div>
                 </div>
 
-                <p className="text-xs text-[#4D534E] leading-relaxed font-medium">
+                <p className="text-xs text-slate-600 leading-relaxed font-medium">
                   {member.bio}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#F0F1EA] space-y-1.5">
-                <div className="text-[10px] font-extrabold uppercase tracking-wider text-[#082C1B]">Verified Credentials</div>
+              <div className="pt-4 border-t border-slate-100 space-y-1.5">
+                <div className="text-[10px] font-bold uppercase tracking-wider text-slate-900">Verified Credentials</div>
                 {member.credentials.map((cred, i) => (
-                  <div key={i} className="flex items-start gap-1.5 text-xs text-[#082C1B] font-bold">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#8BF03B] flex-shrink-0 mt-0.5" />
+                  <div key={i} className="flex items-start gap-1.5 text-xs text-slate-700 font-medium">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0073E6] flex-shrink-0 mt-0.5" />
                     <span>{cred}</span>
                   </div>
                 ))}

@@ -3,6 +3,21 @@
 import React, { useState } from 'react';
 import { Calculator, RefreshCw, Copy, Check, CheckCircle2 } from 'lucide-react';
 
+const TOP_BREEDS = [
+  { name: 'Labrador Retriever', size: 'large' },
+  { name: 'French Bulldog', size: 'small' },
+  { name: 'Golden Retriever', size: 'large' },
+  { name: 'German Shepherd', size: 'large' },
+  { name: 'Poodle (Standard)', size: 'large' },
+  { name: 'Chihuahua', size: 'small' },
+  { name: 'Beagle', size: 'medium' },
+  { name: 'Rottweiler', size: 'large' },
+  { name: 'Dachshund', size: 'small' },
+  { name: 'Boxer', size: 'large' },
+  { name: 'Shih Tzu', size: 'small' },
+  { name: 'Great Dane', size: 'giant' },
+];
+
 interface DogAgeWidgetProps {
   defaultBreedSize?: 'small' | 'medium' | 'large' | 'giant';
   presetBreedName?: string;
@@ -12,6 +27,7 @@ export function DogAgeCalculatorWidget({ defaultBreedSize = 'medium', presetBree
   const [ageYears, setAgeYears] = useState<number>(3);
   const [ageMonths, setAgeMonths] = useState<number>(0);
   const [sizeClass, setSizeClass] = useState<'small' | 'medium' | 'large' | 'giant'>(defaultBreedSize);
+  const [selectedBreed, setSelectedBreed] = useState<string>(presetBreedName || '');
   const [copied, setCopied] = useState<boolean>(false);
 
   const totalAgeYears = (ageYears || 0) + (ageMonths || 0) / 12;
@@ -31,55 +47,89 @@ export function DogAgeCalculatorWidget({ defaultBreedSize = 'medium', presetBree
   }
 
   let lifeStage = 'Puppy / Adolescent';
-  let lifeStageBadge = 'bg-[#8BF03B] text-[#082C1B] font-extrabold';
+  let lifeStageBadge = 'bg-[#EBF2FE] text-[#054FB9] border border-[#D1E0FC]';
   if (totalAgeYears >= 1 && totalAgeYears < 3) {
     lifeStage = 'Young Adult';
   } else if (totalAgeYears >= 3 && totalAgeYears < 7) {
     lifeStage = 'Mature Adult';
   } else if (totalAgeYears >= 7) {
     lifeStage = 'Senior / Geriatric';
+    lifeStageBadge = 'bg-[#EBF2FE] text-[#0461CF] border border-[#B3C7F7]';
   }
+
+  const handleBreedChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const breedName = e.target.value;
+    setSelectedBreed(breedName);
+    const found = TOP_BREEDS.find((b) => b.name === breedName);
+    if (found) {
+      setSizeClass(found.size as any);
+    }
+  };
 
   const handleReset = () => {
     setAgeYears(3);
     setAgeMonths(0);
     setSizeClass(defaultBreedSize);
+    setSelectedBreed('');
   };
 
   const handleCopy = () => {
-    const text = `${presetBreedName || 'Dog'} Age: ${totalAgeYears.toFixed(1)} years = ${Math.round(humanYears)} human years (${lifeStage})`;
+    const name = selectedBreed || presetBreedName || 'Dog';
+    const text = `${name} Age: ${totalAgeYears.toFixed(1)} years = ${Math.round(humanYears)} human years (${lifeStage})`;
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const progressPercent = Math.min(100, Math.round((humanYears / 100) * 100));
+
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid max-w-3xl mx-auto my-6 space-y-6">
-      <div className="flex items-center justify-between pb-4 border-b border-[#F0F1EA]">
+    <div className="bg-white rounded-xl border border-[#D1E0FC] p-6 md:p-8 max-w-3xl mx-auto my-4 space-y-6">
+      <div className="flex items-center justify-between pb-4 border-b border-slate-100">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-[#082C1B] text-[#8BF03B] flex items-center justify-center font-bold">
+          <div className="w-9 h-9 rounded-lg bg-[#054FB9] text-white flex items-center justify-center font-bold">
             <Calculator className="w-5 h-5" />
           </div>
           <div>
-            <h2 className="text-xl font-black text-[#082C1B]">
-              {presetBreedName ? `${presetBreedName} Age Calculator` : 'Interactive Dog Age Calculator'}
+            <h2 className="text-lg font-bold text-[#054FB9]">
+              {presetBreedName ? `${presetBreedName} Age Calculator` : 'Canine Age Converter'}
             </h2>
-            <p className="text-xs font-semibold text-[#4D534E]">Exact biological human age equivalent</p>
+            <p className="text-xs font-normal text-slate-500">Biological age based on epigenetic DNA clock math</p>
           </div>
         </div>
 
         <button
           onClick={handleReset}
-          className="flex items-center gap-1 text-xs font-bold text-[#082C1B] px-3 py-1.5 rounded-lg border border-[#E2E3D8] hover:bg-[#F0F1EA] transition-colors"
+          className="flex items-center gap-1 text-xs font-medium text-slate-600 px-2.5 py-1.5 rounded-lg border border-[#D1E0FC] hover:bg-[#F4F7FC] transition-colors"
         >
-          <RefreshCw className="w-3.5 h-3.5" /> Reset
+          <RefreshCw className="w-3.5 h-3.5 text-[#0073E6]" /> Reset
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {!presetBreedName && (
+          <div className="md:col-span-2">
+            <label className="block text-xs font-bold text-[#054FB9] uppercase tracking-wider mb-1.5">
+              Select Breed (Optional Auto-Fill)
+            </label>
+            <select
+              value={selectedBreed}
+              onChange={handleBreedChange}
+              className="w-full bg-[#F4F7FC] border border-[#D1E0FC] rounded-lg px-3.5 py-2 text-slate-800 text-xs font-medium focus:outline-none focus:border-[#0073E6]"
+            >
+              <option value="">Custom Breed / Mixed Breed</option>
+              {TOP_BREEDS.map((b) => (
+                <option key={b.name} value={b.name}>
+                  {b.name} ({b.size} size)
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-2">
-            Dog's Age: <span className="text-[#082C1B] font-black">{ageYears} Years</span>
+          <label className="block text-xs font-bold text-[#054FB9] uppercase tracking-wider mb-2">
+            Dog's Age: <span className="text-[#054FB9] font-extrabold">{ageYears} Years</span>
           </label>
           <input
             type="range"
@@ -88,18 +138,18 @@ export function DogAgeCalculatorWidget({ defaultBreedSize = 'medium', presetBree
             step="0.5"
             value={ageYears}
             onChange={(e) => setAgeYears(parseFloat(e.target.value))}
-            className="w-full h-2 bg-[#E2E3D8] rounded-lg appearance-none cursor-pointer accent-[#082C1B]"
+            className="w-full h-2 bg-[#D1E0FC] rounded-lg appearance-none cursor-pointer accent-[#0073E6]"
           />
         </div>
 
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-2">
+          <label className="block text-xs font-bold text-[#054FB9] uppercase tracking-wider mb-1.5">
             Additional Months
           </label>
           <select
             value={ageMonths}
             onChange={(e) => setAgeMonths(parseInt(e.target.value))}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-4 py-2 text-[#082C1B] font-bold focus:outline-none"
+            className="w-full bg-[#F4F7FC] border border-[#D1E0FC] rounded-lg px-3.5 py-2 text-slate-800 text-xs font-medium focus:outline-none focus:border-[#0073E6]"
           >
             {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((m) => (
               <option key={m} value={m}>
@@ -111,7 +161,7 @@ export function DogAgeCalculatorWidget({ defaultBreedSize = 'medium', presetBree
 
         {!presetBreedName && (
           <div className="md:col-span-2">
-            <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-[#054FB9] uppercase tracking-wider mb-2">
               Breed Size Category
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -125,14 +175,14 @@ export function DogAgeCalculatorWidget({ defaultBreedSize = 'medium', presetBree
                   key={item.id}
                   type="button"
                   onClick={() => setSizeClass(item.id as any)}
-                  className={`p-3 rounded-xl border text-center transition-all ${
+                  className={`p-2.5 rounded-lg border text-center transition-all ${
                     sizeClass === item.id
-                      ? 'border-[#082C1B] bg-[#082C1B] text-[#8BF03B] font-black shadow-sm'
-                      : 'border-[#E2E3D8] bg-[#F0F1EA] text-[#082C1B] font-bold hover:bg-white'
+                      ? 'border-[#054FB9] bg-[#054FB9] text-white font-bold shadow-xs'
+                      : 'border-[#D1E0FC] bg-[#F4F7FC] text-slate-700 font-medium hover:bg-white'
                   }`}
                 >
-                  <div className="text-xs uppercase">{item.label}</div>
-                  <div className="text-[10px] opacity-80 font-normal">{item.sub}</div>
+                  <div className="text-xs">{item.label}</div>
+                  <div className="text-[10px] opacity-75 font-normal">{item.sub}</div>
                 </button>
               ))}
             </div>
@@ -140,31 +190,48 @@ export function DogAgeCalculatorWidget({ defaultBreedSize = 'medium', presetBree
         )}
       </div>
 
-      <div className="bg-[#082C1B] text-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-paid-lg border border-[#0d4028]">
-        <div className="text-center md:text-left">
-          <div className="text-[#A2B5AB] text-xs font-extrabold uppercase tracking-wider mb-1">Human Equivalent Age</div>
-          <div className="text-4xl md:text-5xl font-black text-[#8BF03B]">
-            {Math.round(humanYears)}{' '}
-            <span className="text-lg text-white font-semibold">human years</span>
+      {/* RESULT DISPLAY CARD WITH BLUE THEME & COPY BUTTON */}
+      <div className="bg-[#054FB9] text-white rounded-xl p-6 flex flex-col justify-between gap-5 border border-[#0461CF]">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <div className="text-[#B3C7F7] text-xs font-medium uppercase tracking-wider mb-1">Human Equivalent Age</div>
+            <div className="text-4xl font-extrabold text-white">
+              {Math.round(humanYears)}{' '}
+              <span className="text-base text-[#B3C7F7] font-normal">human years</span>
+            </div>
+            <div className="mt-1 text-xs text-[#B3C7F7] font-normal">
+              Based on {totalAgeYears.toFixed(1)} calendar years in {sizeClass} breed class
+            </div>
           </div>
-          <div className="mt-2 text-xs text-[#A2B5AB] font-medium">
-            Based on {totalAgeYears.toFixed(1)} calendar years in {sizeClass} breed class
+
+          <div className="flex items-center gap-3">
+            <span className={`px-3 py-1 rounded-md text-xs font-semibold uppercase tracking-wider ${lifeStageBadge}`}>
+              {lifeStage}
+            </span>
+
+            <button
+              type="button"
+              onClick={handleCopy}
+              className="flex items-center gap-1.5 text-xs font-semibold bg-[#0073E6] hover:bg-[#0461CF] text-white px-3.5 py-2 rounded-lg border border-[#8BABF1]/30 transition-colors"
+            >
+              {copied ? <Check className="w-3.5 h-3.5 text-[#B3C7F7]" /> : <Copy className="w-3.5 h-3.5 text-[#B3C7F7]" />}
+              <span>{copied ? 'Copied!' : 'Copy Result'}</span>
+            </button>
           </div>
         </div>
 
-        <div className="flex flex-col items-center md:items-end gap-3">
-          <span className={`px-4 py-1.5 rounded-md text-xs uppercase tracking-wider ${lifeStageBadge}`}>
-            {lifeStage}
-          </span>
-
-          <button
-            type="button"
-            onClick={handleCopy}
-            className="flex items-center gap-1.5 text-xs font-extrabold bg-[#041B10] hover:bg-[#0d4028] text-white px-4 py-2 rounded-lg border border-[#0d4028] transition-colors"
-          >
-            {copied ? <Check className="w-4 h-4 text-[#8BF03B]" /> : <Copy className="w-4 h-4 text-[#8BF03B]" />}
-            <span>{copied ? 'Copied!' : 'Copy Result'}</span>
-          </button>
+        {/* Visual Progress Bar */}
+        <div className="space-y-1.5 pt-2 border-t border-[#0461CF]">
+          <div className="flex justify-between text-[11px] text-[#B3C7F7]">
+            <span>Life Stage Progress</span>
+            <span className="text-white font-medium">{progressPercent}% of Human Life Scale</span>
+          </div>
+          <div className="w-full bg-[#0461CF] rounded-full h-2 overflow-hidden">
+            <div
+              className="bg-[#0073E6] h-2 rounded-full transition-all duration-300"
+              style={{ width: `${progressPercent}%` }}
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -195,12 +262,12 @@ export function PuppyAgeCalculatorWidget() {
   }
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid max-w-3xl mx-auto my-6 space-y-6">
-      <h3 className="text-lg font-black text-[#082C1B]">Puppy Milestone & Age Tracker</h3>
+    <div className="bg-white rounded-xl border border-[#D1E0FC] p-6 md:p-8 max-w-3xl mx-auto my-4 space-y-6">
+      <h3 className="text-base font-bold text-[#054FB9]">Puppy Milestone & Age Tracker</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-2">
-            Puppy Age: <span className="text-[#082C1B] font-black">{weeks} Weeks</span>
+          <label className="block text-xs font-bold text-[#054FB9] uppercase tracking-wider mb-2">
+            Puppy Age: <span className="text-[#054FB9] font-extrabold">{weeks} Weeks</span>
           </label>
           <input
             type="range"
@@ -208,15 +275,15 @@ export function PuppyAgeCalculatorWidget() {
             max="24"
             value={weeks}
             onChange={(e) => setWeeks(parseInt(e.target.value))}
-            className="w-full h-2 bg-[#E2E3D8] rounded-lg appearance-none cursor-pointer accent-[#082C1B]"
+            className="w-full h-2 bg-[#D1E0FC] rounded-lg appearance-none cursor-pointer accent-[#0073E6]"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-2">Target Breed Size</label>
+          <label className="block text-xs font-bold text-[#054FB9] uppercase tracking-wider mb-1.5">Target Breed Size</label>
           <select
             value={size}
             onChange={(e) => setSize(e.target.value as any)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-4 py-2.5 text-[#082C1B] font-bold"
+            className="w-full bg-[#F4F7FC] border border-[#D1E0FC] rounded-lg px-3.5 py-2 text-slate-800 text-xs font-medium"
           >
             <option value="small">Small Breed (&lt; 20 lbs)</option>
             <option value="medium">Medium Breed (21-50 lbs)</option>
@@ -226,13 +293,13 @@ export function PuppyAgeCalculatorWidget() {
         </div>
       </div>
 
-      <div className="bg-[#082C1B] text-white rounded-2xl p-6 border border-[#0d4028]">
-        <div className="flex items-center gap-2 text-[#8BF03B] font-extrabold mb-1">
-          <CheckCircle2 className="w-5 h-5 text-[#8BF03B]" />
-          <span>Stage: {milestone}</span>
+      <div className="bg-[#054FB9] text-white rounded-xl p-5 border border-[#0461CF] space-y-2">
+        <div className="flex items-center gap-2 text-[#B3C7F7] font-bold text-sm">
+          <CheckCircle2 className="w-4 h-4 text-[#0073E6]" />
+          <span>Developmental Phase: {milestone}</span>
         </div>
-        <p className="text-xs text-[#A2B5AB] leading-relaxed mt-2 font-medium">{desc}</p>
-        <div className="mt-4 text-xs text-[#8BF03B] font-black border-t border-[#0d4028] pt-3 uppercase">
+        <p className="text-xs text-[#B3C7F7] leading-relaxed font-normal">{desc}</p>
+        <div className="mt-3 text-xs text-white font-semibold border-t border-[#0461CF] pt-2 uppercase">
           Human Toddler Equivalent: ~{Math.round(weeks * 0.4 + 1)} year old child
         </div>
       </div>
@@ -247,11 +314,11 @@ export function SmallVsLargeBreedAgeWidget() {
   const largeHuman = age <= 2 ? (age === 1 ? 14 : 22) : 22 + (age - 2) * 6.5;
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid max-w-3xl mx-auto my-6 space-y-6">
-      <h3 className="text-lg font-black text-[#082C1B]">Side-by-Side Small vs Large Breed Aging</h3>
+    <div className="bg-white rounded-xl border border-[#D1E0FC] p-6 md:p-8 max-w-3xl mx-auto my-4 space-y-6">
+      <h3 className="text-base font-bold text-[#054FB9]">Side-by-Side Small vs Large Breed Aging</h3>
       <div>
-        <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-2">
-          Dog Calendar Age: <span className="text-[#082C1B] font-black">{age} Years</span>
+        <label className="block text-xs font-bold text-[#054FB9] uppercase tracking-wider mb-2">
+          Calendar Age: <span className="text-[#054FB9] font-extrabold">{age} Years</span>
         </label>
         <input
           type="range"
@@ -259,26 +326,22 @@ export function SmallVsLargeBreedAgeWidget() {
           max="16"
           value={age}
           onChange={(e) => setAge(parseInt(e.target.value))}
-          className="w-full h-2 bg-[#E2E3D8] rounded-lg appearance-none cursor-pointer accent-[#082C1B]"
+          className="w-full h-2 bg-[#D1E0FC] rounded-lg appearance-none cursor-pointer accent-[#0073E6]"
         />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="bg-[#082C1B] text-white rounded-2xl p-6 text-center border border-[#0d4028]">
-          <div className="text-xs uppercase font-extrabold tracking-wider text-[#A2B5AB]">Small Breed (&lt;20 lbs)</div>
-          <div className="text-4xl font-black text-[#8BF03B] my-2">{smallHuman} Yrs</div>
-          <div className="text-xs text-[#A2B5AB]">Aging Rate: ~4 yrs/yr</div>
+        <div className="bg-[#054FB9] text-white rounded-xl p-5 text-center border border-[#0461CF]">
+          <div className="text-xs uppercase font-medium text-[#B3C7F7]">Small Breed (&lt;20 lbs)</div>
+          <div className="text-3xl font-extrabold text-white my-2">{smallHuman} Yrs</div>
+          <div className="text-xs text-[#B3C7F7]">Aging Rate: ~4 yrs/yr</div>
         </div>
 
-        <div className="bg-[#082C1B] text-white rounded-2xl p-6 text-center border border-[#0d4028]">
-          <div className="text-xs uppercase font-extrabold tracking-wider text-[#A2B5AB]">Large Breed (&gt;60 lbs)</div>
-          <div className="text-4xl font-black text-white my-2">{largeHuman} Yrs</div>
-          <div className="text-xs text-[#A2B5AB]">Aging Rate: ~6.5 yrs/yr</div>
+        <div className="bg-[#054FB9] text-white rounded-xl p-5 text-center border border-[#0461CF]">
+          <div className="text-xs uppercase font-medium text-[#B3C7F7]">Large Breed (&gt;60 lbs)</div>
+          <div className="text-3xl font-extrabold text-[#B3C7F7] my-2">{largeHuman} Yrs</div>
+          <div className="text-xs text-[#B3C7F7]">Aging Rate: ~6.5 yrs/yr</div>
         </div>
-      </div>
-      <div className="text-center text-xs text-[#4D534E] font-bold">
-        Biological Gap Difference: Large breed is equivalent to{' '}
-        <span className="font-black text-[#082C1B]">{Math.round(largeHuman - smallHuman)} human years</span> older.
       </div>
     </div>
   );

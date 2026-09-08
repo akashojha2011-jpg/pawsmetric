@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Ruler, Box, Shield, ShoppingBag, Plane } from 'lucide-react';
-import { formatNumber } from '@/lib/utils';
+import { Box } from 'lucide-react';
 
 export function CrateSizeCalculatorWidget() {
   const [lengthInches, setLengthInches] = useState<number>(28);
@@ -22,42 +21,42 @@ export function CrateSizeCalculatorWidget() {
   else crateSizeCategory = '48-Inch XXL Giant Crate';
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid max-w-3xl mx-auto my-6 space-y-6">
-      <div className="flex items-center gap-3 pb-4 border-b border-[#F0F1EA]">
-        <div className="w-10 h-10 rounded-xl bg-[#082C1B] text-[#8BF03B] flex items-center justify-center font-bold">
+    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
+      <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
+        <div className="w-10 h-10 rounded-xl bg-[#0073E6] text-white flex items-center justify-center font-bold">
           <Box className="w-5 h-5" />
         </div>
         <div>
-          <h3 className="text-xl font-black text-[#082C1B]">Dog Crate Sizing Calculator</h3>
-          <p className="text-xs font-semibold text-[#4D534E]">Veterinary clearance: +4" length & +3" headroom rule</p>
+          <h3 className="text-lg font-bold text-slate-900">Dog Crate Sizing Calculator</h3>
+          <p className="text-xs text-slate-500">Veterinary clearance: +4" length & +3" headroom rule</p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Dog Nose-to-Tail Length (Inches)</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Dog Nose-to-Tail Length (Inches)</label>
           <input
             type="number"
             value={lengthInches}
             onChange={(e) => setLengthInches(parseFloat(e.target.value) || 0)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Standing Head Height (Inches)</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Standing Head Height (Inches)</label>
           <input
             type="number"
             value={heightInches}
             onChange={(e) => setHeightInches(parseFloat(e.target.value) || 0)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
           />
         </div>
       </div>
 
-      <div className="bg-[#082C1B] text-white p-6 rounded-2xl border border-[#0d4028] text-center">
-        <div className="text-xs text-[#A2B5AB] font-extrabold uppercase">Recommended Crate Standard</div>
-        <div className="text-3xl font-black text-[#8BF03B] my-2">{crateSizeCategory}</div>
-        <p className="text-xs text-[#A2B5AB] font-semibold">Min Interior Dimensions: {minCrateLength}" Long × {minCrateHeight}" Tall</p>
+      <div className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] text-center space-y-2">
+        <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">Recommended Crate Standard</div>
+        <div className="text-3xl font-extrabold text-[#B3C7F7]">{crateSizeCategory}</div>
+        <p className="text-xs text-blue-100 font-medium">Min Interior Dimensions: {minCrateLength}" Long × {minCrateHeight}" Tall</p>
       </div>
     </div>
   );
@@ -77,33 +76,33 @@ export function HarnessSizeCalculatorWidget() {
   else size = 'Extra Large (XL)';
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid max-w-3xl mx-auto my-6 space-y-6">
-      <h3 className="text-xl font-black text-[#082C1B]">Dog Harness Sizing Calculator</h3>
+    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
+      <h3 className="text-lg font-bold text-slate-900">Dog Harness Sizing Calculator</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Chest Girth Measurement (Inches)</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Chest Girth Measurement (Inches)</label>
           <input
             type="number"
             value={girthInches}
             onChange={(e) => setGirthInches(parseFloat(e.target.value) || 0)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Dog Weight (lbs)</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Dog Weight (lbs)</label>
           <input
             type="number"
             value={weightLbs}
             onChange={(e) => setWeightLbs(parseFloat(e.target.value) || 0)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
           />
         </div>
       </div>
 
-      <div className="bg-[#082C1B] text-white p-6 rounded-2xl border border-[#0d4028] text-center">
-        <div className="text-xs text-[#A2B5AB] font-extrabold uppercase">Recommended Harness Size</div>
-        <div className="text-3xl font-black text-[#8BF03B] my-2">{size}</div>
-        <p className="text-xs text-[#A2B5AB] font-semibold">Always apply the 2-finger fit test behind front legs.</p>
+      <div className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] text-center space-y-2">
+        <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">Recommended Harness Size</div>
+        <div className="text-3xl font-extrabold text-[#B3C7F7]">{size}</div>
+        <p className="text-xs text-blue-100 font-medium">Always apply the 2-finger fit test behind front legs.</p>
       </div>
     </div>
   );
@@ -117,22 +116,22 @@ export function CollarSizeCalculatorWidget() {
   const collarMax = currentNeck + 3.0;
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid max-w-3xl mx-auto my-6 space-y-6">
-      <h3 className="text-xl font-black text-[#082C1B]">Dog Collar Size Calculator</h3>
+    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
+      <h3 className="text-lg font-bold text-slate-900">Dog Collar Size Calculator</h3>
       <div>
-        <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Exact Neck Circumference (Inches)</label>
+        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Exact Neck Circumference (Inches)</label>
         <input
           type="number"
           value={neckInches}
           onChange={(e) => setNeckInches(parseFloat(e.target.value) || 0)}
-          className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
         />
       </div>
 
-      <div className="bg-[#082C1B] text-white p-6 rounded-2xl border border-[#0d4028] text-center">
-        <div className="text-xs text-[#A2B5AB] font-extrabold uppercase">Adjustable Collar Range Target</div>
-        <div className="text-3xl font-black text-[#8BF03B] my-2">{collarMin.toFixed(1)}" - {collarMax.toFixed(1)}" Collar</div>
-        <p className="text-xs text-[#A2B5AB] font-semibold">Allows comfortable 2-finger breathing and neck safety room.</p>
+      <div className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] text-center space-y-2">
+        <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">Adjustable Collar Range Target</div>
+        <div className="text-3xl font-extrabold text-[#B3C7F7]">{collarMin.toFixed(1)}" - {collarMax.toFixed(1)}" Collar</div>
+        <p className="text-xs text-blue-100 font-medium">Allows comfortable 2-finger breathing and neck safety room.</p>
       </div>
     </div>
   );
@@ -151,22 +150,22 @@ export function CoatSizeCalculatorWidget() {
   else coatSize = 'Extra Large Coat (28"+)';
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid max-w-3xl mx-auto my-6 space-y-6">
-      <h3 className="text-xl font-black text-[#082C1B]">Dog Coat & Sweater Size Calculator</h3>
+    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
+      <h3 className="text-lg font-bold text-slate-900">Dog Coat & Sweater Size Calculator</h3>
       <div>
-        <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Back Length (Base of Neck to Tail Base, Inches)</label>
+        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Back Length (Base of Neck to Tail Base, Inches)</label>
         <input
           type="number"
           value={backLengthInches}
           onChange={(e) => setBackLengthInches(parseFloat(e.target.value) || 0)}
-          className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
         />
       </div>
 
-      <div className="bg-[#082C1B] text-white p-6 rounded-2xl border border-[#0d4028] text-center">
-        <div className="text-xs text-[#A2B5AB] font-extrabold uppercase">Recommended Apparel Size</div>
-        <div className="text-3xl font-black text-[#8BF03B] my-2">{coatSize}</div>
-        <p className="text-xs text-[#A2B5AB] font-semibold">Provides full spinal coverage without interfering with bathroom breaks.</p>
+      <div className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] text-center space-y-2">
+        <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">Recommended Apparel Size</div>
+        <div className="text-3xl font-extrabold text-[#B3C7F7]">{coatSize}</div>
+        <p className="text-xs text-blue-100 font-medium">Provides full spinal coverage without interfering with bathroom breaks.</p>
       </div>
     </div>
   );
@@ -181,33 +180,33 @@ export function AirlineCarrierCalculatorWidget() {
   const eligible = (weightLbs || 0) <= 20 && (heightInches || 0) <= 10.5;
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid max-w-3xl mx-auto my-6 space-y-6">
-      <h3 className="text-xl font-black text-[#082C1B]">Airline In-Cabin Pet Carrier Eligibility</h3>
+    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
+      <h3 className="text-lg font-bold text-slate-900">Airline In-Cabin Pet Carrier Eligibility</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Dog Weight (lbs)</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Dog Weight (lbs)</label>
           <input
             type="number"
             value={weightLbs}
             onChange={(e) => setWeightLbs(parseFloat(e.target.value) || 0)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-[#082C1B] uppercase tracking-wider mb-1.5">Standing Height (Inches)</label>
+          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Standing Height (Inches)</label>
           <input
             type="number"
             value={heightInches}
             onChange={(e) => setHeightInches(parseFloat(e.target.value) || 0)}
-            className="w-full bg-[#F0F1EA] border border-[#E2E3D8] rounded-xl px-3 py-2 text-[#082C1B] font-bold"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
           />
         </div>
       </div>
 
-      <div className="bg-[#082C1B] text-white p-6 rounded-2xl border border-[#0d4028] text-center">
-        <div className="text-xs text-[#A2B5AB] font-extrabold uppercase">TSA Under-Seat Eligibility Status</div>
-        <div className="text-3xl font-black text-[#8BF03B] my-2">{eligible ? 'ELIGIBLE FOR IN-CABIN FLIGHT' : 'EXCEEDS IN-CABIN SIZE LIMITS'}</div>
-        <p className="text-xs text-[#A2B5AB] font-semibold">{eligible ? 'Fits standard 17.5" L × 11" W × 10.5" H soft-sided carrier.' : 'Requires FAA approved cargo crate transport.'}</p>
+      <div className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] text-center space-y-2">
+        <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">TSA Under-Seat Eligibility Status</div>
+        <div className="text-3xl font-extrabold text-[#B3C7F7]">{eligible ? 'ELIGIBLE FOR IN-CABIN FLIGHT' : 'EXCEEDS IN-CABIN SIZE LIMITS'}</div>
+        <p className="text-xs text-blue-100 font-medium">{eligible ? 'Fits standard 17.5" L × 11" W × 10.5" H soft-sided carrier.' : 'Requires FAA approved cargo crate transport.'}</p>
       </div>
     </div>
   );
