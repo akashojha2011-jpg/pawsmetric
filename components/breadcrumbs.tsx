@@ -20,13 +20,13 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://pawsmetric.com',
+        item: 'https://www.pawsmetric.com',
       },
       ...items.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 2,
         name: item.label,
-        item: `https://pawsmetric.com${item.url}`,
+        item: `https://www.pawsmetric.com${item.url}`,
       })),
     ],
   };

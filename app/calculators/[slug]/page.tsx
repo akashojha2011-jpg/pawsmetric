@@ -67,12 +67,12 @@ export async function generateMetadata({ params }: ToolOrCategoryPageProps): Pro
       title: metaTitle,
       description: metaDescription,
       alternates: {
-        canonical: `https://pawsmetric.com/calculators/${category.slug}`,
+        canonical: `https://www.pawsmetric.com/calculators/${category.slug}`,
       },
       openGraph: {
         title: metaTitle,
         description: metaDescription,
-        url: `https://pawsmetric.com/calculators/${category.slug}`,
+        url: `https://www.pawsmetric.com/calculators/${category.slug}`,
         type: 'website',
       },
     };
@@ -89,12 +89,12 @@ export async function generateMetadata({ params }: ToolOrCategoryPageProps): Pro
     title: fullMetaTitle,
     description: calc.metaDescription,
     alternates: {
-      canonical: `https://pawsmetric.com/calculators/${calc.slug}`,
+      canonical: `https://www.pawsmetric.com/calculators/${calc.slug}`,
     },
     openGraph: {
       title: fullMetaTitle,
       description: calc.metaDescription,
-      url: `https://pawsmetric.com/calculators/${calc.slug}`,
+      url: `https://www.pawsmetric.com/calculators/${calc.slug}`,
       type: 'website',
     },
   };
@@ -115,7 +115,7 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
       '@type': 'CollectionPage',
       name: `${category.name} Dog Calculators`,
       description: category.description,
-      url: `https://pawsmetric.com/calculators/${category.slug}`,
+      url: `https://www.pawsmetric.com/calculators/${category.slug}`,
     };
 
     return (
@@ -198,7 +198,7 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
     '@type': 'WebApplication',
     name: calc.title,
     description: calc.description,
-    url: `https://pawsmetric.com/calculators/${calc.slug}`,
+    url: `https://www.pawsmetric.com/calculators/${calc.slug}`,
     applicationCategory: 'HealthApplication',
     operatingSystem: 'All',
     offers: {
@@ -209,7 +209,7 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
     author: {
       '@type': 'Organization',
       name: 'PawsMetric',
-      url: 'https://pawsmetric.com',
+      url: 'https://www.pawsmetric.com',
     },
   };
 

@@ -28,7 +28,7 @@ export default function TermsOfServicePage() {
           <section className="space-y-3">
             <h2 className="text-xl font-black text-[#082C1B]">1. Acceptance of Terms</h2>
             <p className="text-[#4D534E]">
-              By accessing, browsing, or using PawsMetric (<a href="https://pawsmetric.com" className="text-[#082C1B] underline font-bold">https://pawsmetric.com</a>), you acknowledge that you have read, understood, and agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you must discontinue use of our website immediately.
+              By accessing, browsing, or using PawsMetric (<a href="https://www.pawsmetric.com" className="text-[#082C1B] underline font-bold">https://www.pawsmetric.com</a>), you acknowledge that you have read, understood, and agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you must discontinue use of our website immediately.
             </p>
           </section>
 

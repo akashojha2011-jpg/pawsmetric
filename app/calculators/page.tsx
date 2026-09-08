@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'chocolate toxicity calculator',
   ],
   alternates: {
-    canonical: 'https://pawsmetric.com/calculators',
+    canonical: 'https://www.pawsmetric.com/calculators',
   },
 };
 

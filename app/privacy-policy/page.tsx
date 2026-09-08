@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
           <section className="space-y-3">
             <h2 className="text-xl font-black text-[#082C1B]">1. Introduction & Commitment to Privacy</h2>
             <p className="text-[#4D534E]">
-              PawsMetric ("we," "our," or "us") operates the companion animal calculation portal located at <a href="https://pawsmetric.com" className="text-[#082C1B] underline font-bold">https://pawsmetric.com</a>. We believe that pet parents should have access to accurate veterinary calculations without sacrificing their personal data or privacy. This Privacy Policy outlines our strict client-side data handling practices.
+              PawsMetric ("we," "our," or "us") operates the companion animal calculation portal located at <a href="https://www.pawsmetric.com" className="text-[#082C1B] underline font-bold">https://www.pawsmetric.com</a>. We believe that pet parents should have access to accurate veterinary calculations without sacrificing their personal data or privacy. This Privacy Policy outlines our strict client-side data handling practices.
             </p>
           </section>
 

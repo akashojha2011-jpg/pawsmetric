@@ -7,6 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/scratch/'],
     },
-    sitemap: 'https://pawsmetric.com/sitemap.xml',
+    sitemap: 'https://www.pawsmetric.com/sitemap.xml',
   };
 }
+

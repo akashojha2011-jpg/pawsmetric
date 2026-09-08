@@ -4,7 +4,7 @@ import { CATEGORIES } from '@/lib/data/categories';
 import { RESOURCES } from '@/lib/data/resources';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://pawsmetric.com';
+  const baseUrl = 'https://www.pawsmetric.com';
 
   const staticPages = [
     '',

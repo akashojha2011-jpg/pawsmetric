@@ -31,12 +31,12 @@ export async function generateMetadata({ params }: ResourcePageProps): Promise<M
     title: article.title,
     description: article.excerpt,
     alternates: {
-      canonical: `https://pawsmetric.com/resources/${article.slug}`,
+      canonical: `https://www.pawsmetric.com/resources/${article.slug}`,
     },
     openGraph: {
       title: article.title,
       description: article.excerpt,
-      url: `https://pawsmetric.com/resources/${article.slug}`,
+      url: `https://www.pawsmetric.com/resources/${article.slug}`,
       type: 'article',
       images: [
         {
@@ -64,7 +64,7 @@ export default async function IndividualResourcePage({ params }: ResourcePagePro
     '@type': 'Article',
     headline: article.title,
     description: article.excerpt,
-    image: `https://pawsmetric.com${article.coverImage}`,
+    image: `https://www.pawsmetric.com${article.coverImage}`,
     wordCount: article.wordCount,
     author: {
       '@type': 'Person',
@@ -75,7 +75,7 @@ export default async function IndividualResourcePage({ params }: ResourcePagePro
     publisher: {
       '@type': 'Organization',
       name: 'PawsMetric',
-      url: 'https://pawsmetric.com',
+      url: 'https://www.pawsmetric.com',
     },
   };
 

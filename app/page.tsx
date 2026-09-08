@@ -45,12 +45,12 @@ export const metadata: Metadata = {
     'dog crate size calculator',
   ],
   alternates: {
-    canonical: 'https://pawsmetric.com',
+    canonical: 'https://www.pawsmetric.com',
   },
   openGraph: {
     title: 'Dog Calculator: Free Dog Age, Calorie, Benadryl & Toxicity Tools | PawsMetric',
     description: 'Free scientific dog calculators for age in human years, Benadryl dosage by weight, daily calories, chocolate toxicity, crate sizes, and puppy growth.',
-    url: 'https://pawsmetric.com',
+    url: 'https://www.pawsmetric.com',
     siteName: 'PawsMetric',
     type: 'website',
   },
@@ -76,10 +76,10 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'PawsMetric - Free Dog Calculators & Health Tools',
-    url: 'https://pawsmetric.com',
+    url: 'https://www.pawsmetric.com',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://pawsmetric.com/calculators?q={search_term_string}',
+      target: 'https://www.pawsmetric.com/calculators?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   };
@@ -89,7 +89,7 @@ export default function HomePage() {
     '@type': 'WebApplication',
     name: 'PawsMetric Dog Calculator Suite',
     description: 'Free web app with 38+ dog calculators for age, food, weight, puppy growth, pregnancy, Benadryl dosage, and chocolate toxicity safety.',
-    url: 'https://pawsmetric.com',
+    url: 'https://www.pawsmetric.com',
     applicationCategory: 'HealthApplication',
     operatingSystem: 'Web',
     offers: {
