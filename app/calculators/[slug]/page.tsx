@@ -119,7 +119,7 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
     };
 
     return (
-      <div className="bg-[#F0F1EA] min-h-screen py-8 md:py-12">
+      <div className="bg-slate-50 min-h-screen py-8 md:py-12">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(categorySchema) }}
@@ -133,14 +133,14 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
             ]}
           />
 
-          <div className="space-y-4 border-b border-[#E2E3D8] pb-6">
-            <span className="bg-[#8BF03B] text-[#082C1B] text-xs font-black uppercase px-3 py-1 rounded">
-              CATEGORY DIRECTORY ({categoryTools.length} TOOLS)
+          <div className="space-y-3 border-b border-slate-200 pb-6">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-600">
+              {category.name} ({categoryTools.length} Tools)
             </span>
-            <h1 className="text-3xl sm:text-4xl font-black text-[#082C1B] tracking-tight">
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               {category.name} Calculators
             </h1>
-            <p className="text-base text-[#4D534E] max-w-3xl leading-relaxed font-semibold">
+            <p className="text-base text-slate-600 max-w-3xl leading-relaxed font-normal">
               {category.description}
             </p>
           </div>
@@ -150,26 +150,26 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
               <Link
                 key={tool.slug}
                 href={`/calculators/${tool.slug}`}
-                className="bg-white rounded-2xl border border-[#E2E3D8] p-6 shadow-paid hover:border-[#082C1B] transition-all flex flex-col justify-between group"
+                className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:border-emerald-600 transition-all flex flex-col justify-between group"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded bg-[#8BF03B] text-[#082C1B]">
+                    <span className="text-[11px] font-semibold px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-100">
                       {tool.categoryName}
                     </span>
-                    <ArrowRight className="w-4 h-4 text-stone-400 group-hover:text-[#082C1B] group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all" />
                   </div>
-                  <h2 className="text-lg font-black text-[#082C1B] group-hover:text-[#0d4028] leading-snug">
+                  <h2 className="text-base font-bold text-slate-900 group-hover:text-emerald-600 leading-snug">
                     {tool.title}
                   </h2>
-                  <p className="text-xs text-[#4D534E] line-clamp-2 leading-relaxed font-medium">
+                  <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed font-normal">
                     {tool.description}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#F0F1EA] flex items-center justify-between text-[11px] text-[#4D534E] font-semibold">
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
                   <span>Updated {tool.lastUpdated}</span>
-                  <span className="font-bold text-[#082C1B] group-hover:text-[#0d4028]">Calculate →</span>
+                  <span className="font-semibold text-slate-900 group-hover:text-emerald-600">Calculate →</span>
                 </div>
               </Link>
             ))}
@@ -242,7 +242,7 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
     : null;
 
   return (
-    <div className="bg-[#F0F1EA] min-h-screen py-8 md:py-12">
+    <div className="bg-slate-50 min-h-screen py-8 md:py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
       {howToSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
@@ -264,50 +264,50 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
 
         {/* 1. Tool Header & Medical Review Board Badges */}
         <div className="space-y-4">
-          <div className="flex flex-wrap items-center gap-2 text-xs text-[#4D534E]">
-            <span className="font-extrabold uppercase px-2.5 py-1 rounded bg-[#8BF03B] text-[#082C1B]">
+          <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
+            <span className="font-semibold px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-100">
               {calc.categoryName}
             </span>
             <span>•</span>
-            <span className="flex items-center gap-1 font-semibold">
-              <Clock className="w-3.5 h-3.5 text-[#082C1B]" /> Updated {calc.lastUpdated}
+            <span className="flex items-center gap-1 font-medium text-slate-500">
+              <Clock className="w-3.5 h-3.5 text-slate-400" /> Updated {calc.lastUpdated}
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-black text-[#082C1B] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             {calc.title}
           </h1>
 
-          <p className="text-sm sm:text-base text-[#4D534E] leading-relaxed font-semibold">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
             {calc.description}
           </p>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-[#E2E3D8] text-xs text-[#4D534E]">
-            <div className="flex items-center gap-1.5 font-bold text-[#082C1B]">
-              <UserCheck className="w-4 h-4 text-[#8BF03B]" />
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-slate-200 text-xs text-slate-600">
+            <div className="flex items-center gap-1.5 font-semibold text-slate-900">
+              <UserCheck className="w-4 h-4 text-emerald-600" />
               <span>Medical Review: {calc.author?.name || 'Dr. Emily Watson, DVM'}</span>
             </div>
-            <div className="flex items-center gap-1.5 font-bold text-[#082C1B] bg-white px-3 py-1 rounded-md border border-[#E2E3D8]">
-              <ShieldCheck className="w-4 h-4 text-[#8BF03B]" /> Peer-Reviewed DVM Formula
+            <div className="flex items-center gap-1.5 font-semibold text-slate-700 bg-white px-3 py-1 rounded-md border border-slate-200">
+              <ShieldCheck className="w-4 h-4 text-emerald-600" /> Peer-Reviewed DVM Formula
             </div>
           </div>
         </div>
 
         {/* 2. INTERACTIVE CALCULATOR WIDGET ENGINE */}
-        <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid">
+        <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm">
           <WidgetDispatcher slug={calc.slug} />
         </div>
 
         {/* 3. STEP-BY-STEP INSTRUCTIONS ("HOW TO USE THIS TOOL") */}
         {calc.howToUse && calc.howToUse.length > 0 && (
-          <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid space-y-4">
-            <div className="flex items-center gap-2 border-b border-[#F0F1EA] pb-3">
-              <ListOrdered className="w-5 h-5 text-[#082C1B]" />
-              <h2 className="text-lg sm:text-xl font-black text-[#082C1B]">
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm space-y-4">
+            <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
+              <ListOrdered className="w-5 h-5 text-slate-900" />
+              <h2 className="text-lg font-bold text-slate-900">
                 How to Use the {calc.title}
               </h2>
             </div>
-            <ol className="list-decimal pl-5 space-y-2.5 text-xs sm:text-sm text-[#082C1B] font-semibold">
+            <ol className="list-decimal pl-5 space-y-2 text-xs sm:text-sm text-slate-700 font-normal">
               {calc.howToUse.map((step, idx) => (
                 <li key={idx} className="leading-relaxed">
                   {step}
@@ -319,25 +319,25 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
 
         {/* 4. FORMULA & SCIENTIFIC METHODOLOGY BOX */}
         {calc.methodology && (
-          <div className="bg-white rounded-2xl border border-[#E2E3D8] p-6 md:p-8 shadow-paid space-y-4">
-            <div className="flex items-center gap-2 border-b border-[#F0F1EA] pb-3">
-              <BookOpen className="w-5 h-5 text-[#082C1B]" />
-              <h2 className="text-lg sm:text-xl font-black text-[#082C1B]">
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm space-y-4">
+            <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
+              <BookOpen className="w-5 h-5 text-slate-900" />
+              <h2 className="text-lg font-bold text-slate-900">
                 Clinical Methodology & Formula Breakdown
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-[#4D534E] font-medium leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
               {calc.methodology.summary}
             </p>
-            <div className="bg-[#082C1B] text-white p-5 rounded-xl border border-[#0d4028] space-y-2">
-              <div className="text-xs font-extrabold text-[#8BF03B] uppercase tracking-wider">Clinical Veterinary Formula</div>
-              <div className="text-xs sm:text-sm font-black text-[#8BF03B]">{calc.methodology.formulaText}</div>
+            <div className="bg-slate-900 text-white p-5 rounded-xl border border-slate-800 space-y-2">
+              <div className="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Clinical Veterinary Formula</div>
+              <div className="text-xs sm:text-sm font-bold text-emerald-400">{calc.methodology.formulaText}</div>
             </div>
 
             {calc.methodology.sources && calc.methodology.sources.length > 0 && (
-              <div className="pt-3 border-t border-[#F0F1EA]">
-                <div className="text-[11px] font-extrabold uppercase text-[#082C1B]">Peer-Reviewed Scientific Sources:</div>
-                <ul className="list-disc pl-5 text-xs text-[#4D534E] font-semibold space-y-1 mt-1">
+              <div className="pt-3 border-t border-slate-100">
+                <div className="text-[11px] font-bold uppercase text-slate-500">Peer-Reviewed Scientific Sources:</div>
+                <ul className="list-disc pl-5 text-xs text-slate-600 font-normal space-y-1 mt-1">
                   {calc.methodology.sources.map((src, i) => (
                     <li key={i}>{src}</li>
                   ))}
