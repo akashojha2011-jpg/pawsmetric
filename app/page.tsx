@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import {
@@ -8,26 +7,22 @@ import {
   Clock,
   Scale,
   HeartPulse,
-  Ruler,
   CheckCircle2,
-  Calculator,
-  BookOpen,
 } from 'lucide-react';
 import { CATEGORIES } from '@/lib/data/categories';
 import { CALCULATORS } from '@/lib/data/calculators';
-import { TEAM_MEMBERS } from '@/app/team/page';
 
 export const metadata: Metadata = {
-  title: 'PawsMetric: Veterinary Dog Calculators & Health Tools',
+  title: 'Dog Calculator: Free Canine Health, Nutrition & Growth Tools | PawsMetric',
   description:
-    'Free scientific calculators for dog age conversion, daily caloric requirements, Benadryl dosage by weight, chocolate toxicity risk, crate sizes, and puppy growth. Fact-checked by DVM specialists.',
+    'Free scientific dog calculator tools for biological age conversion, daily caloric requirements, Benadryl dosage by weight, chocolate toxicity risk, crate sizes, and puppy growth prediction.',
   alternates: {
     canonical: 'https://www.pawsmetric.com',
   },
   openGraph: {
-    title: 'PawsMetric: Veterinary Dog Calculators & Health Tools',
+    title: 'Dog Calculator: Free Canine Health, Nutrition & Growth Tools | PawsMetric',
     description:
-      'Free scientific calculators for dog age, nutrition, Benadryl dosage, chocolate toxicity, and puppy growth.',
+      'Free scientific dog calculator tools for age, calories, Benadryl dosage, chocolate toxicity, and puppy growth.',
     url: 'https://www.pawsmetric.com',
     siteName: 'PawsMetric',
     type: 'website',
@@ -50,7 +45,7 @@ export default function HomePage() {
   const homeSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'PawsMetric',
+    name: 'PawsMetric Dog Calculator',
     url: 'https://www.pawsmetric.com',
     potentialAction: {
       '@type': 'SearchAction',
@@ -62,9 +57,9 @@ export default function HomePage() {
   const appSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'PawsMetric Companion Animal Calculation Portal',
+    name: 'PawsMetric Dog Calculator & Canine Health Portal',
     description:
-      'Veterinary calculations for canine age, nutrition, weight-based dosage, and safety alerts.',
+      'Free canine calculations for biological age, nutrition, weight-based dosage, and toxicity safety.',
     url: 'https://www.pawsmetric.com',
     applicationCategory: 'HealthApplication',
     operatingSystem: 'Web',
@@ -81,10 +76,10 @@ export default function HomePage() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'How does PawsMetric calculate dog age in human years?',
+        name: 'How does the PawsMetric dog age calculator convert to human years?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'We utilize the 2020 UCSD School of Medicine epigenetic clock formula [Human Age = 16 * ln(Dog Age) + 31] adjusted for breed weight classes, replacing outdated multiply-by-7 assumptions.',
+          text: 'We apply the 2020 UCSD School of Medicine epigenetic clock equation [Human Age = 16 * ln(Dog Age) + 31] adjusted for breed weight classes, replacing outdated multiply-by-7 rules.',
         },
       },
       {
@@ -97,7 +92,7 @@ export default function HomePage() {
       },
       {
         '@type': 'Question',
-        name: 'What is the standard Benadryl dose for dogs?',
+        name: 'What is the baseline Benadryl dose for dogs?',
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'The baseline veterinary dose is 1 mg of Benadryl (Diphenhydramine) per 1 lb of body weight administered orally every 8 to 12 hours under veterinary guidance.',
@@ -105,10 +100,10 @@ export default function HomePage() {
       },
       {
         '@type': 'Question',
-        name: 'Are PawsMetric calculations a substitute for veterinary care?',
+        name: 'Are PawsMetric dog calculator tools free?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'No. PawsMetric tools are educational reference resources based on published clinical literature. They assist pet parents in daily planning but do not replace evaluation by a licensed Doctor of Veterinary Medicine (DVM).',
+          text: 'Yes. All PawsMetric dog calculators are 100% free, run directly in your browser without requiring registration or app downloads.',
         },
       },
     ],
@@ -126,16 +121,16 @@ export default function HomePage() {
           {/* Left Column Text & Hero Copy */}
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#EBF2FE] text-[#054FB9] text-xs font-semibold border border-[#D1E0FC]">
-              <ShieldCheck className="w-4 h-4 text-[#0073E6]" />
-              DVM Medical Board Reviewed
+              <CheckCircle2 className="w-4 h-4 text-[#0073E6]" />
+              100% Free Client-Side Canine Tools
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-[1.15]">
-              Science-backed pet tools for every stage of your dog's life
+              Dog Calculator & Free Canine Health Tools
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
-              Instant, accurate calculations for biological age, daily caloric requirements, emergency food toxicity, and growth tracking—fact-checked by veterinary specialists.
+              Instant, accurate calculations for dog biological age, daily caloric intake, emergency chocolate & medication safety limits, crate size, and puppy growth.
             </p>
 
             {/* Quick Category Filter Pills */}
@@ -210,9 +205,9 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 border-b border-[#D1E0FC] pb-4">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0073E6]">Essential Tools</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0073E6]">Essential Dog Calculators</span>
             <h2 className="text-2xl font-bold text-[#0F172A] tracking-tight mt-1">
-              Popular Veterinary Calculators
+              Popular Dog Calculators
             </h2>
           </div>
           <Link href="/calculators" className="text-xs font-semibold text-slate-700 hover:text-[#0073E6] flex items-center gap-1">
@@ -258,7 +253,7 @@ export default function HomePage() {
         <div className="space-y-1 border-b border-[#D1E0FC] pb-4">
           <span className="text-xs font-bold uppercase tracking-wider text-[#0073E6]">Browse by Category</span>
           <h2 className="text-2xl font-bold text-[#0F172A] tracking-tight">
-            Explore All Tool Areas
+            Dog Calculator Categories
           </h2>
         </div>
 
@@ -267,18 +262,13 @@ export default function HomePage() {
             <Link
               key={cat.id}
               href={`/calculators/${cat.slug}`}
-              className="clean-card p-6 space-y-3 group"
+              className="clean-card p-6 space-y-2.5 group"
             >
               <div className="flex items-center justify-between">
-                <div className="w-9 h-9 rounded-lg bg-[#054FB9] text-white flex items-center justify-center font-bold">
-                  <Calculator className="w-4 h-4" />
-                </div>
-                <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#0073E6] group-hover:translate-x-1 transition-all" />
+                <h3 className="text-base font-bold text-[#0F172A] group-hover:text-[#0073E6] transition-colors">{cat.name}</h3>
+                <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#0073E6] group-hover:translate-x-1 transition-all flex-shrink-0" />
               </div>
-              <div>
-                <h3 className="text-base font-bold text-[#0F172A] group-hover:text-[#0073E6]">{cat.name}</h3>
-                <p className="text-xs text-slate-600 font-normal leading-relaxed mt-1 line-clamp-2">{cat.description}</p>
-              </div>
+              <p className="text-xs text-slate-600 font-normal leading-relaxed line-clamp-2">{cat.description}</p>
             </Link>
           ))}
         </div>
@@ -288,12 +278,12 @@ export default function HomePage() {
       <section className="bg-white py-12 border-y border-[#D1E0FC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl space-y-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0073E6]">Clinical Methodology</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0073E6]">Calculation Methodology</span>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#0F172A] tracking-tight">
-              Grounded in peer-reviewed veterinary literature
+              Standardized companion animal equations
             </h2>
             <p className="text-sm text-slate-600 leading-relaxed font-normal">
-              Every PawsMetric calculation engine is built directly from validated clinical studies published by leading companion animal health institutions.
+              Every calculation engine on PawsMetric is built using established formulas published in veterinary reference literature.
             </p>
           </div>
 
@@ -328,36 +318,6 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-
-          {/* DVM Review Board Preview */}
-          <div className="pt-6 border-t border-[#D1E0FC]">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
-              <div>
-                <h3 className="text-lg font-bold text-[#0F172A]">Medical Review Board</h3>
-                <p className="text-xs text-slate-500">Reviewed by licensed Doctors of Veterinary Medicine</p>
-              </div>
-              <Link href="/team" className="text-xs font-semibold text-[#0073E6] hover:text-[#054FB9]">
-                Meet the Full Team →
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {TEAM_MEMBERS.slice(0, 2).map((member) => (
-                <div key={member.name} className="bg-[#F4F7FC] p-5 rounded-xl border border-[#D1E0FC] flex items-start gap-4">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden border border-[#0073E6] flex-shrink-0">
-                    <Image src={member.image} alt={member.name} fill className="object-cover" />
-                  </div>
-                  <div className="space-y-1">
-                    <div className="font-bold text-[#0F172A] text-sm">{member.name}</div>
-                    <div className="text-[11px] text-[#054FB9] font-medium">{member.role}</div>
-                    <p className="text-xs text-slate-600 font-normal line-clamp-2 leading-relaxed">
-                      {member.bio}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
@@ -366,7 +326,7 @@ export default function HomePage() {
         <div className="space-y-1 border-b border-[#D1E0FC] pb-4">
           <span className="text-xs font-bold uppercase tracking-wider text-[#0073E6]">Frequently Asked Questions</span>
           <h2 className="text-2xl font-bold text-[#0F172A] tracking-tight">
-            Understanding Canine Calculations
+            Understanding Dog Calculations
           </h2>
         </div>
 
@@ -403,3 +363,4 @@ export default function HomePage() {
     </div>
   );
 }
+

@@ -284,11 +284,11 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
 
           <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-[#D1E0FC] text-xs text-slate-600">
             <div className="flex items-center gap-1.5 font-semibold text-[#054FB9]">
-              <UserCheck className="w-4 h-4 text-[#0073E6]" />
-              <span>Medical Review: {calc.author?.name || 'Dr. Emily Watson, DVM'}</span>
+              <CheckCircle2 className="w-4 h-4 text-[#0073E6]" />
+              <span>Verified Formula Sourcing</span>
             </div>
             <div className="flex items-center gap-1.5 font-semibold text-slate-700 bg-white px-3 py-1 rounded-md border border-[#D1E0FC]">
-              <ShieldCheck className="w-4 h-4 text-[#0073E6]" /> Peer-Reviewed DVM Formula
+              <ShieldCheck className="w-4 h-4 text-[#0073E6]" /> Instant Client-Side Math
             </div>
           </div>
         </div>

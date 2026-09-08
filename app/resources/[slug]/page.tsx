@@ -179,18 +179,13 @@ export default async function IndividualResourcePage({ params }: ResourcePagePro
                   href={`/calculators/${calc.slug}`}
                   className="clean-card p-5 hover:border-[#0073E6] transition-all flex items-center justify-between group"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-[#0073E6] text-white flex items-center justify-center flex-shrink-0 font-bold">
-                      <Calculator className="w-4.5 h-4.5" />
-                    </div>
-                    <div>
-                      <div className="text-[10px] font-bold text-[#0461CF] uppercase tracking-wider">{calc.categoryName}</div>
-                      <div className="text-sm font-bold text-slate-900 group-hover:text-[#0073E6] line-clamp-1">
-                        {calc.title}
-                      </div>
+                  <div>
+                    <div className="text-[10px] font-bold text-[#0461CF] uppercase tracking-wider">{calc.categoryName}</div>
+                    <div className="text-sm font-bold text-slate-900 group-hover:text-[#0073E6] line-clamp-1 transition-colors">
+                      {calc.title}
                     </div>
                   </div>
-                  <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#0073E6] group-hover:translate-x-1 transition-all flex-shrink-0" />
+                  <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#0073E6] group-hover:translate-x-1 transition-all flex-shrink-0 ml-2" />
                 </Link>
               ))}
             </div>

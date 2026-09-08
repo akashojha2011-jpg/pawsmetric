@@ -31,7 +31,7 @@ export const RESOURCES: ResourceArticle[] = [
     publishedDate: 'August 3, 2026',
     wordCount: 2250,
     coverImage: '/images/blog_benadryl_vet.jpg',
-    author: { name: 'Dr. Marcus Vance, DACVIM', role: 'Veterinary Internal Medicine Specialist' },
+    author: { name: 'PawsMetric Editorial Team', role: 'Canine Health Research' },
     relatedToolSlugs: ['dog-benadryl-dosage-calculator', 'dog-chocolate-toxicity-calculator', 'dog-water-intake-calculator'],
     tableOfContents: [
       { id: 'introduction', title: '1. What Is Benadryl & How Does It Work in Dogs?' },
@@ -53,9 +53,9 @@ export const RESOURCES: ResourceArticle[] = [
 
       <section id="standard-dosage-rule">
         <h2>2. Standard Veterinary Benadryl Dosage Rule</h2>
-        <div class="bg-[#082C1B] p-6 rounded-2xl my-6 border border-[#0d4028]">
-          <div class="text-xs text-[#8BF03B] font-extrabold uppercase tracking-wider mb-1">Golden Veterinary Rule</div>
-          <div class="text-xl sm:text-2xl font-black text-[#8BF03B]">1 mg of Benadryl per 1 lb of Body Weight (2.2 mg/kg)</div>
+        <div class="bg-[#054FB9] text-white p-6 rounded-2xl my-6 border border-[#0461CF]">
+          <div class="text-xs text-[#B3C7F7] font-extrabold uppercase tracking-wider mb-1">Golden Veterinary Rule</div>
+          <div class="text-xl sm:text-2xl font-black text-[#B3C7F7]">1 mg of Benadryl per 1 lb of Body Weight (2.2 mg/kg)</div>
           <div class="text-xs text-[#A2B5AB] font-semibold mt-2">Administered orally every 8 to 12 hours (2 to 3 times daily) as recommended by your DVM.</div>
         </div>
         <p>Unlike humans who take antihistamines based on age brackets, canine medication dosages are strictly computed by precise body weight. A 10 lb Chihuahua requires a drastically smaller milligram dose than a 90 lb Golden Retriever. Overdosing can lead to central nervous system depression or toxicity, while underdosing renders the medication ineffective.</p>
@@ -118,12 +118,12 @@ export const RESOURCES: ResourceArticle[] = [
       <section id="dangerous-ingredients-warning">
         <h2>6. CRITICAL WARNING: Ingredients That Are Fatal to Dogs</h2>
         <div class="bg-[#082C1B] p-6 rounded-2xl my-6 border border-[#0d4028] space-y-2">
-          <div class="text-xs font-extrabold text-[#8BF03B] uppercase tracking-wider">Veterinary Emergency Alert</div>
+          <div class="text-xs font-extrabold text-[#B3C7F7] uppercase tracking-wider">Veterinary Emergency Alert</div>
           <h3 class="text-lg font-black text-white">Always Inspect Active & Inactive Ingredients!</h3>
           <p class="text-xs text-[#A2B5AB] leading-relaxed">
             Many human cold, sinus, and allergy combination products contain secondary active ingredients that are <strong>lethal to dogs</strong>:
           </p>
-          <ul class="list-disc pl-5 text-xs text-[#8BF03B] space-y-1 font-semibold pt-1">
+          <ul class="list-disc pl-5 text-xs text-[#B3C7F7] space-y-1 font-semibold pt-1">
             <li><strong>Decongestants (Pseudoephedrine & Phenylephrine):</strong> Causes severe hypertension, tachycardia, hyperthermia, and fatal seizures.</li>
             <li><strong>Pain Relievers (Tylenol / Acetaminophen):</strong> Causes acute methemoglobinemia and acute liver toxicity in dogs.</li>
             <li><strong>Xylitol / Birch Sugar (E967):</strong> Triggers rapid insulin release, leading to severe hypoglycemia and acute hepatic necrosis.</li>
@@ -171,7 +171,7 @@ export const RESOURCES: ResourceArticle[] = [
           </div>
         </div>
 
-        <p>Calculate your dog's exact weight-based dose now with our <a href="/calculators/dog-benadryl-dosage-calculator" class="text-[#082C1B] underline font-bold">Dog Benadryl Dosage Calculator</a>.</p>
+        <p>Calculate your dog's exact weight-based dose now with our <a href="/calculators/dog-benadryl-dosage-calculator" class="text-[#0073E6] font-bold">Dog Benadryl Dosage Calculator</a>.</p>
       </section>
     `
   },
@@ -184,7 +184,7 @@ export const RESOURCES: ResourceArticle[] = [
     publishedDate: 'August 2, 2026',
     wordCount: 2150,
     coverImage: '/images/blog_dog_grooming.jpg',
-    author: { name: 'Sarah Jenkins, RVT', role: 'Registered Veterinary Technician' },
+    author: { name: 'PawsMetric Editorial Team', role: 'Canine Health Research' },
     relatedToolSlugs: ['dog-coat-sweater-size-calculator', 'dog-walking-pace-calculator', 'dog-water-intake-calculator'],
     tableOfContents: [
       { id: 'understanding-canine-coat', title: '1. Understanding the Canine Hair Growth Cycle' },
@@ -220,7 +220,7 @@ export const RESOURCES: ResourceArticle[] = [
             <li><strong>Daily Undercoat Raking:</strong> Use a dual-length stainless steel undercoat rake 3x weekly to remove loose Telogen undercoat fur before it drops onto your carpet.</li>
             <li><strong>High-Velocity Force Drying:</strong> After bathing, use a high-velocity pet dryer (without heat) to blow out trapped undercoat fur.</li>
             <li><strong>Omega-3 Salmon Oil Supplementation:</strong> Add 75-100 mg EPA/DHA per kg body weight to strengthen follicle root attachment.</li>
-            <li><strong>Hydration Optimization:</strong> Dehydrated skin triggers hair follicle atrophy. Check daily fluid needs with our <a href="/calculators/dog-water-intake-calculator" class="text-[#082C1B] underline font-bold">Water Intake Calculator</a>.</li>
+            <li><strong>Hydration Optimization:</strong> Dehydrated skin triggers hair follicle atrophy. Check daily fluid needs with our <a href="/calculators/dog-water-intake-calculator" class="text-[#0073E6] font-bold">Water Intake Calculator</a>.</li>
             <li><strong>Rubber Curry Brush Massage:</strong> For short-haired breeds (Boxers, Pugs), massage in circular motions with a rubber ZoomGroom brush.</li>
           </ol>
         </div>
@@ -239,9 +239,9 @@ export const RESOURCES: ResourceArticle[] = [
       <section id="nutrition-omega-supplements">
         <h2>5. Nutrition & Omega-3 Fatty Acid Dosing for Coat Health</h2>
         <p>Diet is the foundation of coat integrity. Essential Fatty Acids (EFAs), specifically Eicosapentaenoic Acid (EPA) and Docosahexaenoic Acid (DHA), decrease systemic inflammatory cytokines (PGE2) in the dermis.</p>
-        <div class="bg-[#082C1B] p-6 rounded-2xl my-6 border border-[#0d4028]">
-          <div class="text-xs text-[#8BF03B] font-extrabold uppercase">DVM EFA Dosing Formula</div>
-          <div class="text-xl font-black text-[#8BF03B] mt-1">75 to 100 mg Combined EPA + DHA per kg Body Weight</div>
+        <div class="bg-[#054FB9] text-white p-6 rounded-2xl my-6 border border-[#0461CF]">
+          <div class="text-xs text-[#B3C7F7] font-extrabold uppercase">DVM EFA Dosing Formula</div>
+          <div class="text-xl font-black text-[#B3C7F7] mt-1">75 to 100 mg Combined EPA + DHA per kg Body Weight</div>
           <div class="text-xs text-[#A2B5AB] mt-1">Example: A 50 lb (22.7 kg) dog requires ~1,700 mg of combined EPA/DHA daily.</div>
         </div>
       </section>
@@ -294,7 +294,7 @@ export const RESOURCES: ResourceArticle[] = [
     publishedDate: 'August 1, 2026',
     wordCount: 2050,
     coverImage: '/images/blog_dog_nail_trim.jpg',
-    author: { name: 'Sarah Jenkins, RVT', role: 'Registered Veterinary Technician' },
+    author: { name: 'PawsMetric Editorial Team', role: 'Canine Health Research' },
     relatedToolSlugs: ['dog-harness-size-calculator', 'dog-crate-size-calculator'],
     tableOfContents: [
       { id: 'why-nail-trimming-matters', title: '1. Why Regular Dog Nail Trimming Is Essential' },
@@ -337,7 +337,7 @@ export const RESOURCES: ResourceArticle[] = [
       <section id="emergency-bleeding-protocol">
         <h2>5. What to Do If You Hit the Quick (Styptic Protocol)</h2>
         <div class="bg-[#082C1B] p-6 rounded-2xl my-6 border border-[#0d4028] space-y-2">
-          <div class="text-xs font-extrabold text-[#8BF03B] uppercase">Emergency Quick Bleeding Protocol</div>
+          <div class="text-xs font-extrabold text-[#B3C7F7] uppercase">Emergency Quick Bleeding Protocol</div>
           <h3 class="text-lg font-black text-white">Don't Panic! Follow These 3 Steps:</h3>
           <ol class="list-decimal pl-5 text-xs text-[#A2B5AB] space-y-1 font-semibold">
             <li>Dip the bleeding nail directly into <strong>Styptic Powder (Kwik Stop)</strong> or cornstarch.</li>
@@ -357,7 +357,7 @@ export const RESOURCES: ResourceArticle[] = [
     publishedDate: 'July 30, 2026',
     wordCount: 2300,
     coverImage: '/images/blog_emergency_vet.jpg',
-    author: { name: 'Dr. Marcus Vance, DACVIM', role: 'Veterinary Internal Medicine Specialist' },
+    author: { name: 'PawsMetric Editorial Team', role: 'Canine Health Research' },
     relatedToolSlugs: ['dog-chocolate-toxicity-calculator', 'dog-xylitol-toxicity-calculator', 'dog-grape-toxicity-calculator'],
     tableOfContents: [
       { id: 'chocolate-toxicity-overview', title: '1. Why Chocolate Is Poisonous to Dogs (Theobromine Math)' },
@@ -385,16 +385,16 @@ export const RESOURCES: ResourceArticle[] = [
           <li><strong>Dry Cocoa Powder:</strong> 28.5 mg methylxanthines / gram. Extreme emergency hazard!</li>
         </ul>
 
-        <p>Calculate your dog's exact hazard rating using our interactive <a href="/calculators/dog-chocolate-toxicity-calculator" class="text-[#082C1B] underline font-bold">Chocolate Toxicity Calculator</a>.</p>
+        <p>Calculate your dog's exact hazard rating using our interactive <a href="/calculators/dog-chocolate-toxicity-calculator" class="text-[#0073E6] font-bold">Chocolate Toxicity Calculator</a>.</p>
       </section>
 
       <section id="how-to-make-dog-throw-up">
         <h2>3. How to Make a Dog Throw Up (3% Hydrogen Peroxide Protocol)</h2>
         <div class="bg-[#082C1B] p-6 rounded-2xl my-6 border border-[#0d4028] space-y-3">
-          <div class="text-xs font-extrabold text-[#8BF03B] uppercase">DVM Emergency Peroxide Protocol</div>
+          <div class="text-xs font-extrabold text-[#B3C7F7] uppercase">DVM Emergency Peroxide Protocol</div>
           <h3 class="text-lg font-black text-white">1 mL of 3% Hydrogen Peroxide per 1 lb Body Weight</h3>
           <p className="text-xs text-[#A2B5AB]">Example: A 30 lb dog receives 30 mL (2 tablespoons) of 3% hydrogen peroxide orally.</p>
-          <ul class="list-disc pl-5 text-xs text-[#8BF03B] space-y-1 font-semibold">
+          <ul class="list-disc pl-5 text-xs text-[#B3C7F7] space-y-1 font-semibold">
             <li>Administer within 2 hours of toxin ingestion.</li>
             <li>Maximum safety cap: Never exceed 45 mL (3 tablespoons) total regardless of weight.</li>
             <li>Walk the dog for 5-10 minutes to trigger stomach irritation. Vomiting occurs in 10-15 minutes.</li>

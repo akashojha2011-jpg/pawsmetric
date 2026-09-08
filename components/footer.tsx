@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShieldCheck, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { CATEGORIES } from '@/lib/data/categories';
 
 export function Footer() {
@@ -46,9 +46,6 @@ export function Footer() {
             <p className="text-xs text-[#B3C7F7] leading-relaxed max-w-sm">
               Companion animal health calculation engines built around published veterinary research (AAHA, WSAVA, NRC 2006). Zero paywalls or account sign-ups.
             </p>
-            <div className="inline-flex items-center gap-1.5 text-[11px] text-[#B3C7F7] font-medium bg-[#0461CF] px-2.5 py-1 rounded border border-[#0073E6]">
-              <ShieldCheck className="w-3.5 h-3.5 text-white" /> Medical Review Board Verified
-            </div>
           </div>
 
           {/* Categories */}
@@ -81,10 +78,10 @@ export function Footer() {
           <div>
             <div className="text-[11px] font-bold uppercase tracking-wider text-[#B3C7F7] mb-3">Resources & Legal</div>
             <ul className="space-y-2 text-xs font-normal text-[#8BABF1]">
-              <li><Link href="/team" className="hover:text-white transition-colors">Veterinary Team</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About PawsMetric</Link></li>
               <li><Link href="/editorial-guidelines" className="hover:text-white transition-colors">Editorial Guidelines</Link></li>
               <li><Link href="/resources" className="hover:text-white transition-colors">Evidence-Based Guides</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></li>
             </ul>

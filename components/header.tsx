@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, Menu, X, ChevronDown, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Search, Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
 import { SearchModal } from './search-modal';
 import { CATEGORIES } from '@/lib/data/categories';
 
@@ -16,9 +16,9 @@ export function Header() {
       {/* Top Banner Notice */}
       <div className="bg-[#054FB9] text-white text-xs font-medium py-2 px-4 text-center border-b border-[#0461CF] flex items-center justify-center gap-2">
         <span className="bg-[#0073E6] text-white text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full flex-shrink-0">
-          DVM Review
+          100% Free
         </span>
-        <span className="truncate text-[#B3C7F7]">Formulated using published AAHA, WSAVA & NRC clinical guidelines</span>
+        <span className="truncate text-[#B3C7F7]">Instant, client-side canine health & nutrition calculators</span>
       </div>
 
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#D1E0FC]">
@@ -30,7 +30,7 @@ export function Header() {
               alt="PawsMetric Logo"
               width={34}
               height={34}
-              className="w-8 h-8 rounded-lg object-contain"
+              className="w-8 h-8 rounded-lg object-contain shadow-xs"
               priority
             />
             <span className="text-xl font-extrabold text-[#054FB9] tracking-tight">
@@ -75,12 +75,12 @@ export function Header() {
               </div>
             </div>
 
-            <Link href="/team" className="hover:text-[#0073E6] transition-colors">
-              Medical Team
-            </Link>
-
             <Link href="/resources" className="hover:text-[#0073E6] transition-colors">
               Guides
+            </Link>
+
+            <Link href="/about" className="hover:text-[#0073E6] transition-colors">
+              About
             </Link>
           </nav>
 
@@ -138,18 +138,18 @@ export function Header() {
               ))}
             </div>
             <Link
-              href="/team"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block font-medium text-slate-700 text-xs py-1"
-            >
-              Medical Team
-            </Link>
-            <Link
               href="/resources"
               onClick={() => setIsMobileMenuOpen(false)}
               className="block font-medium text-slate-700 text-xs py-1"
             >
-              Guides & Methodology
+              Guides & Articles
+            </Link>
+            <Link
+              href="/about"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block font-medium text-slate-700 text-xs py-1"
+            >
+              About Us
             </Link>
           </div>
         )}
