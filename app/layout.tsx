@@ -64,6 +64,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} font-sans scroll-smooth`}>
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6119304743747461"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="flex flex-col min-h-screen bg-slate-50 text-slate-900 antialiased overflow-x-hidden">
         <Header />
         <main className="flex-1">{children}</main>
