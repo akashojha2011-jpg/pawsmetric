@@ -630,18 +630,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. REVIEWS & TESTIMONIALS SECTION (NEW) */}
+      {/* 7. REVIEWS & TESTIMONIALS SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="text-center max-w-2xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FDF1D0] border border-[#F6DF9C] text-xs font-bold text-[#162737]">
-            <div className="flex text-amber-500">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-              ))}
-            </div>
-            <span className="ml-1">4.9 / 5.0 Rating • 1,280+ Reviews</span>
-          </div>
-
+        <div className="text-center max-w-2xl mx-auto space-y-2">
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#1C1917] tracking-tight">
             Calculators dog parents rely on every day
           </h2>
