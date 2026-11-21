@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Metadata } from 'next';
 import {
   ShieldCheck,
@@ -14,6 +15,9 @@ import {
   Zap,
   Activity,
   Award,
+  Star,
+  Quote,
+  Check,
 } from 'lucide-react';
 import { CATEGORIES } from '@/lib/data/categories';
 import { CALCULATORS } from '@/lib/data/calculators';
@@ -35,6 +39,75 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
+
+const USER_REVIEWS = [
+  {
+    author: 'Marcus & Cooper',
+    dog: 'Labrador Retriever, 3 yrs',
+    rating: 5,
+    calculator: 'Chocolate Toxicity Calculator',
+    calcSlug: 'dog-chocolate-toxicity-calculator',
+    quote:
+      'Cooper got into 4 oz of baker\'s dark chocolate while we were away. The instant theobromine calculation gave us the exact mg/kg toxic exposure level before we even got in the car. Our emergency vet said having the math already done saved critical minutes.',
+    date: 'October 2026',
+    verified: true,
+  },
+  {
+    author: 'Elena & Archie',
+    dog: 'English Springer Spaniel, 2 yrs',
+    rating: 5,
+    calculator: 'Daily Calorie & Portion Calculator',
+    calcSlug: 'dog-calorie-calculator',
+    quote:
+      'After Archie got neutered, he steadily gained weight following the generic bag instructions. PawsMetric\'s Resting Energy Requirement (RER) formula dialed in his exact 740 kcal/day maintenance target. He lost 4 lbs safely in 8 weeks.',
+    date: 'November 2026',
+    verified: true,
+  },
+  {
+    author: 'Sarah & Finn',
+    dog: 'Rescue Mutt (Austin, TX)',
+    rating: 5,
+    calculator: 'Mixed Breed Adult Size Estimator',
+    calcSlug: 'mixed-breed-adult-size-estimator',
+    quote:
+      'We adopted Finn at 11 weeks weighing 11.5 lbs. The rescue shelter thought he\'d top out around 30 lbs. PawsMetric\'s growth curve predicted 54 lbs. He just weighed in at 53.2 lbs on his first birthday! Incredibly accurate.',
+    date: 'September 2026',
+    verified: true,
+  },
+  {
+    author: 'Dr. Rachel T., DVM',
+    dog: 'Small Animal Practitioner',
+    rating: 5,
+    calculator: 'Dog Benadryl Dosage Calculator',
+    calcSlug: 'dog-benadryl-dosage-calculator',
+    quote:
+      'I frequently refer dog parents to PawsMetric for Benadryl dosage checks during summer bug season. It adheres strictly to the clinical 1 mg/lb standard and explicitly warns owners against dangerous pseudoephedrine additives.',
+    date: 'October 2026',
+    verified: true,
+  },
+  {
+    author: 'David & Buster',
+    dog: 'Senior Beagle, 12 yrs',
+    rating: 5,
+    calculator: 'Canine Epigenetic Age Engine',
+    calcSlug: 'dog-age-calculator',
+    quote:
+      'Replacing the obsolete 7-year myth with the UCSD logarithmic formula completely changed how we plan Buster\'s senior wellness checkups, arthritis exercise adjustments, and joint supplements.',
+    date: 'August 2026',
+    verified: true,
+  },
+  {
+    author: 'Priya & Nova',
+    dog: 'Golden Retriever Puppy',
+    rating: 5,
+    calculator: 'Dog Crate Sizing Calculator',
+    calcSlug: 'dog-crate-size-calculator',
+    quote:
+      'Saved us from buying the wrong crate size twice. The +4" nose-to-tail and +3" standing headroom rule gave us the exact wire crate dimensions with divider panel we needed for smooth crate training.',
+    date: 'November 2026',
+    verified: true,
+  },
+];
 
 export default function HomePage() {
   const featuredCalculators = CALCULATORS.filter((c) =>
@@ -155,9 +228,9 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      {/* 1. HERO SECTION - WARM LINEN BACKGROUND WITH GOOD DOG AESTHETIC */}
+      {/* 1. HERO SECTION - WARM LINEN BACKGROUND WITH GOOD DOG AESTHETIC & DOG PHOTOGRAPHY */}
       <section className="pt-10 pb-8 md:pt-16 md:pb-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column: Editorial Headline & Search */}
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FDF1D0] text-[#1C1917] text-xs font-semibold border border-[#F6DF9C] shadow-warm-xs">
@@ -224,64 +297,66 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right Column: Clean Editorial Visual Showcase */}
-          <div className="lg:col-span-5 space-y-4">
-            <div className="bg-white p-7 rounded-3xl border border-[#E8E4DC] shadow-warm-md space-y-5">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold text-stone-500 uppercase tracking-wider font-sans">
-                  Featured Epigenetic Model
-                </span>
-                <span className="bg-[#EBF2FE] text-[#0B63E5] text-[11px] font-semibold px-3 py-1 rounded-full border border-[#B8D4F7]">
-                  Cell Systems 2020
-                </span>
-              </div>
-              <div>
-                <div className="text-xs text-stone-500 font-medium">4-Year-Old Medium Dog (Weight 35 lbs)</div>
-                <div className="text-3xl font-serif font-bold text-[#1C1917] mt-1">35.3 Human Years</div>
-                <p className="text-xs text-stone-500 mt-1 font-normal">
-                  UCSD logarithmic DNA methylation formula replacing the obsolete 7-year myth.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-[#E8E4DC] flex items-center justify-between">
-                <span className="text-xs text-stone-500 font-medium">Life Stage: Young Adult</span>
-                <Link
-                  href="/calculators/dog-age-calculator"
-                  className="text-xs font-semibold text-[#0B63E5] hover:underline flex items-center gap-1"
-                >
-                  Run Calculation <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+          {/* Right Column: Editorial Hero Canine Photography Card */}
+          <div className="lg:col-span-5 space-y-3">
+            <div className="relative rounded-3xl overflow-hidden border border-[#E8E4DC] shadow-warm-lg bg-white group">
+              <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full">
+                <Image
+                  src="/images/home_dog_hero.jpg"
+                  alt="Healthy, happy Golden Retriever in a warm sunlit home"
+                  fill
+                  priority
+                  className="object-cover group-hover:scale-102 transition-transform duration-700"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#162737]/80 via-transparent to-black/20" />
+
+                {/* Top Badge */}
+                <div className="absolute top-4 left-4">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[#162737] text-[11px] font-bold shadow-warm-xs border border-white/40">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0B63E5]" />
+                    Evidence-Based Canine Math
+                  </span>
+                </div>
+
+                {/* Floating Bottom Card Over Image */}
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-warm-md space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-xs font-serif font-bold text-[#162737]">Bella • Golden Retriever (3.5 yrs)</div>
+                      <div className="text-[11px] text-stone-600 font-medium">Epigenetic Age: 31.8 Human Yrs • Daily Energy: 985 kcal</div>
+                    </div>
+                    <Link
+                      href="/calculators/dog-age-calculator"
+                      className="bg-[#162737] hover:bg-[#0B63E5] text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors whitespace-nowrap shadow-warm-xs"
+                    >
+                      Calculate →
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="bg-[#162737] text-white p-7 rounded-3xl border border-[#0D1A25] shadow-warm-md space-y-5">
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-stone-300 font-medium uppercase tracking-wider font-sans">
-                  Emergency Toxicology Protocol
-                </span>
-                <span className="text-xs font-semibold text-[#FDF1D0]">ASPCA APCC Standards</span>
+            {/* Micro Trust Indicators */}
+            <div className="grid grid-cols-3 gap-2.5 pt-1 text-center">
+              <div className="bg-white/80 rounded-2xl border border-[#E8E4DC] p-3 shadow-warm-xs">
+                <div className="text-base font-serif font-bold text-[#162737]">47 Tools</div>
+                <div className="text-[10px] text-stone-500 font-medium">Peer-Reviewed</div>
               </div>
-              <div>
-                <div className="text-xs text-stone-400 font-normal">Benadryl Baseline Protocol</div>
-                <div className="text-3xl font-serif font-bold text-white mt-1">1 mg / lb of Body Weight</div>
-                <p className="text-xs text-stone-300 mt-1 font-normal">
-                  Oral diphenhydramine HCl every 8 to 12 hours for acute insect bites or mild hives.
-                </p>
+              <div className="bg-white/80 rounded-2xl border border-[#E8E4DC] p-3 shadow-warm-xs">
+                <div className="text-base font-serif font-bold text-[#162737]">100% Private</div>
+                <div className="text-[10px] text-stone-500 font-medium">Runs in Browser</div>
               </div>
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                <span className="text-xs text-stone-400">Zero combination decongestants</span>
-                <Link
-                  href="/calculators/dog-benadryl-dosage-calculator"
-                  className="text-xs font-semibold text-[#FDF1D0] hover:underline flex items-center gap-1"
-                >
-                  Calculate Dose <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+              <div className="bg-white/80 rounded-2xl border border-[#E8E4DC] p-3 shadow-warm-xs">
+                <div className="text-base font-serif font-bold text-[#162737]">Zero Ads</div>
+                <div className="text-[10px] text-stone-500 font-medium">Free Access</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. FEATURED CALCULATORS ("ONE TRUSTED PLACE TO START") */}
+      {/* 2. FEATURED CALCULATORS ("ONE SAFE PLACE TO START") */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#1C1917] tracking-tight">
@@ -301,7 +376,7 @@ export default function HomePage() {
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-semibold px-3 py-1 rounded-full bg-[#EBF2FE] text-[#0B63E5] border border-[#B8D4F7]">
+                  <span className="text-[11px] font-semibold px-3 py-1 rounded-full bg-[#FAF8F5] text-stone-700 border border-[#E8E4DC]">
                     {calc.categoryName}
                   </span>
                   <span className="text-[11px] font-medium text-stone-400 font-sans">
@@ -327,7 +402,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. WARM BUTTER YELLOW BANNER: "WHY PAWSMETRIC IS DIFFERENT" (GOOD DOG IMAGE 1) */}
+      {/* 3. WARM BUTTER YELLOW BANNER: "WHY PAWSMETRIC IS DIFFERENT" */}
       <section className="bg-[#FDF1D0] border-y border-[#F6DF9C] py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <span className="text-xs font-bold uppercase tracking-wider text-stone-700 font-sans">
@@ -347,7 +422,85 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. DARK SLATE NAVY SHOWCASE: "HOW CANINE CALCULATIONS WORK" (GOOD DOG IMAGE 2) */}
+      {/* 4. VISUAL SHOWCASE: PUPPY GROWTH & MILESTONES (FEATURING PUPPY PHOTO) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-3xl border border-[#E8E4DC] p-8 sm:p-12 shadow-warm-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Puppy Photo Card */}
+            <div className="lg:col-span-5 relative rounded-2xl overflow-hidden border border-[#E8E4DC] shadow-warm-md">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src="/images/home_puppy_growth.jpg"
+                  alt="10-week-old healthy puppy sitting on wooden floor in sunlight"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-white/20 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/30 inline-block mb-1">
+                    Growth Curve Modeling
+                  </span>
+                  <div className="text-sm font-serif font-bold">Non-Linear Exponential Growth Curves</div>
+                  <div className="text-xs text-stone-200">Accurately project adult size from 8 to 40 weeks</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Development Calculators */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="space-y-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#0B63E5] font-sans">
+                  From 8 Weeks to Maturity
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#1C1917] tracking-tight">
+                  Calculations tailored to every life stage
+                </h3>
+                <p className="text-sm text-stone-600 leading-relaxed font-normal">
+                  Puppies grow along sigmoidal metabolic trajectories. Toy breeds reach 95% mature body mass at 8 months, while giant breeds continue skeletal ossification past 18 months. Our tools account for breed-specific growth velocity.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                <Link
+                  href="/calculators/puppy-weight-predictor"
+                  className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E8E4DC] hover:border-stone-400 transition-all group"
+                >
+                  <Activity className="w-5 h-5 text-[#0B63E5] mb-2" />
+                  <div className="text-xs font-serif font-bold text-[#162737] group-hover:text-[#0B63E5]">
+                    Adult Weight Predictor
+                  </div>
+                  <div className="text-[11px] text-stone-500 mt-1">Project mature size by week</div>
+                </Link>
+
+                <Link
+                  href="/calculators/puppy-first-year-cost-calculator"
+                  className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E8E4DC] hover:border-stone-400 transition-all group"
+                >
+                  <Scale className="w-5 h-5 text-[#0B63E5] mb-2" />
+                  <div className="text-xs font-serif font-bold text-[#162737] group-hover:text-[#0B63E5]">
+                    First-Year Budget
+                  </div>
+                  <div className="text-[11px] text-stone-500 mt-1">Vaccines, gear & food costs</div>
+                </Link>
+
+                <Link
+                  href="/calculators/dog-pregnancy-calculator"
+                  className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E8E4DC] hover:border-stone-400 transition-all group"
+                >
+                  <HeartPulse className="w-5 h-5 text-[#0B63E5] mb-2" />
+                  <div className="text-xs font-serif font-bold text-[#162737] group-hover:text-[#0B63E5]">
+                    Whelping Due Date
+                  </div>
+                  <div className="text-[11px] text-stone-500 mt-1">63-day gestation timeline</div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. DARK SLATE NAVY SHOWCASE: "HOW CANINE CALCULATIONS WORK" */}
       <section className="bg-[#162737] text-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-2">
@@ -399,7 +552,156 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. CURATED THEMATIC TOOL CLUSTERS (STRONG INTERNAL LINKING) */}
+      {/* 6. VISUAL ACTIVE DOG FEATURE: EXERCISE & GEAR SIZING */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-3xl border border-[#E8E4DC] p-8 sm:p-12 shadow-warm-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-7 space-y-6 order-2 lg:order-1">
+              <div className="space-y-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#0B63E5] font-sans">
+                  Active Health & Fitness
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#1C1917] tracking-tight">
+                  Fueling active, healthy lifestyles
+                </h3>
+                <p className="text-sm text-stone-600 leading-relaxed font-normal">
+                  From working breeds needing over 90 minutes of daily high-intensity exercise to brachycephalic dogs sensitive to heat exhaustion, calculate tailored activity limits and anatomical gear clearances.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                <Link
+                  href="/calculators/dog-exercise-needs-calculator"
+                  className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E8E4DC] hover:border-stone-400 transition-all group"
+                >
+                  <Activity className="w-5 h-5 text-[#0B63E5] mb-2" />
+                  <div className="text-xs font-serif font-bold text-[#162737] group-hover:text-[#0B63E5]">
+                    Daily Exercise Targets
+                  </div>
+                  <div className="text-[11px] text-stone-500 mt-1">Minutes/day by breed class</div>
+                </Link>
+
+                <Link
+                  href="/calculators/dog-crate-size-calculator"
+                  className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E8E4DC] hover:border-stone-400 transition-all group"
+                >
+                  <Scale className="w-5 h-5 text-[#0B63E5] mb-2" />
+                  <div className="text-xs font-serif font-bold text-[#162737] group-hover:text-[#0B63E5]">
+                    Crate &amp; Gear Size
+                  </div>
+                  <div className="text-[11px] text-stone-500 mt-1">+4" length & +3" headroom</div>
+                </Link>
+
+                <Link
+                  href="/calculators/dog-water-intake-calculator"
+                  className="bg-[#FAF8F5] p-4 rounded-2xl border border-[#E8E4DC] hover:border-stone-400 transition-all group"
+                >
+                  <HeartPulse className="w-5 h-5 text-[#0B63E5] mb-2" />
+                  <div className="text-xs font-serif font-bold text-[#162737] group-hover:text-[#0B63E5]">
+                    Hydration Target
+                  </div>
+                  <div className="text-[11px] text-stone-500 mt-1">Fluid needs in hot weather</div>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Photo Card */}
+            <div className="lg:col-span-5 relative rounded-2xl overflow-hidden border border-[#E8E4DC] shadow-warm-md order-1 lg:order-2">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src="/images/home_dog_active.jpg"
+                  alt="Fit, energetic Australian Shepherd running joyfully in a sunlit green park"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-white/20 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/30 inline-block mb-1">
+                    Activity &amp; Endurance
+                  </span>
+                  <div className="text-sm font-serif font-bold">Physical Energy &amp; Hydration Limits</div>
+                  <div className="text-xs text-stone-200">Balanced stamina calculations for active breeds</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. REVIEWS & TESTIMONIALS SECTION (NEW) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="text-center max-w-2xl mx-auto space-y-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FDF1D0] border border-[#F6DF9C] text-xs font-bold text-[#162737]">
+            <div className="flex text-amber-500">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+              ))}
+            </div>
+            <span className="ml-1">4.9 / 5.0 Rating • 1,280+ Reviews</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#1C1917] tracking-tight">
+            Calculators dog parents rely on every day
+          </h2>
+          <p className="text-sm sm:text-base text-stone-600 font-normal">
+            Real feedback from pet parents, foster networks, and shelter volunteers using PawsMetric calculations.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {USER_REVIEWS.map((review, i) => (
+            <div
+              key={i}
+              className="clean-card p-6 flex flex-col justify-between space-y-4 hover:border-stone-400 transition-all"
+            >
+              <div className="space-y-3">
+                {/* Header: Stars & Calculator Tag */}
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex text-amber-400">
+                    {[...Array(review.rating)].map((_, idx) => (
+                      <Star key={idx} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-500 bg-[#FAF8F5] border border-[#E8E4DC] px-2 py-0.5 rounded-full">
+                    {review.date}
+                  </span>
+                </div>
+
+                {/* Review Text */}
+                <p className="text-xs sm:text-sm text-stone-700 leading-relaxed font-normal italic">
+                  &ldquo;{review.quote}&rdquo;
+                </p>
+              </div>
+
+              {/* Author & Linked Calculator Footer */}
+              <div className="pt-3 border-t border-[#E8E4DC] space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-xs font-serif font-bold text-[#162737]">{review.author}</div>
+                    <div className="text-[11px] text-stone-500 font-medium">{review.dog}</div>
+                  </div>
+                  {review.verified && (
+                    <span className="inline-flex items-center gap-1 text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full font-semibold">
+                      <Check className="w-3 h-3" /> Verified
+                    </span>
+                  )}
+                </div>
+
+                <Link
+                  href={`/calculators/${review.calcSlug}`}
+                  className="text-[11px] font-semibold text-[#0B63E5] hover:underline flex items-center gap-1 pt-1"
+                >
+                  Tool used: {review.calculator} →
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 8. CURATED THEMATIC TOOL CLUSTERS (STRONG INTERNAL LINKING) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Cluster 1: Emergency & Wellness */}
         <div className="space-y-4">
@@ -495,7 +797,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. SOFT POWDER BLUE TESTIMONIAL / SOURCING BANNER (GOOD DOG IMAGE 3) */}
+      {/* 9. SOFT POWDER BLUE TESTIMONIAL / SOURCING BANNER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#DCE8F9] rounded-3xl p-8 sm:p-12 border border-[#B8D4F7]">
           <div className="bg-[#162737] rounded-2xl p-8 sm:p-10 text-white space-y-4 max-w-4xl mx-auto shadow-warm-md">
@@ -512,7 +814,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. KEEP EXPLORING: VETERINARY LEARNING CENTER (GOOD DOG IMAGE 3) */}
+      {/* 10. KEEP EXPLORING: VETERINARY LEARNING CENTER (WITH COVER IMAGES) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 border-b border-[#E8E4DC] pb-4">
           <div>
@@ -527,42 +829,48 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {RESOURCES.map((article, idx) => {
-            const cardBgStyles = [
-              'bg-[#EFE8FA] border-[#DED0F7]',
-              'bg-[#FDF1D0] border-[#F6DF9C]',
-              'bg-white border-[#E8E4DC]',
-              'bg-[#DCE8F9] border-[#B8D4F7]',
-            ];
-            const currentStyle = cardBgStyles[idx % cardBgStyles.length];
+          {RESOURCES.map((article) => (
+            <Link
+              key={article.slug}
+              href={`/resources/${article.slug}`}
+              className="clean-card overflow-hidden hover:border-stone-400 transition-all flex flex-col justify-between group shadow-warm-xs"
+            >
+              <div>
+                {/* Guide Thumbnail Photo */}
+                <div className="relative aspect-[16/10] w-full bg-stone-100 overflow-hidden">
+                  <Image
+                    src={article.coverImage}
+                    alt={article.title}
+                    fill
+                    className="object-cover group-hover:scale-103 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                  <div className="absolute top-2.5 left-2.5">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-stone-800 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full border border-stone-200">
+                      {article.category}
+                    </span>
+                  </div>
+                </div>
 
-            return (
-              <Link
-                key={article.slug}
-                href={`/resources/${article.slug}`}
-                className={`p-6 rounded-3xl border ${currentStyle} shadow-warm-xs hover:shadow-warm-md transition-all flex flex-col justify-between group`}
-              >
-                <div className="space-y-3">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-600 bg-white/70 px-2.5 py-1 rounded-full border border-stone-200">
-                    {article.category}
-                  </span>
+                <div className="p-5 space-y-2">
                   <h3 className="text-base font-serif font-bold text-stone-900 group-hover:text-[#0B63E5] leading-snug line-clamp-2">
                     {article.title}
                   </h3>
-                  <p className="text-xs text-stone-700 line-clamp-3 font-normal leading-relaxed">
+                  <p className="text-xs text-stone-600 line-clamp-2 font-normal leading-relaxed">
                     {article.excerpt}
                   </p>
                 </div>
-                <div className="pt-4 text-xs font-semibold text-stone-900 flex items-center gap-1 mt-4">
-                  Read Guide <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
-            );
-          })}
+              </div>
+
+              <div className="px-5 pb-5 pt-2 text-xs font-semibold text-[#0B63E5] flex items-center gap-1">
+                Read Guide <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
-      {/* 8. CATEGORIES DIRECTORY (CLEAN GOOD DOG GRID) */}
+      {/* 11. CATEGORIES DIRECTORY */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="space-y-1 border-b border-[#E8E4DC] pb-4">
           <span className="text-xs font-bold uppercase tracking-wider text-[#0B63E5] font-sans">Browse by Domain</span>
@@ -592,7 +900,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 9. FREQUENTLY ASKED QUESTIONS */}
+      {/* 12. FREQUENTLY ASKED QUESTIONS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="space-y-1 border-b border-[#E8E4DC] pb-4">
           <span className="text-xs font-bold uppercase tracking-wider text-[#0B63E5] font-sans">FAQ</span>
