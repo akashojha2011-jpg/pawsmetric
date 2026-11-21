@@ -26,7 +26,7 @@ export function ChocolateToxicityCalculatorWidget() {
   const doseMgKg = totalMg / (weightKg || 1);
 
   let hazardLevel = 'MILD / NEGLIGIBLE RISK';
-  let hazardBadge = 'bg-[#B3C7F7]/20 text-[#B3C7F7] border border-[#8BABF1]/40';
+  let hazardBadge = 'bg-[#FDF1D0] text-[#1C1917] border border-[#F6DF9C]';
   let actionText = 'Low risk of cardiac toxicity. Monitor for mild gastrointestinal upset.';
 
   if (doseMgKg >= 20 && doseMgKg < 40) {
@@ -51,47 +51,47 @@ export function ChocolateToxicityCalculatorWidget() {
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
-      <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+    <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
+      <div className="flex items-center justify-between pb-4 border-b border-[#E8E4DC]">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-[#0073E6] text-white flex items-center justify-center font-bold">
-            <AlertOctagon className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
+            <AlertOctagon className="w-5 h-5 text-rose-400" />
           </div>
           <div>
-            <h3 className="text-lg font-bold text-slate-900">Chocolate Toxicity Estimator</h3>
-            <p className="text-xs text-slate-500">Total methylxanthine (Theobromine + Caffeine) dose in mg/kg</p>
+            <h3 className="text-xl font-serif font-bold text-[#1C1917]">Chocolate Toxicity Estimator</h3>
+            <p className="text-xs text-stone-500 font-sans">Total methylxanthine (Theobromine + Caffeine) dose in mg/kg</p>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div>
-          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Dog Weight (lbs)</label>
+          <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 font-sans">Dog Weight (lbs)</label>
           <input
             type="number"
             min="1"
             max="200"
             value={weightLbs}
             onChange={(e) => setWeightLbs(parseFloat(e.target.value) || 1)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
+            className="w-full bg-[#FAF8F5] border border-[#E8E4DC] rounded-xl px-4 py-2.5 text-stone-900 font-bold text-sm focus:outline-none focus:border-[#0B63E5]"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Chocolate Type</label>
+          <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 font-sans">Chocolate Type</label>
           <select
             value={chocType}
             onChange={(e) => setChocType(e.target.value)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
+            className="w-full bg-[#FAF8F5] border border-[#E8E4DC] rounded-xl px-4 py-2.5 text-stone-900 font-bold text-sm focus:outline-none focus:border-[#0B63E5]"
           >
-            <option value="white">White Chocolate (Low risk)</option>
-            <option value="milk">Milk Chocolate</option>
+            <option value="white">White Chocolate (Low Toxin)</option>
+            <option value="milk">Milk Chocolate (Standard)</option>
             <option value="dark">Dark Chocolate (45-70%)</option>
-            <option value="baking">Baking Chocolate (Unsweetened)</option>
+            <option value="baking">Unsweetened Baker&apos;s Chocolate</option>
             <option value="cocoa">Dry Cocoa Powder (Extreme)</option>
           </select>
         </div>
         <div>
-          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Amount Eaten (Ounces)</label>
+          <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 font-sans">Amount Eaten (Ounces)</label>
           <input
             type="number"
             min="0.1"
@@ -99,36 +99,36 @@ export function ChocolateToxicityCalculatorWidget() {
             step="0.5"
             value={amountOz}
             onChange={(e) => setAmountOz(parseFloat(e.target.value) || 0)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
+            className="w-full bg-[#FAF8F5] border border-[#E8E4DC] rounded-xl px-4 py-2.5 text-stone-900 font-bold text-sm focus:outline-none focus:border-[#0B63E5]"
           />
         </div>
       </div>
 
-      <div className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] space-y-3">
+      <div className="bg-[#162737] text-white p-6 sm:p-7 rounded-3xl border border-[#0D1A25] space-y-4 shadow-warm-sm">
         <div className="flex items-center justify-between gap-4">
-          <div className="text-xs uppercase font-bold text-[#B3C7F7]">Estimated Toxin Load</div>
-          <div className="text-base font-extrabold text-[#B3C7F7]">{doseMgKg.toFixed(1)} mg/kg</div>
+          <div className="text-xs uppercase font-bold text-stone-300 font-sans">Estimated Toxin Load</div>
+          <div className="text-lg font-bold font-mono text-[#FDF1D0]">{doseMgKg.toFixed(1)} mg/kg</div>
         </div>
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <span className={`px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider border ${hazardBadge}`}>
+          <span className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider ${hazardBadge}`}>
             {hazardLevel}
           </span>
           <button
             type="button"
             onClick={handleCopy}
-            className="flex items-center gap-1.5 text-xs font-semibold bg-[#0461CF] hover:bg-[#0073E6] text-white px-3.5 py-1.5 rounded-lg border border-[#8BABF1]/40 transition-colors"
+            className="flex items-center gap-1.5 text-xs font-semibold bg-[#0B63E5] hover:bg-[#094EB8] text-white px-4 py-2 rounded-full transition-all shadow-warm-xs"
           >
-            {copied ? <Check className="w-3.5 h-3.5 text-[#B3C7F7]" /> : <Copy className="w-3.5 h-3.5 text-[#B3C7F7]" />}
+            {copied ? <Check className="w-3.5 h-3.5 text-white" /> : <Copy className="w-3.5 h-3.5 text-white" />}
             <span>{copied ? 'Copied!' : 'Copy Result'}</span>
           </button>
         </div>
-        <p className="text-xs text-blue-100 font-medium leading-relaxed pt-2 border-t border-[#0461CF]">{actionText}</p>
+        <p className="text-xs text-stone-300 font-medium leading-relaxed pt-3 border-t border-white/10">{actionText}</p>
       </div>
 
-      <div className="bg-slate-900 border border-slate-800 text-white text-xs p-4 rounded-xl flex items-start gap-2.5">
-        <ShieldAlert className="w-5 h-5 text-[#B3C7F7] flex-shrink-0 mt-0.5" />
-        <div>
-          <strong className="font-bold text-[#B3C7F7]">Emergency Notice:</strong> This calculator provides mathematical estimations only. If your dog consumed chocolate, contact ASPCA Poison Control (888-426-4435) or visit an emergency vet immediately.
+      <div className="bg-[#FDF1D0] border border-[#F6DF9C] text-stone-900 text-xs p-5 rounded-2xl flex items-start gap-3 shadow-warm-xs">
+        <ShieldAlert className="w-5 h-5 text-stone-800 flex-shrink-0 mt-0.5" />
+        <div className="leading-relaxed">
+          <strong className="font-bold text-stone-900 font-sans uppercase tracking-wider block mb-0.5">Emergency Notice:</strong> This calculator provides mathematical estimations only. If your dog consumed chocolate, contact ASPCA Poison Control (888-426-4435) or visit an emergency vet immediately.
         </div>
       </div>
     </div>
@@ -152,22 +152,22 @@ export function BenadrylDosageCalculatorWidget() {
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
-      <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+    <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
+      <div className="flex items-center justify-between pb-4 border-b border-[#E8E4DC]">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-[#0073E6] text-white flex items-center justify-center font-bold">
-            <Pill className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
+            <Pill className="w-5 h-5 text-[#0B63E5]" />
           </div>
           <div>
-            <h3 className="text-lg font-bold text-slate-900">Benadryl (Diphenhydramine) Dosage</h3>
-            <p className="text-xs text-slate-500">Standard veterinary baseline: 1 mg per lb body weight</p>
+            <h3 className="text-xl font-serif font-bold text-[#1C1917]">Benadryl (Diphenhydramine) Dosage</h3>
+            <p className="text-xs text-stone-500 font-sans">Standard veterinary baseline: 1 mg per lb body weight</p>
           </div>
         </div>
       </div>
 
       <div>
-        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-          Dog Body Weight: <span className="text-[#0073E6] font-extrabold">{currentLbs} lbs ({(currentLbs / 2.20462).toFixed(1)} kg)</span>
+        <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 font-sans">
+          Dog Body Weight: <span className="text-[#0B63E5] font-extrabold">{currentLbs} lbs ({(currentLbs / 2.20462).toFixed(1)} kg)</span>
         </label>
         <input
           type="range"
@@ -175,40 +175,40 @@ export function BenadrylDosageCalculatorWidget() {
           max="120"
           value={currentLbs}
           onChange={(e) => setWeightLbs(parseInt(e.target.value))}
-          className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0073E6]"
+          className="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-[#0B63E5]"
         />
       </div>
 
-      <div className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] space-y-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="bg-[#162737] text-white p-6 sm:p-7 rounded-3xl border border-[#0D1A25] space-y-4 shadow-warm-sm">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <div className="text-xs text-[#B3C7F7] font-bold uppercase">Standard 25mg Tablets</div>
-            <div className="text-3xl font-extrabold text-[#B3C7F7] mt-1">{formatNumber(pills25mg, 1)} Pill(s)</div>
-            <div className="text-xs text-blue-100 font-medium">Target Dose: {targetMg} mg</div>
+            <div className="text-xs text-stone-300 font-bold uppercase font-sans">Standard 25mg Tablets</div>
+            <div className="text-4xl font-serif font-bold text-[#FDF1D0] mt-1">{formatNumber(pills25mg, 1)} Pill(s)</div>
+            <div className="text-xs text-stone-300 font-medium mt-1">Target Dose: {targetMg} mg</div>
           </div>
           <div>
-            <div className="text-xs text-[#B3C7F7] font-bold uppercase">Children's Liquid (12.5mg/5mL)</div>
-            <div className="text-3xl font-extrabold text-white mt-1">{formatNumber(liquidMl, 1)} mL</div>
-            <div className="text-xs text-blue-100 font-medium">Administer every 8-12 hours</div>
+            <div className="text-xs text-stone-300 font-bold uppercase font-sans">Children&apos;s Liquid (12.5mg/5mL)</div>
+            <div className="text-4xl font-serif font-bold text-white mt-1">{formatNumber(liquidMl, 1)} mL</div>
+            <div className="text-xs text-stone-300 font-medium mt-1">Administer every 8-12 hours</div>
           </div>
         </div>
 
-        <div className="pt-3 border-t border-[#0461CF] flex justify-end">
+        <div className="pt-3 border-t border-white/10 flex justify-end">
           <button
             type="button"
             onClick={handleCopy}
-            className="flex items-center gap-1.5 text-xs font-semibold bg-[#0461CF] hover:bg-[#0073E6] text-white px-3.5 py-1.5 rounded-lg border border-[#8BABF1]/40 transition-colors"
+            className="flex items-center gap-1.5 text-xs font-semibold bg-[#0B63E5] hover:bg-[#094EB8] text-white px-4 py-2 rounded-full transition-all shadow-warm-xs"
           >
-            {copied ? <Check className="w-3.5 h-3.5 text-[#B3C7F7]" /> : <Copy className="w-3.5 h-3.5 text-[#B3C7F7]" />}
+            {copied ? <Check className="w-3.5 h-3.5 text-white" /> : <Copy className="w-3.5 h-3.5 text-white" />}
             <span>{copied ? 'Copied!' : 'Copy Result'}</span>
           </button>
         </div>
       </div>
 
-      <div className="bg-slate-900 border border-slate-800 text-white p-4 rounded-xl flex items-start gap-3">
-        <AlertTriangle className="w-5 h-5 text-[#B3C7F7] flex-shrink-0 mt-0.5" />
+      <div className="bg-[#FDF1D0] border border-[#F6DF9C] text-stone-900 p-5 rounded-2xl flex items-start gap-3 shadow-warm-xs">
+        <AlertTriangle className="w-5 h-5 text-stone-800 flex-shrink-0 mt-0.5" />
         <div className="text-xs leading-relaxed font-normal">
-          <strong className="font-bold text-[#B3C7F7] uppercase tracking-wider block mb-1">Veterinary Medical Disclaimer</strong>
+          <strong className="font-bold text-stone-900 font-sans uppercase tracking-wider block mb-1">Veterinary Medical Disclaimer</strong>
           This calculator is for informational reference only. Always confirm medication types and dosages with your veterinarian prior to administration. NEVER use products containing decongestants (Pseudoephedrine) or Xylitol, which are toxic to dogs.
         </div>
       </div>
@@ -227,43 +227,43 @@ export function XylitolToxicityCalculatorWidget() {
   const isHepaticFailure = doseMgKg >= 500;
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
-      <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
-        <div className="w-10 h-10 rounded-xl bg-[#0073E6] text-white flex items-center justify-center font-bold">
-          <AlertOctagon className="w-5 h-5" />
+    <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
+      <div className="flex items-center gap-3 pb-4 border-b border-[#E8E4DC]">
+        <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
+          <AlertOctagon className="w-5 h-5 text-rose-400" />
         </div>
         <div>
-          <h3 className="text-lg font-bold text-slate-900">Xylitol (Birch Sugar) Toxicity Calculator</h3>
-          <p className="text-xs text-slate-500">Hypoglycemia threshold &gt;100 mg/kg | Acute Liver Failure &gt;500 mg/kg</p>
+          <h3 className="text-xl font-serif font-bold text-[#1C1917]">Xylitol (Birch Sugar) Toxicity Calculator</h3>
+          <p className="text-xs text-stone-500 font-sans">Hypoglycemia threshold &gt;100 mg/kg | Acute Liver Failure &gt;500 mg/kg</p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Dog Weight (lbs)</label>
+          <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 font-sans">Dog Weight (lbs)</label>
           <input
             type="number"
             value={weightLbs}
             onChange={(e) => setWeightLbs(parseFloat(e.target.value) || 1)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
+            className="w-full bg-[#FAF8F5] border border-[#E8E4DC] rounded-xl px-4 py-2.5 text-stone-900 font-bold text-sm focus:outline-none focus:border-[#0B63E5]"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Xylitol Consumed (Grams)</label>
+          <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 font-sans">Xylitol Consumed (Grams)</label>
           <input
             type="number"
             step="0.1"
             value={amountGrams}
             onChange={(e) => setAmountGrams(parseFloat(e.target.value) || 0)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
+            className="w-full bg-[#FAF8F5] border border-[#E8E4DC] rounded-xl px-4 py-2.5 text-stone-900 font-bold text-sm focus:outline-none focus:border-[#0B63E5]"
           />
         </div>
       </div>
 
-      <div className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] space-y-3 text-center">
-        <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">Calculated Dose Load</div>
-        <div className="text-4xl font-extrabold text-[#B3C7F7]">{doseMgKg.toFixed(0)} mg/kg</div>
-        <p className="text-xs text-blue-100 font-medium">
+      <div className="bg-[#162737] text-white p-6 sm:p-7 rounded-3xl border border-[#0D1A25] space-y-3 text-center shadow-warm-sm">
+        <div className="text-xs text-stone-300 font-bold uppercase tracking-wider font-sans">Calculated Dose Load</div>
+        <div className="text-4xl sm:text-5xl font-serif font-bold text-[#FDF1D0]">{doseMgKg.toFixed(0)} mg/kg</div>
+        <p className="text-xs text-stone-300 font-medium">
           {isHepaticFailure
             ? 'CRITICAL RISK FOR ACUTE HEPATIC (LIVER) FAILURE! Emergency vet care required immediately.'
             : isHypoglycemia
@@ -280,42 +280,42 @@ export function GrapeToxicityCalculatorWidget() {
   const [grapeCount, setGrapeCount] = useState<number>(5);
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
-      <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
-        <div className="w-10 h-10 rounded-xl bg-[#0073E6] text-white flex items-center justify-center font-bold">
-          <AlertOctagon className="w-5 h-5" />
+    <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
+      <div className="flex items-center gap-3 pb-4 border-b border-[#E8E4DC]">
+        <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
+          <AlertOctagon className="w-5 h-5 text-rose-400" />
         </div>
         <div>
-          <h3 className="text-lg font-bold text-slate-900">Grape & Raisin Toxicity Estimator</h3>
-          <p className="text-xs text-slate-500">Idiosyncratic Tartaric Acid Nephrotoxicity Risk</p>
+          <h3 className="text-xl font-serif font-bold text-[#1C1917]">Grape &amp; Raisin Toxicity Estimator</h3>
+          <p className="text-xs text-stone-500 font-sans">Idiosyncratic Tartaric Acid Nephrotoxicity Risk</p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Dog Weight (lbs)</label>
+          <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 font-sans">Dog Weight (lbs)</label>
           <input
             type="number"
             value={weightLbs}
             onChange={(e) => setWeightLbs(parseFloat(e.target.value) || 1)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
+            className="w-full bg-[#FAF8F5] border border-[#E8E4DC] rounded-xl px-4 py-2.5 text-stone-900 font-bold text-sm focus:outline-none focus:border-[#0B63E5]"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Grapes or Raisins Eaten</label>
+          <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 font-sans">Grapes or Raisins Eaten</label>
           <input
             type="number"
             value={grapeCount}
             onChange={(e) => setGrapeCount(parseInt(e.target.value) || 0)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
+            className="w-full bg-[#FAF8F5] border border-[#E8E4DC] rounded-xl px-4 py-2.5 text-stone-900 font-bold text-sm focus:outline-none focus:border-[#0B63E5]"
           />
         </div>
       </div>
 
-      <div className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] space-y-2 text-center">
-        <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">Clinical Risk Assessment</div>
-        <div className="text-3xl font-extrabold text-[#B3C7F7]">POTENTIAL ACUTE RENAL FAILURE RISK</div>
-        <p className="text-xs text-blue-100 font-medium">
+      <div className="bg-[#162737] text-white p-6 sm:p-7 rounded-3xl border border-[#0D1A25] space-y-3 text-center shadow-warm-sm">
+        <div className="text-xs text-stone-300 font-bold uppercase tracking-wider font-sans">Clinical Risk Assessment</div>
+        <div className="text-2xl sm:text-3xl font-serif font-bold text-[#FDF1D0]">POTENTIAL ACUTE RENAL FAILURE RISK</div>
+        <p className="text-xs text-stone-300 font-normal leading-relaxed max-w-xl mx-auto">
           Grape toxicity is idiosyncratic (unpredictable based on weight). Even a single grape or raisin can trigger acute kidney failure in sensitive dogs. Contact ASPCA Poison Control (888-426-4435) or visit a vet immediately.
         </p>
       </div>
@@ -337,31 +337,31 @@ export function PregnancyDueDateCalculatorWidget() {
   dueDateMax.setDate(dueDateMax.getDate() + 68);
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
-      <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
-        <div className="w-10 h-10 rounded-xl bg-[#0073E6] text-white flex items-center justify-center font-bold">
-          <Calendar className="w-5 h-5" />
+    <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
+      <div className="flex items-center gap-3 pb-4 border-b border-[#E8E4DC]">
+        <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
+          <Calendar className="w-5 h-5 text-[#0B63E5]" />
         </div>
         <div>
-          <h3 className="text-lg font-bold text-slate-900">Canine Pregnancy Due Date Calculator</h3>
-          <p className="text-xs text-slate-500">Standard 63-day canine gestation calculation</p>
+          <h3 className="text-xl font-serif font-bold text-[#1C1917]">Canine Pregnancy Due Date Calculator</h3>
+          <p className="text-xs text-stone-500 font-sans">Standard 63-day canine gestation calculation</p>
         </div>
       </div>
 
       <div>
-        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">First Mating / Ovulation Date</label>
+        <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 font-sans">First Mating / Ovulation Date</label>
         <input
           type="date"
           value={matingDate}
           onChange={(e) => setMatingDate(e.target.value)}
-          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
+          className="w-full bg-[#FAF8F5] border border-[#E8E4DC] rounded-xl px-4 py-2.5 text-stone-900 font-bold text-sm focus:outline-none focus:border-[#0B63E5]"
         />
       </div>
 
-      <div className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] space-y-3 text-center">
-        <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">Estimated Whelping (Due Date)</div>
-        <div className="text-3xl font-extrabold text-[#B3C7F7]">{dueDateAvg.toDateString()}</div>
-        <p className="text-xs text-blue-100 font-medium">Standard Window (63 days): {dueDateMin.toLocaleDateString()} – {dueDateMax.toLocaleDateString()}</p>
+      <div className="bg-[#162737] text-white p-6 sm:p-7 rounded-3xl border border-[#0D1A25] space-y-3 text-center shadow-warm-sm">
+        <div className="text-xs text-stone-300 font-bold uppercase tracking-wider font-sans">Estimated Whelping (Due Date)</div>
+        <div className="text-3xl sm:text-4xl font-serif font-bold text-[#FDF1D0]">{dueDateAvg.toDateString()}</div>
+        <p className="text-xs text-stone-300 font-medium">Standard Window (63 days): {dueDateMin.toLocaleDateString()} – {dueDateMax.toLocaleDateString()}</p>
       </div>
     </div>
   );
@@ -376,31 +376,31 @@ export function WaterIntakeCalculatorWidget() {
   const maxOz = maxMl / 29.5735;
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
-      <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
-        <div className="w-10 h-10 rounded-xl bg-[#0073E6] text-white flex items-center justify-center font-bold">
-          <Droplets className="w-5 h-5" />
+    <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
+      <div className="flex items-center gap-3 pb-4 border-b border-[#E8E4DC]">
+        <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
+          <Droplets className="w-5 h-5 text-[#0B63E5]" />
         </div>
         <div>
-          <h3 className="text-lg font-bold text-slate-900">Daily Dog Water Intake Calculator</h3>
-          <p className="text-xs text-slate-500">Baseline requirement: 50-60 mL water per kg body weight</p>
+          <h3 className="text-xl font-serif font-bold text-[#1C1917]">Daily Dog Water Intake Calculator</h3>
+          <p className="text-xs text-stone-500 font-sans">Baseline requirement: 50-60 mL water per kg body weight</p>
         </div>
       </div>
 
       <div>
-        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Dog Weight (lbs)</label>
+        <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 font-sans">Dog Weight (lbs)</label>
         <input
           type="number"
           value={weightLbs}
           onChange={(e) => setWeightLbs(parseFloat(e.target.value) || 1)}
-          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
+          className="w-full bg-[#FAF8F5] border border-[#E8E4DC] rounded-xl px-4 py-2.5 text-stone-900 font-bold text-sm focus:outline-none focus:border-[#0B63E5]"
         />
       </div>
 
-      <div className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] space-y-2 text-center">
-        <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">Recommended Daily Water Intake</div>
-        <div className="text-4xl font-extrabold text-[#B3C7F7]">{minOz.toFixed(0)} - {maxOz.toFixed(0)} Fluid Ounces</div>
-        <p className="text-xs text-blue-100 font-medium">({Math.round(minMl)} - {Math.round(maxMl)} mL / day). Increase in hot weather or active exertion.</p>
+      <div className="bg-[#162737] text-white p-6 sm:p-7 rounded-3xl border border-[#0D1A25] space-y-3 text-center shadow-warm-sm">
+        <div className="text-xs text-stone-300 font-bold uppercase tracking-wider font-sans">Recommended Daily Water Intake</div>
+        <div className="text-3xl sm:text-4xl font-serif font-bold text-[#FDF1D0]">{minOz.toFixed(0)} - {maxOz.toFixed(0)} Fluid Ounces</div>
+        <p className="text-xs text-stone-300 font-medium">({Math.round(minMl)} - {Math.round(maxMl)} mL / day). Increase in hot weather or active exertion.</p>
       </div>
     </div>
   );
@@ -414,23 +414,23 @@ export function DehydrationRiskCalculatorWidget() {
   else if (skinTurgorSec >= 2) status = 'Moderate Dehydration (6-9%) - Offer Fluid Replacement';
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
-      <h3 className="text-lg font-bold text-slate-900">Dog Dehydration Risk & Skin Turgor Checker</h3>
+    <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
+      <h3 className="text-xl font-serif font-bold text-[#1C1917]">Dog Dehydration Risk &amp; Skin Turgor Checker</h3>
       <div>
-        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Skin Snap-Back Time (Seconds)</label>
+        <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 font-sans">Skin Snap-Back Time (Seconds)</label>
         <input
           type="number"
           step="0.5"
           value={skinTurgorSec}
           onChange={(e) => setSkinTurgorSec(parseFloat(e.target.value) || 0)}
-          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
+          className="w-full bg-[#FAF8F5] border border-[#E8E4DC] rounded-xl px-4 py-2.5 text-stone-900 font-bold text-sm focus:outline-none focus:border-[#0B63E5]"
         />
       </div>
 
-      <div className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] space-y-2 text-center">
-        <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">Hydration Status Assessment</div>
-        <div className="text-3xl font-extrabold text-[#B3C7F7]">{status}</div>
-        <p className="text-xs text-blue-100 font-medium">Check sticky gums, sunken eyes, or lethargy if dehydration is suspected.</p>
+      <div className="bg-[#162737] text-white p-6 sm:p-7 rounded-3xl border border-[#0D1A25] space-y-3 text-center shadow-warm-sm">
+        <div className="text-xs text-stone-300 font-bold uppercase tracking-wider font-sans">Hydration Status Assessment</div>
+        <div className="text-2xl sm:text-3xl font-serif font-bold text-[#FDF1D0]">{status}</div>
+        <p className="text-xs text-stone-300 font-medium">Check sticky gums, sunken eyes, or lethargy if dehydration is suspected.</p>
       </div>
     </div>
   );
@@ -444,22 +444,22 @@ export function HeatCycleTrackerWidget() {
   nextHeat.setMonth(nextHeat.getMonth() + 6);
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-xs">
-      <h3 className="text-lg font-bold text-slate-900">Dog Heat Cycle (Estrus) Predictor</h3>
+    <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
+      <h3 className="text-xl font-serif font-bold text-[#1C1917]">Dog Heat Cycle (Estrus) Predictor</h3>
       <div>
-        <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Start Date of Last Heat Cycle</label>
+        <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-2 font-sans">Start Date of Last Heat Cycle</label>
         <input
           type="date"
           value={lastHeatDate}
           onChange={(e) => setLastHeatDate(e.target.value)}
-          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 font-bold text-sm focus:outline-none focus:border-[#0073E6]"
+          className="w-full bg-[#FAF8F5] border border-[#E8E4DC] rounded-xl px-4 py-2.5 text-stone-900 font-bold text-sm focus:outline-none focus:border-[#0B63E5]"
         />
       </div>
 
-      <div className="bg-[#054FB9] text-white p-6 rounded-2xl border border-[#0461CF] space-y-2 text-center">
-        <div className="text-xs text-[#B3C7F7] font-bold uppercase tracking-wider">Estimated Next Heat Window</div>
-        <div className="text-3xl font-extrabold text-[#B3C7F7]">{nextHeat.toDateString()}</div>
-        <p className="text-xs text-blue-100 font-medium">Average estrus frequency is every 6 months (range: 5-8 months depending on size).</p>
+      <div className="bg-[#162737] text-white p-6 sm:p-7 rounded-3xl border border-[#0D1A25] space-y-3 text-center shadow-warm-sm">
+        <div className="text-xs text-stone-300 font-bold uppercase tracking-wider font-sans">Estimated Next Heat Window</div>
+        <div className="text-3xl sm:text-4xl font-serif font-bold text-[#FDF1D0]">{nextHeat.toDateString()}</div>
+        <p className="text-xs text-stone-300 font-medium">Average estrus frequency is every 6 months (range: 5-8 months depending on size).</p>
       </div>
     </div>
   );

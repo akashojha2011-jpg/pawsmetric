@@ -37,9 +37,9 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-[#4D534E] font-semibold py-1">
-        <Link href="/" className="hover:text-[#082C1B] flex items-center gap-1">
-          <Home className="w-3.5 h-3.5 text-[#082C1B]" />
+      <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-stone-500 font-medium py-1">
+        <Link href="/" className="hover:text-[#1C1917] flex items-center gap-1 transition-colors">
+          <Home className="w-3.5 h-3.5 text-stone-400" />
           <span>Home</span>
         </Link>
 
@@ -47,11 +47,11 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
           const isLast = idx === items.length - 1;
           return (
             <React.Fragment key={item.url}>
-              <ChevronRight className="w-3.5 h-3.5 text-stone-400 flex-shrink-0" />
+              <ChevronRight className="w-3.5 h-3.5 text-stone-300 flex-shrink-0" />
               {isLast ? (
-                <span className="font-extrabold text-[#082C1B] line-clamp-1">{item.label}</span>
+                <span className="font-semibold text-[#1C1917] line-clamp-1">{item.label}</span>
               ) : (
-                <Link href={item.url} className="hover:text-[#082C1B] line-clamp-1">
+                <Link href={item.url} className="hover:text-[#1C1917] line-clamp-1 transition-colors">
                   {item.label}
                 </Link>
               )}

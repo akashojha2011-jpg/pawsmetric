@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Newsreader } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
@@ -8,6 +8,13 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-sans',
+});
+
+const newsreader = Newsreader({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-serif',
+  style: ['normal', 'italic'],
 });
 
 export const metadata: Metadata = {
@@ -51,7 +58,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#054FB9',
+  themeColor: '#162737',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -63,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} font-sans scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} ${newsreader.variable} font-sans scroll-smooth`}>
       <head>
         <script
           async
@@ -71,7 +78,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className="flex flex-col min-h-screen bg-slate-50 text-slate-900 antialiased overflow-x-hidden">
+      <body className="flex flex-col min-h-screen bg-[#FAF8F5] text-[#1C1917] antialiased overflow-x-hidden selection:bg-[#FDF1D0] selection:text-[#162737]">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
@@ -79,3 +86,4 @@ export default function RootLayout({
     </html>
   );
 }
+

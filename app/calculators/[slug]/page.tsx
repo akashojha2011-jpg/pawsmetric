@@ -134,14 +134,14 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
             ]}
           />
 
-          <div className="space-y-3 border-b border-[#D1E0FC] pb-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0073E6]">
-              {category.name} ({categoryTools.length} Tools)
+          <div className="space-y-3 border-b border-[#E8E4DC] pb-8">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0B63E5]">
+              {category.name} ({categoryTools.length} Veterinary Tools)
             </span>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-[#054FB9] tracking-tight">
+            <h1 className="text-3xl sm:text-5xl font-serif font-bold text-[#162737] tracking-tight">
               {category.name} Calculators
             </h1>
-            <p className="text-base text-slate-600 max-w-3xl leading-relaxed font-normal">
+            <p className="text-base text-stone-600 max-w-3xl leading-relaxed font-normal">
               {category.description}
             </p>
           </div>
@@ -151,26 +151,26 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
               <Link
                 key={tool.slug}
                 href={`/calculators/${tool.slug}`}
-                className="clean-card p-6 flex flex-col justify-between group"
+                className="clean-card p-6 flex flex-col justify-between group hover:border-[#162737] transition-all"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-semibold px-2.5 py-1 rounded-md bg-[#EBF2FE] text-[#054FB9] border border-[#D1E0FC]">
+                    <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-[#FAF8F5] text-stone-700 border border-[#E8E4DC]">
                       {tool.categoryName}
                     </span>
-                    <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#0073E6] group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-4 h-4 text-stone-400 group-hover:text-[#0B63E5] group-hover:translate-x-1 transition-all" />
                   </div>
-                  <h2 className="text-base font-bold text-[#0F172A] group-hover:text-[#0073E6] leading-snug">
+                  <h2 className="text-lg font-serif font-bold text-[#162737] group-hover:text-[#0B63E5] leading-snug">
                     {tool.title}
                   </h2>
-                  <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed font-normal">
+                  <p className="text-xs text-stone-600 line-clamp-2 leading-relaxed font-normal">
                     {tool.description}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
+                <div className="mt-6 pt-4 border-t border-[#E8E4DC] flex items-center justify-between text-xs text-stone-500 font-medium">
                   <span>Updated {tool.lastUpdated}</span>
-                  <span className="font-semibold text-[#054FB9] group-hover:text-[#0073E6]">Calculate →</span>
+                  <span className="font-bold text-[#0B63E5] group-hover:underline">Calculate →</span>
                 </div>
               </Link>
             ))}
@@ -252,7 +252,7 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
     : null;
 
   return (
-    <div className="bg-[#F4F7FC] min-h-screen py-8 md:py-12">
+    <div className="bg-[#FAF8F5] min-h-screen py-8 md:py-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
       {howToSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
@@ -272,33 +272,33 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
           ]}
         />
 
-        {/* 1. Tool Header & Medical Review Board Badges */}
+        {/* 1. Tool Header & Badges */}
         <div className="space-y-4">
-          <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-            <span className="font-semibold px-2.5 py-0.5 rounded-md bg-[#EBF2FE] text-[#054FB9] border border-[#D1E0FC]">
+          <div className="flex flex-wrap items-center gap-2 text-xs text-stone-500 font-sans">
+            <span className="font-semibold px-3 py-1 rounded-full bg-[#EBF2FE] text-[#0B63E5] border border-[#B8D4F7]">
               {calc.categoryName}
             </span>
             <span>•</span>
-            <span className="flex items-center gap-1 font-medium text-slate-500">
-              <Clock className="w-3.5 h-3.5 text-[#0073E6]" /> Updated {calc.lastUpdated}
+            <span className="flex items-center gap-1 font-medium text-stone-500">
+              <Clock className="w-3.5 h-3.5 text-stone-400" /> Updated {calc.lastUpdated}
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#054FB9] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-serif font-bold text-[#1C1917] tracking-tight">
             {calc.title}
           </h1>
 
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+          <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
             {calc.description}
           </p>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-[#D1E0FC] text-xs text-slate-600">
-            <div className="flex items-center gap-1.5 font-semibold text-[#054FB9]">
-              <CheckCircle2 className="w-4 h-4 text-[#0073E6]" />
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-[#E8E4DC] text-xs text-stone-600 font-sans">
+            <div className="flex items-center gap-1.5 font-semibold text-[#1C1917]">
+              <CheckCircle2 className="w-4 h-4 text-[#0B63E5]" />
               <span>Verified Formula Sourcing</span>
             </div>
-            <div className="flex items-center gap-1.5 font-semibold text-slate-700 bg-white px-3 py-1 rounded-md border border-[#D1E0FC]">
-              <ShieldCheck className="w-4 h-4 text-[#0073E6]" /> Instant Client-Side Math
+            <div className="flex items-center gap-1.5 font-semibold text-stone-700 bg-white px-3 py-1 rounded-full border border-[#E8E4DC] shadow-warm-xs">
+              <ShieldCheck className="w-4 h-4 text-[#0B63E5]" /> Instant Client-Side Math
             </div>
           </div>
         </div>
@@ -310,14 +310,14 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
 
         {/* 3. STEP-BY-STEP INSTRUCTIONS ("HOW TO USE THIS TOOL") */}
         {calc.howToUse && calc.howToUse.length > 0 && (
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm space-y-4">
-            <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
-              <ListOrdered className="w-5 h-5 text-slate-900" />
-              <h2 className="text-lg font-bold text-slate-900">
+          <div className="clean-card p-6 md:p-8 space-y-4">
+            <div className="flex items-center gap-2 border-b border-[#E8E4DC] pb-3">
+              <ListOrdered className="w-5 h-5 text-stone-700" />
+              <h2 className="text-lg font-serif font-bold text-[#1C1917]">
                 How to Use the {calc.title}
               </h2>
             </div>
-            <ol className="list-decimal pl-5 space-y-2 text-xs sm:text-sm text-slate-700 font-normal">
+            <ol className="list-decimal pl-5 space-y-2 text-xs sm:text-sm text-stone-700 font-normal">
               {calc.howToUse.map((step, idx) => (
                 <li key={idx} className="leading-relaxed">
                   {step}
@@ -330,24 +330,24 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
         {/* 4. FORMULA & SCIENTIFIC METHODOLOGY BOX */}
         {calc.methodology && (
           <div className="clean-card p-6 md:p-8 space-y-4">
-            <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
-              <BookOpen className="w-5 h-5 text-[#054FB9]" />
-              <h2 className="text-lg font-bold text-[#054FB9]">
-                Clinical Methodology & Formula Breakdown
+            <div className="flex items-center gap-2 border-b border-[#E8E4DC] pb-3">
+              <BookOpen className="w-5 h-5 text-stone-700" />
+              <h2 className="text-lg font-serif font-bold text-[#1C1917]">
+                Clinical Methodology &amp; Formula Breakdown
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+            <p className="text-xs sm:text-sm text-stone-600 font-normal leading-relaxed">
               {calc.methodology.summary}
             </p>
-            <div className="bg-[#054FB9] text-white p-5 rounded-xl border border-[#0461CF] space-y-2">
-              <div className="text-xs font-semibold text-[#B3C7F7] uppercase tracking-wider">Clinical Veterinary Formula</div>
-              <div className="text-xs sm:text-sm font-bold text-[#B3C7F7]">{calc.methodology.formulaText}</div>
+            <div className="bg-[#162737] text-white p-6 rounded-2xl border border-[#0D1A25] space-y-2 shadow-warm-sm">
+              <div className="text-xs font-semibold text-[#FDF1D0] uppercase tracking-wider font-sans">Clinical Veterinary Formula</div>
+              <div className="text-xs sm:text-sm font-bold text-white font-mono">{calc.methodology.formulaText}</div>
             </div>
 
             {calc.methodology.sources && calc.methodology.sources.length > 0 && (
-              <div className="pt-3 border-t border-slate-100">
-                <div className="text-[11px] font-bold uppercase text-slate-500">Peer-Reviewed Scientific Sources:</div>
-                <ul className="list-disc pl-5 text-xs text-slate-600 font-normal space-y-1 mt-1">
+              <div className="pt-3 border-t border-[#E8E4DC]">
+                <div className="text-[11px] font-bold uppercase text-stone-500 font-sans">Peer-Reviewed Scientific Sources:</div>
+                <ul className="list-disc pl-5 text-xs text-stone-600 font-normal space-y-1 mt-1.5">
                   {calc.methodology.sources.map((src, i) => (
                     <li key={i}>{src}</li>
                   ))}
@@ -360,24 +360,24 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
         {/* 5. WORKED CLINICAL EXAMPLE BOX */}
         {calc.workedExample && (
           <div className="clean-card p-6 md:p-8 space-y-4">
-            <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
-              <CheckCircle2 className="w-5 h-5 text-[#054FB9]" />
-              <h2 className="text-lg font-bold text-[#054FB9]">
+            <div className="flex items-center gap-2 border-b border-[#E8E4DC] pb-3">
+              <CheckCircle2 className="w-5 h-5 text-[#0B63E5]" />
+              <h2 className="text-lg font-serif font-bold text-[#1C1917]">
                 Worked Clinical Example
               </h2>
             </div>
-            <div className="bg-[#F4F7FC] p-5 rounded-xl border border-[#D1E0FC] space-y-3">
+            <div className="bg-[#FAF8F5] p-5 rounded-2xl border border-[#E8E4DC] space-y-3">
               <div>
-                <div className="text-[11px] font-bold uppercase text-[#054FB9]">Scenario</div>
-                <div className="text-xs text-slate-700 font-medium">{calc.workedExample.scenario}</div>
+                <div className="text-[11px] font-bold uppercase text-stone-500 font-sans">Scenario</div>
+                <div className="text-xs text-stone-800 font-medium">{calc.workedExample.scenario}</div>
               </div>
-              <div className="border-t border-[#D1E0FC] pt-2">
-                <div className="text-[11px] font-bold uppercase text-[#054FB9]">Mathematical Calculation</div>
-                <div className="text-xs text-[#054FB9] font-bold font-mono">{calc.workedExample.calculation}</div>
+              <div className="border-t border-[#E8E4DC] pt-2">
+                <div className="text-[11px] font-bold uppercase text-stone-500 font-sans">Mathematical Calculation</div>
+                <div className="text-xs text-[#0B63E5] font-bold font-mono">{calc.workedExample.calculation}</div>
               </div>
-              <div className="border-t border-[#D1E0FC] pt-2">
-                <div className="text-[11px] font-bold uppercase text-[#054FB9]">Veterinary Interpretation</div>
-                <div className="text-xs text-[#0F172A] font-extrabold">{calc.workedExample.result}</div>
+              <div className="border-t border-[#E8E4DC] pt-2">
+                <div className="text-[11px] font-bold uppercase text-stone-500 font-sans">Veterinary Interpretation</div>
+                <div className="text-xs text-[#1C1917] font-extrabold">{calc.workedExample.result}</div>
               </div>
             </div>
           </div>
@@ -386,31 +386,31 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
         {/* 6. REFERENCE CONVERSION & COMPARISON CHART TABLE */}
         {calc.referenceTable && calc.referenceTable.headers && (
           <div className="clean-card p-6 md:p-8 space-y-4">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div className="flex items-center justify-between border-b border-[#E8E4DC] pb-3">
               <div className="flex items-center gap-2">
-                <FileSpreadsheet className="w-5 h-5 text-[#054FB9]" />
-                <h2 className="text-lg font-bold text-[#054FB9]">
+                <FileSpreadsheet className="w-5 h-5 text-stone-700" />
+                <h2 className="text-lg font-serif font-bold text-[#1C1917]">
                   {calc.referenceTable.title}
                 </h2>
               </div>
             </div>
 
-            <div className="overflow-x-auto border border-[#D1E0FC] rounded-xl">
+            <div className="overflow-x-auto border border-[#E8E4DC] rounded-2xl">
               <table className="w-full text-left text-xs">
-                <thead className="bg-[#054FB9] text-white font-bold uppercase">
+                <thead className="bg-[#162737] text-white font-bold uppercase font-sans">
                   <tr>
                     {calc.referenceTable.headers.map((h, i) => (
-                      <th key={i} className="p-3 border-b border-[#0461CF]">
+                      <th key={i} className="p-3.5 border-b border-[#0D1A25]">
                         {h}
                       </th>
                     ))}
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 bg-white font-medium">
+                <tbody className="divide-y divide-[#E8E4DC] bg-white font-medium">
                   {calc.referenceTable.rows.map((row, rIdx) => (
-                    <tr key={rIdx} className={rIdx % 2 === 1 ? 'bg-[#F4F7FC]' : ''}>
+                    <tr key={rIdx} className={rIdx % 2 === 1 ? 'bg-[#FAF8F5]' : ''}>
                       {row.map((cell, cIdx) => (
-                        <td key={cIdx} className={`p-3 ${cIdx === 0 ? 'font-bold text-[#054FB9]' : 'text-slate-600'}`}>
+                        <td key={cIdx} className={`p-3.5 ${cIdx === 0 ? 'font-bold text-[#1C1917]' : 'text-stone-600'}`}>
                           {cell}
                         </td>
                       ))}
@@ -425,48 +425,49 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
         {/* 7. CLINICAL DEEP DIVE & COMPREHENSIVE GUIDE */}
         {deepDive && (
           <div className="clean-card p-6 md:p-8 space-y-6">
-            <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
-              <BookOpen className="w-5 h-5 text-[#054FB9]" />
-              <h2 className="text-xl font-bold text-[#054FB9]">
-                Clinical Guide & Veterinary Deep Dive
+            <div className="flex items-center gap-2 border-b border-[#E8E4DC] pb-3">
+              <BookOpen className="w-5 h-5 text-stone-700" />
+              <h2 className="text-xl font-serif font-bold text-[#1C1917]">
+                Clinical Guide &amp; Veterinary Deep Dive
               </h2>
             </div>
 
-            <p className="text-sm text-slate-700 leading-relaxed font-normal">
+            <p className="text-sm text-stone-700 leading-relaxed font-normal">
               {deepDive.overview}
             </p>
 
             <div className="space-y-4 pt-2">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-[#054FB9]">
-                Key Biological & Physiological Factors
+              <h3 className="text-xs font-bold uppercase tracking-wider text-stone-500 font-sans">
+                Key Biological &amp; Physiological Factors
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {deepDive.keyFactors.map((factor, idx) => (
-                  <div key={idx} className="bg-[#F4F7FC] p-4 rounded-xl border border-[#D1E0FC] space-y-1.5">
-                    <h4 className="text-xs font-bold text-[#054FB9]">{factor.title}</h4>
-                    <p className="text-xs text-slate-600 leading-relaxed">{factor.description}</p>
+                  <div key={idx} className="bg-[#FAF8F5] p-5 rounded-2xl border border-[#E8E4DC] space-y-1.5">
+                    <h4 className="text-xs font-bold text-[#1C1917] font-sans">{factor.title}</h4>
+                    <p className="text-xs text-stone-600 leading-relaxed font-normal">{factor.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-              <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs space-y-2">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-[#0461CF] flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#0073E6]" /> Practical Veterinary Tips
+              <div className="bg-white p-5 rounded-2xl border border-[#E8E4DC] shadow-warm-xs space-y-2">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#1C1917] flex items-center gap-1.5 font-sans">
+                  <CheckCircle2 className="w-4 h-4 text-[#0B63E5]" /> Practical Veterinary Tips
                 </h3>
-                <ul className="list-disc pl-4 text-xs text-slate-600 space-y-1 leading-relaxed">
+                <ul className="list-disc pl-4 text-xs text-stone-600 space-y-1 leading-relaxed font-normal">
                   {deepDive.clinicalTips.map((tip, idx) => (
                     <li key={idx}>{tip}</li>
                   ))}
                 </ul>
               </div>
 
-              <div className="bg-[#EBF2FE]/60 p-5 rounded-xl border border-[#D1E0FC] space-y-2">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-[#054FB9] flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-[#0073E6]" /> When to Consult a Licensed DVM
+              {/* Good Dog Butter Yellow Alert Box for Vet Advice */}
+              <div className="bg-[#FDF1D0] p-5 rounded-2xl border border-[#F6DF9C] space-y-2 shadow-warm-xs">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#1C1917] flex items-center gap-1.5 font-sans">
+                  <ShieldCheck className="w-4 h-4 text-stone-800" /> When to Consult a Licensed DVM
                 </h3>
-                <ul className="list-disc pl-4 text-xs text-slate-700 space-y-1 leading-relaxed">
+                <ul className="list-disc pl-4 text-xs text-stone-800 space-y-1 leading-relaxed font-normal">
                   {deepDive.whenToConsultVet.map((alert, idx) => (
                     <li key={idx}>{alert}</li>
                   ))}
@@ -479,17 +480,17 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
         {/* 8. FREQUENTLY ASKED QUESTIONS (FAQ) */}
         {calc.faqs && calc.faqs.length > 0 && (
           <div className="clean-card p-6 md:p-8 space-y-6">
-            <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
-              <HelpCircle className="w-5 h-5 text-slate-900" />
-              <h2 className="text-lg font-bold text-slate-900">
+            <div className="flex items-center gap-2 border-b border-[#E8E4DC] pb-3">
+              <HelpCircle className="w-5 h-5 text-stone-700" />
+              <h2 className="text-lg font-serif font-bold text-[#1C1917]">
                 Frequently Asked Questions
               </h2>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {calc.faqs.map((faq, i) => (
-                <div key={i} className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-1.5">
-                  <h3 className="text-sm font-bold text-slate-900">{faq.question}</h3>
-                  <p className="text-xs text-slate-600 font-normal leading-relaxed">{faq.answer}</p>
+                <div key={i} className="bg-[#FAF8F5] p-5 rounded-2xl border border-[#E8E4DC] space-y-1.5">
+                  <h3 className="text-sm font-bold font-serif text-[#1C1917]">{faq.question}</h3>
+                  <p className="text-xs text-stone-600 font-normal leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -500,9 +501,9 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
         <div className="space-y-8 pt-4">
           {relatedTools.length > 0 && (
             <div className="space-y-4">
-              <div className="flex items-center justify-between border-b border-[#D1E0FC] pb-2">
-                <h3 className="text-lg font-bold text-slate-900">Recommended Dog Calculators</h3>
-                <Link href="/calculators" className="text-xs font-semibold text-[#0073E6] hover:underline flex items-center gap-1">
+              <div className="flex items-center justify-between border-b border-[#E8E4DC] pb-2">
+                <h3 className="text-lg font-serif font-bold text-[#1C1917]">Recommended Dog Calculators</h3>
+                <Link href="/calculators" className="text-xs font-semibold text-[#0B63E5] hover:underline flex items-center gap-1 font-sans">
                   All 47 Tools <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -511,20 +512,20 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
                   <Link
                     key={rel.slug}
                     href={`/calculators/${rel.slug}`}
-                    className="clean-card p-4 hover:border-[#0073E6] transition-all space-y-2 group flex flex-col justify-between"
+                    className="clean-card p-5 hover:border-stone-400 transition-all space-y-2 group flex flex-col justify-between"
                   >
                     <div>
-                      <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-blue-50 text-[#0461CF]">
+                      <span className="text-[10px] font-semibold px-2.5 py-0.5 rounded-full bg-[#EBF2FE] text-[#0B63E5]">
                         {rel.categoryName}
                       </span>
-                      <div className="text-sm font-bold text-slate-900 group-hover:text-[#0073E6] mt-1.5 leading-snug">
+                      <div className="text-sm font-serif font-bold text-[#1C1917] group-hover:text-[#0B63E5] mt-2 leading-snug">
                         {rel.title}
                       </div>
-                      <p className="text-xs text-slate-500 line-clamp-2 mt-1 font-normal">
+                      <p className="text-xs text-stone-500 line-clamp-2 mt-1 font-normal">
                         {rel.description}
                       </p>
                     </div>
-                    <div className="text-xs font-semibold text-[#0073E6] flex items-center gap-1 pt-2">
+                    <div className="text-xs font-semibold text-[#0B63E5] flex items-center gap-1 pt-3 font-sans">
                       Use Calculator <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
@@ -535,9 +536,9 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
 
           {relatedGuides.length > 0 && (
             <div className="space-y-4 pt-2">
-              <div className="flex items-center justify-between border-b border-[#D1E0FC] pb-2">
-                <h3 className="text-lg font-bold text-slate-900">Clinical Veterinary Guides</h3>
-                <Link href="/resources" className="text-xs font-semibold text-[#0073E6] hover:underline flex items-center gap-1">
+              <div className="flex items-center justify-between border-b border-[#E8E4DC] pb-2">
+                <h3 className="text-lg font-serif font-bold text-[#1C1917]">Clinical Veterinary Guides</h3>
+                <Link href="/resources" className="text-xs font-semibold text-[#0B63E5] hover:underline flex items-center gap-1 font-sans">
                   View Library <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -546,17 +547,17 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
                   <Link
                     key={guide.slug}
                     href={`/resources/${guide.slug}`}
-                    className="clean-card p-4 hover:border-[#0073E6] transition-all flex flex-col justify-between group"
+                    className="clean-card p-5 hover:border-stone-400 transition-all flex flex-col justify-between group"
                   >
                     <div>
-                      <span className="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">
+                      <span className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-700">
                         {guide.category}
                       </span>
-                      <div className="text-xs font-bold text-slate-900 group-hover:text-[#0073E6] mt-2 line-clamp-2 leading-snug">
+                      <div className="text-xs font-serif font-bold text-[#1C1917] group-hover:text-[#0B63E5] mt-2 line-clamp-2 leading-snug">
                         {guide.title}
                       </div>
                     </div>
-                    <div className="text-xs text-slate-400 group-hover:text-[#0073E6] flex items-center gap-1 pt-3 font-medium">
+                    <div className="text-xs text-stone-400 group-hover:text-[#0B63E5] flex items-center gap-1 pt-3 font-medium font-sans">
                       Read Guide <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
@@ -566,8 +567,8 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
           )}
 
           {/* Sibling Category Hubs for High Authority Navigation */}
-          <div className="clean-card p-6 bg-[#F4F7FC]/70 border border-[#D1E0FC] space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500">
+          <div className="clean-card p-6 bg-[#FAF8F5] border border-[#E8E4DC] space-y-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-stone-500 font-sans">
               Explore Canine Calculation Categories
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
@@ -575,10 +576,10 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
                 <Link
                   key={cat.id}
                   href={`/calculators/${cat.slug}`}
-                  className="p-3 rounded-lg bg-white hover:bg-[#EBF2FE] border border-[#D1E0FC] transition-colors font-semibold text-slate-800 hover:text-[#054FB9] flex items-center justify-between group"
+                  className="p-3.5 rounded-2xl bg-white hover:bg-stone-50 border border-[#E8E4DC] transition-colors font-semibold text-stone-800 hover:text-[#0B63E5] flex items-center justify-between group shadow-warm-xs"
                 >
                   <span className="truncate">{cat.name}</span>
-                  <ArrowRight className="w-3 h-3 text-slate-400 group-hover:text-[#054FB9] flex-shrink-0" />
+                  <ArrowRight className="w-3 h-3 text-stone-400 group-hover:text-[#0B63E5] flex-shrink-0" />
                 </Link>
               ))}
             </div>

@@ -8,22 +8,41 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        darkGreen: '#082C1B',
-        darkGreenHover: '#0D4028',
-        lime: '#8BF03B',
-        limeHover: '#7CE428',
-        sageBg: '#F0F1EA',
-        sageCard: '#FFFFFF',
-        sageBorder: '#E2E3D8',
-        sageMuted: '#4D534E',
+        canvas: '#FAF8F5',
+        card: '#FFFFFF',
+        borderNeutral: '#E8E4DC',
+        borderSubtle: '#F0ECE4',
+        navy: {
+          DEFAULT: '#162737',
+          light: '#233748',
+          dark: '#0D1A25',
+        },
+        cobalt: {
+          DEFAULT: '#0B63E5',
+          hover: '#094EB8',
+          light: '#EBF2FE',
+        },
+        butter: {
+          DEFAULT: '#FDF1D0',
+          dark: '#F6DF9C',
+          light: '#FFF9EA',
+        },
+        powder: {
+          DEFAULT: '#DCE8F9',
+          dark: '#B8D4F7',
+          light: '#F0F6FE',
+        },
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        sans: ['var(--font-sans)', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        serif: ['var(--font-serif)', 'Newsreader', 'Georgia', 'serif'],
       },
       boxShadow: {
-        'paid': '0 2px 8px rgba(8, 44, 27, 0.06)',
-        'paid-lg': '0 8px 24px rgba(8, 44, 27, 0.12)',
-      }
+        'warm-xs': '0 1px 2px rgba(30, 25, 20, 0.03)',
+        'warm-sm': '0 1px 3px rgba(30, 25, 20, 0.05)',
+        'warm-md': '0 4px 14px rgba(30, 25, 20, 0.06)',
+        'warm-lg': '0 10px 30px rgba(30, 25, 20, 0.08)',
+      },
     },
   },
   plugins: [],
