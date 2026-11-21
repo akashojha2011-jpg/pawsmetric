@@ -20,6 +20,7 @@ import { CATEGORIES } from '@/lib/data/categories';
 import { WidgetDispatcher } from '@/components/widgets/WidgetDispatcher';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { RESOURCES } from '@/lib/data/resources';
+import { getToolDeepDive } from '@/lib/data/tool-deep-dives';
 
 interface ToolOrCategoryPageProps {
   params: Promise<{
@@ -186,11 +187,20 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
   }
 
   const categoryObj = CATEGORIES.find((c) => c.id === calc.category);
-  const relatedTools = CALCULATORS.filter(
-    (c) => c.category === calc.category && c.slug !== calc.slug
-  ).slice(0, 3);
+  const deepDive = getToolDeepDive(calc.slug, calc);
 
-  const relatedGuides = RESOURCES.slice(0, 2);
+  // Prioritize tools explicitly defined in calc.relatedSlugs, then fill with category tools
+  const explicitRelated = (calc.relatedSlugs || [])
+    .map((s) => CALCULATORS.find((c) => c.slug === s))
+    .filter((c): c is typeof CALCULATORS[0] => !!c && c.slug !== calc.slug);
+
+  const fallbackCategoryTools = CALCULATORS.filter(
+    (c) => c.category === calc.category && c.slug !== calc.slug && !explicitRelated.some((er) => er.slug === c.slug)
+  );
+
+  const relatedTools = [...explicitRelated, ...fallbackCategoryTools].slice(0, 6);
+  const relatedGuides = RESOURCES.slice(0, 3);
+  const siblingCategories = CATEGORIES.filter((cat) => cat.id !== calc.category).slice(0, 4);
 
   // Schema.org WebApplication, HowTo, & FAQPage JSON-LD
   const webAppSchema = {
@@ -412,7 +422,61 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
           </div>
         )}
 
-        {/* 7. FREQUENTLY ASKED QUESTIONS (FAQ) */}
+        {/* 7. CLINICAL DEEP DIVE & COMPREHENSIVE GUIDE */}
+        {deepDive && (
+          <div className="clean-card p-6 md:p-8 space-y-6">
+            <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
+              <BookOpen className="w-5 h-5 text-[#054FB9]" />
+              <h2 className="text-xl font-bold text-[#054FB9]">
+                Clinical Guide & Veterinary Deep Dive
+              </h2>
+            </div>
+
+            <p className="text-sm text-slate-700 leading-relaxed font-normal">
+              {deepDive.overview}
+            </p>
+
+            <div className="space-y-4 pt-2">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-[#054FB9]">
+                Key Biological & Physiological Factors
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {deepDive.keyFactors.map((factor, idx) => (
+                  <div key={idx} className="bg-[#F4F7FC] p-4 rounded-xl border border-[#D1E0FC] space-y-1.5">
+                    <h4 className="text-xs font-bold text-[#054FB9]">{factor.title}</h4>
+                    <p className="text-xs text-slate-600 leading-relaxed">{factor.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs space-y-2">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#0461CF] flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#0073E6]" /> Practical Veterinary Tips
+                </h3>
+                <ul className="list-disc pl-4 text-xs text-slate-600 space-y-1 leading-relaxed">
+                  {deepDive.clinicalTips.map((tip, idx) => (
+                    <li key={idx}>{tip}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-[#EBF2FE]/60 p-5 rounded-xl border border-[#D1E0FC] space-y-2">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#054FB9] flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4 text-[#0073E6]" /> When to Consult a Licensed DVM
+                </h3>
+                <ul className="list-disc pl-4 text-xs text-slate-700 space-y-1 leading-relaxed">
+                  {deepDive.whenToConsultVet.map((alert, idx) => (
+                    <li key={idx}>{alert}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* 8. FREQUENTLY ASKED QUESTIONS (FAQ) */}
         {calc.faqs && calc.faqs.length > 0 && (
           <div className="clean-card p-6 md:p-8 space-y-6">
             <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
@@ -432,23 +496,36 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
           </div>
         )}
 
-        {/* 8. RELATED CALCULATORS & VETERINARY GUIDES CROSS-LINKS */}
-        <div className="space-y-6 pt-4">
+        {/* 9. STRONG INTERNAL LINKING: RELATED CALCULATORS & VETERINARY HUBS */}
+        <div className="space-y-8 pt-4">
           {relatedTools.length > 0 && (
             <div className="space-y-4">
-              <h3 className="text-lg font-bold text-slate-900">Related Dog Calculators</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="flex items-center justify-between border-b border-[#D1E0FC] pb-2">
+                <h3 className="text-lg font-bold text-slate-900">Recommended Dog Calculators</h3>
+                <Link href="/calculators" className="text-xs font-semibold text-[#0073E6] hover:underline flex items-center gap-1">
+                  All 47 Tools <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {relatedTools.map((rel) => (
                   <Link
                     key={rel.slug}
                     href={`/calculators/${rel.slug}`}
-                    className="clean-card p-4 hover:border-[#0073E6] transition-all space-y-2 group"
+                    className="clean-card p-4 hover:border-[#0073E6] transition-all space-y-2 group flex flex-col justify-between"
                   >
-                    <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-blue-50 text-[#0461CF]">
-                      {rel.categoryName}
-                    </span>
-                    <div className="text-xs font-bold text-slate-900 group-hover:text-[#0073E6] line-clamp-2 leading-snug">
-                      {rel.title}
+                    <div>
+                      <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-blue-50 text-[#0461CF]">
+                        {rel.categoryName}
+                      </span>
+                      <div className="text-sm font-bold text-slate-900 group-hover:text-[#0073E6] mt-1.5 leading-snug">
+                        {rel.title}
+                      </div>
+                      <p className="text-xs text-slate-500 line-clamp-2 mt-1 font-normal">
+                        {rel.description}
+                      </p>
+                    </div>
+                    <div className="text-xs font-semibold text-[#0073E6] flex items-center gap-1 pt-2">
+                      Use Calculator <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
                 ))}
@@ -458,28 +535,54 @@ export default async function DynamicCalculatorOrCategoryPage({ params }: ToolOr
 
           {relatedGuides.length > 0 && (
             <div className="space-y-4 pt-2">
-              <h3 className="text-lg font-bold text-slate-900">Related Veterinary Research Guides</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="flex items-center justify-between border-b border-[#D1E0FC] pb-2">
+                <h3 className="text-lg font-bold text-slate-900">Clinical Veterinary Guides</h3>
+                <Link href="/resources" className="text-xs font-semibold text-[#0073E6] hover:underline flex items-center gap-1">
+                  View Library <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {relatedGuides.map((guide) => (
                   <Link
                     key={guide.slug}
                     href={`/resources/${guide.slug}`}
-                    className="clean-card p-4 hover:border-[#0073E6] transition-all flex items-center justify-between group"
+                    className="clean-card p-4 hover:border-[#0073E6] transition-all flex flex-col justify-between group"
                   >
                     <div>
                       <span className="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">
                         {guide.category}
                       </span>
-                      <div className="text-xs font-bold text-slate-900 group-hover:text-[#0073E6] mt-1 line-clamp-1">
+                      <div className="text-xs font-bold text-slate-900 group-hover:text-[#0073E6] mt-2 line-clamp-2 leading-snug">
                         {guide.title}
                       </div>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#0073E6] group-hover:translate-x-1 transition-all flex-shrink-0 ml-2" />
+                    <div className="text-xs text-slate-400 group-hover:text-[#0073E6] flex items-center gap-1 pt-3 font-medium">
+                      Read Guide <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </Link>
                 ))}
               </div>
             </div>
           )}
+
+          {/* Sibling Category Hubs for High Authority Navigation */}
+          <div className="clean-card p-6 bg-[#F4F7FC]/70 border border-[#D1E0FC] space-y-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500">
+              Explore Canine Calculation Categories
+            </h4>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+              {siblingCategories.map((cat) => (
+                <Link
+                  key={cat.id}
+                  href={`/calculators/${cat.slug}`}
+                  className="p-3 rounded-lg bg-white hover:bg-[#EBF2FE] border border-[#D1E0FC] transition-colors font-semibold text-slate-800 hover:text-[#054FB9] flex items-center justify-between group"
+                >
+                  <span className="truncate">{cat.name}</span>
+                  <ArrowRight className="w-3 h-3 text-slate-400 group-hover:text-[#054FB9] flex-shrink-0" />
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

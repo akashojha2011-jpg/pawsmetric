@@ -8,9 +8,16 @@ import {
   Scale,
   HeartPulse,
   CheckCircle2,
+  BookOpen,
+  FileSpreadsheet,
+  AlertTriangle,
+  Sparkles,
+  Zap,
+  Info,
 } from 'lucide-react';
 import { CATEGORIES } from '@/lib/data/categories';
 import { CALCULATORS } from '@/lib/data/calculators';
+import { RESOURCES } from '@/lib/data/resources';
 
 export const metadata: Metadata = {
   title: 'Dog Calculator: Free Canine Health, Nutrition & Growth Tools | PawsMetric',
@@ -36,9 +43,21 @@ export default function HomePage() {
       'dog-calorie-calculator',
       'dog-chocolate-toxicity-calculator',
       'dog-benadryl-dosage-calculator',
-      'puppy-growth-predictor',
+      'puppy-weight-predictor',
       'dog-crate-size-calculator',
     ].includes(c.slug)
+  );
+
+  const emergencyTools = CALCULATORS.filter((c) =>
+    ['dog-chocolate-toxicity-calculator', 'dog-benadryl-dosage-calculator', 'dog-xylitol-toxicity-calculator', 'dog-grape-toxicity-calculator', 'dog-dehydration-risk-calculator', 'dog-water-intake-calculator'].includes(c.slug)
+  );
+
+  const nutritionTools = CALCULATORS.filter((c) =>
+    ['dog-calorie-calculator', 'dog-food-portion-calculator', 'raw-diet-calculator', 'dog-weight-loss-calculator', 'dog-ideal-weight-calculator', 'dog-food-cost-calculator'].includes(c.slug)
+  );
+
+  const breedGrowthTools = CALCULATORS.filter((c) =>
+    ['puppy-age-calculator', 'puppy-weight-predictor', 'dog-life-expectancy-calculator', 'dog-breed-weight-height-predictor', 'mixed-breed-adult-size-estimator', 'litter-size-estimator'].includes(c.slug)
   );
 
   // Schema.org WebSite, Organization, WebApplication, and FAQPage JSON-LD
@@ -122,7 +141,7 @@ export default function HomePage() {
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#EBF2FE] text-[#054FB9] text-xs font-semibold border border-[#D1E0FC]">
               <CheckCircle2 className="w-4 h-4 text-[#0073E6]" />
-              100% Free Client-Side Canine Tools
+              100% Free Client-Side Canine Tools (47 Calculators)
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-[1.15]">
@@ -130,7 +149,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
-              Instant, accurate calculations for dog biological age, daily caloric intake, emergency chocolate & medication safety limits, crate size, and puppy growth.
+              PawsMetric provides precise, peer-reviewed canine mathematical engines. Calculate biological age, daily caloric intake (RER/MER), emergency chocolate & medication safety limits, crate dimensions, and puppy growth curves without paywalls.
             </p>
 
             {/* Quick Category Filter Pills */}
@@ -211,7 +230,7 @@ export default function HomePage() {
             </h2>
           </div>
           <Link href="/calculators" className="text-xs font-semibold text-slate-700 hover:text-[#0073E6] flex items-center gap-1">
-            View All Tools <ArrowRight className="w-3.5 h-3.5 text-[#0073E6]" />
+            View All 47 Tools <ArrowRight className="w-3.5 h-3.5 text-[#0073E6]" />
           </Link>
         </div>
 
@@ -248,7 +267,153 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. CATEGORIES DIRECTORY */}
+      {/* 3. ABOUT PAWSMETRIC & HOW CANINE CALCULATIONS WORK (NEW IN-DEPTH CONTENT) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-2xl border border-[#D1E0FC] p-8 md:p-12 space-y-8 shadow-xs">
+          <div className="space-y-3 max-w-3xl">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0073E6]">Why Canine Science Matters</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
+              Why Generic Pet Advice Fails Dogs
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+              For decades, pet care was dominated by inaccurate shortcuts—such as assuming one dog year equals seven human years or trusting generic kibble cup charts on food bags. However, domestic canines exhibit the highest morphological diversity of any land mammal, with adult body weights spanning from 2-pound Chihuahuas to 200-pound English Mastiffs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+            <div className="bg-[#F4F7FC] p-6 rounded-xl border border-[#D1E0FC] space-y-3">
+              <Zap className="w-6 h-6 text-[#0073E6]" />
+              <h3 className="font-bold text-base text-[#0F172A]">Non-Linear Epigenetics</h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                Canine aging is non-linear. Dogs reach reproductive maturity in their first year, matching adolescent human biology. Cellular aging then diverges dramatically based on adult body mass and metabolic strain.
+              </p>
+              <Link href="/calculators/dog-age-calculator" className="text-xs font-bold text-[#054FB9] hover:underline flex items-center gap-1 pt-1">
+                Explore Age Converter →
+              </Link>
+            </div>
+
+            <div className="bg-[#F4F7FC] p-6 rounded-xl border border-[#D1E0FC] space-y-3">
+              <Scale className="w-6 h-6 text-[#0073E6]" />
+              <h3 className="font-bold text-base text-[#0F172A]">Metabolic Body Weight (kg^0.75)</h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                Energy requirements scale with body surface area rather than simple linear mass. Our calorie tools implement WSAVA Resting Energy Requirement (RER) formulas tailored to neuter status and activity tiers.
+              </p>
+              <Link href="/calculators/dog-calorie-calculator" className="text-xs font-bold text-[#054FB9] hover:underline flex items-center gap-1 pt-1">
+                Calculate Daily Calories →
+              </Link>
+            </div>
+
+            <div className="bg-[#F4F7FC] p-6 rounded-xl border border-[#D1E0FC] space-y-3">
+              <ShieldCheck className="w-6 h-6 text-[#0073E6]" />
+              <h3 className="font-bold text-base text-[#0F172A]">Exact Toxicology Bounds</h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                Canine livers process methylxanthines (theobromine, caffeine) up to 8x slower than humans. Our emergency calculators compute toxic milligrams per kilogram to accurately gauge clinical danger levels.
+              </p>
+              <Link href="/calculators/dog-chocolate-toxicity-calculator" className="text-xs font-bold text-[#054FB9] hover:underline flex items-center gap-1 pt-1">
+                Check Chocolate Hazard →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. CURATED TOOL CLUSTERS FOR STRONG INTERNAL LINKING */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        {/* Cluster 1: Health, Safety & Emergency Calculations */}
+        <div className="space-y-4">
+          <div className="flex items-center justify-between border-b border-[#D1E0FC] pb-3">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0073E6]">Emergency & Wellness</span>
+              <h3 className="text-xl font-bold text-[#0F172A]">Canine Health, Toxicology & Medication Calculators</h3>
+            </div>
+            <Link href="/calculators/health" className="text-xs font-semibold text-[#0073E6] hover:underline flex items-center gap-1">
+              View Health Category <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {emergencyTools.map((tool) => (
+              <Link
+                key={tool.slug}
+                href={`/calculators/${tool.slug}`}
+                className="clean-card p-4 hover:border-[#0073E6] transition-all space-y-2 group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="text-xs font-bold text-[#0461CF] uppercase tracking-wider">{tool.categoryName}</div>
+                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#0073E6] leading-snug mt-1">{tool.title}</h4>
+                  <p className="text-xs text-slate-600 line-clamp-2 mt-1">{tool.description}</p>
+                </div>
+                <span className="text-xs font-semibold text-[#0073E6] pt-2 flex items-center gap-1">
+                  Launch Tool <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Cluster 2: Nutrition, Calories & Diet Models */}
+        <div className="space-y-4">
+          <div className="flex items-center justify-between border-b border-[#D1E0FC] pb-3">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0073E6]">Nutrition & Feeding</span>
+              <h3 className="text-xl font-bold text-[#0F172A]">Dog Calorie, Portion & Raw Diet Calculators</h3>
+            </div>
+            <Link href="/calculators/weight" className="text-xs font-semibold text-[#0073E6] hover:underline flex items-center gap-1">
+              View Nutrition Category <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {nutritionTools.map((tool) => (
+              <Link
+                key={tool.slug}
+                href={`/calculators/${tool.slug}`}
+                className="clean-card p-4 hover:border-[#0073E6] transition-all space-y-2 group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="text-xs font-bold text-[#0461CF] uppercase tracking-wider">{tool.categoryName}</div>
+                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#0073E6] leading-snug mt-1">{tool.title}</h4>
+                  <p className="text-xs text-slate-600 line-clamp-2 mt-1">{tool.description}</p>
+                </div>
+                <span className="text-xs font-semibold text-[#0073E6] pt-2 flex items-center gap-1">
+                  Launch Tool <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Cluster 3: Puppy Growth, Size & Breeding */}
+        <div className="space-y-4">
+          <div className="flex items-center justify-between border-b border-[#D1E0FC] pb-3">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0073E6]">Growth & Development</span>
+              <h3 className="text-xl font-bold text-[#0F172A]">Puppy Development, Weight Prediction & Breed Genetics</h3>
+            </div>
+            <Link href="/calculators/breed" className="text-xs font-semibold text-[#0073E6] hover:underline flex items-center gap-1">
+              View Breed Category <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {breedGrowthTools.map((tool) => (
+              <Link
+                key={tool.slug}
+                href={`/calculators/${tool.slug}`}
+                className="clean-card p-4 hover:border-[#0073E6] transition-all space-y-2 group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="text-xs font-bold text-[#0461CF] uppercase tracking-wider">{tool.categoryName}</div>
+                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#0073E6] leading-snug mt-1">{tool.title}</h4>
+                  <p className="text-xs text-slate-600 line-clamp-2 mt-1">{tool.description}</p>
+                </div>
+                <span className="text-xs font-semibold text-[#0073E6] pt-2 flex items-center gap-1">
+                  Launch Tool <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. CATEGORIES DIRECTORY */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="space-y-1 border-b border-[#D1E0FC] pb-4">
           <span className="text-xs font-bold uppercase tracking-wider text-[#0073E6]">Browse by Category</span>
@@ -274,7 +439,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. VETERINARY RESEARCH & CLINICAL METHODOLOGY */}
+      {/* 6. VETERINARY RESEARCH & CLINICAL METHODOLOGY */}
       <section className="bg-white py-12 border-y border-[#D1E0FC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="max-w-3xl space-y-2">
@@ -321,7 +486,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. FREQUENTLY ASKED QUESTIONS */}
+      {/* 7. EVIDENCE-BASED VETERINARY ARTICLES FEATURED */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 border-b border-[#D1E0FC] pb-4">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0073E6]">Veterinary Library</span>
+            <h2 className="text-2xl font-bold text-[#0F172A] tracking-tight mt-1">
+              Clinical Dog Care & Health Guides
+            </h2>
+          </div>
+          <Link href="/resources" className="text-xs font-semibold text-slate-700 hover:text-[#0073E6] flex items-center gap-1">
+            Browse All Guides <ArrowRight className="w-3.5 h-3.5 text-[#0073E6]" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {RESOURCES.map((article) => (
+            <Link
+              key={article.slug}
+              href={`/resources/${article.slug}`}
+              className="clean-card p-5 hover:border-[#0073E6] transition-all flex flex-col justify-between group"
+            >
+              <div className="space-y-2">
+                <span className="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-700">
+                  {article.category}
+                </span>
+                <h3 className="text-sm font-bold text-[#0F172A] group-hover:text-[#0073E6] leading-snug line-clamp-2">
+                  {article.title}
+                </h3>
+                <p className="text-xs text-slate-600 line-clamp-3 font-normal leading-relaxed">
+                  {article.excerpt}
+                </p>
+              </div>
+              <div className="pt-3 border-t border-slate-100 text-xs font-semibold text-[#054FB9] flex items-center gap-1 mt-4">
+                Read Guide <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 8. FREQUENTLY ASKED QUESTIONS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="space-y-1 border-b border-[#D1E0FC] pb-4">
           <span className="text-xs font-bold uppercase tracking-wider text-[#0073E6]">Frequently Asked Questions</span>
@@ -363,4 +568,5 @@ export default function HomePage() {
     </div>
   );
 }
+
 
