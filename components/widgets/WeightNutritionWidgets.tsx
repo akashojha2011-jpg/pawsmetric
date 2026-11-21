@@ -39,8 +39,8 @@ export function DogWeightCalculatorWidget() {
     <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
       <div className="flex items-center justify-between pb-4 border-b border-[#E8E4DC]">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
-            <Scale className="w-5 h-5 text-[#0B63E5]" />
+          <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#E8E4DC] text-[#162737] flex items-center justify-center font-bold">
+            <Scale className="w-5 h-5 text-[#162737]" />
           </div>
           <div>
             <h3 className="text-xl font-serif font-bold text-[#1C1917]">Dog Ideal Weight &amp; Target Calculator</h3>
@@ -151,8 +151,8 @@ export function DogCalorieCalculatorWidget() {
     <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
       <div className="flex items-center justify-between pb-4 border-b border-[#E8E4DC]">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
-            <Flame className="w-5 h-5 text-[#0B63E5]" />
+          <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#E8E4DC] text-[#162737] flex items-center justify-center font-bold">
+            <Flame className="w-5 h-5 text-[#162737]" />
           </div>
           <div>
             <h3 className="text-xl font-serif font-bold text-[#1C1917]">Daily Calorie &amp; Portion Calculator</h3>
@@ -249,8 +249,8 @@ export function DogFoodPortionWidget() {
   return (
     <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
       <div className="flex items-center gap-3 pb-4 border-b border-[#E8E4DC]">
-        <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
-          <Utensils className="w-5 h-5 text-[#0B63E5]" />
+        <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#E8E4DC] text-[#162737] flex items-center justify-center font-bold">
+          <Utensils className="w-5 h-5 text-[#162737]" />
         </div>
         <div>
           <h3 className="text-xl font-serif font-bold text-[#1C1917]">Kibble Portion Calculator</h3>
@@ -318,8 +318,8 @@ export function RawDietCalculatorWidget() {
   return (
     <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
       <div className="flex items-center gap-3 pb-4 border-b border-[#E8E4DC]">
-        <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
-          <Utensils className="w-5 h-5 text-[#0B63E5]" />
+        <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#E8E4DC] text-[#162737] flex items-center justify-center font-bold">
+          <Utensils className="w-5 h-5 text-[#162737]" />
         </div>
         <div>
           <h3 className="text-xl font-serif font-bold text-[#1C1917]">BARF &amp; Raw Diet Ratio Calculator</h3>
@@ -391,8 +391,8 @@ export function PuppyGrowthPredictorWidget() {
   return (
     <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
       <div className="flex items-center gap-3 pb-4 border-b border-[#E8E4DC]">
-        <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
-          <Sparkles className="w-5 h-5 text-[#0B63E5]" />
+        <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#E8E4DC] text-[#162737] flex items-center justify-center font-bold">
+          <Sparkles className="w-5 h-5 text-[#162737]" />
         </div>
         <div>
           <h3 className="text-xl font-serif font-bold text-[#1C1917]">Puppy Adult Weight &amp; Size Predictor</h3>

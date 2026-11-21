@@ -54,8 +54,8 @@ export function ChocolateToxicityCalculatorWidget() {
     <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
       <div className="flex items-center justify-between pb-4 border-b border-[#E8E4DC]">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
-            <AlertOctagon className="w-5 h-5 text-rose-400" />
+          <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#E8E4DC] text-[#162737] flex items-center justify-center font-bold">
+            <AlertTriangle className="w-5 h-5 text-amber-700" />
           </div>
           <div>
             <h3 className="text-xl font-serif font-bold text-[#1C1917]">Chocolate Toxicity Estimator</h3>
@@ -155,8 +155,8 @@ export function BenadrylDosageCalculatorWidget() {
     <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
       <div className="flex items-center justify-between pb-4 border-b border-[#E8E4DC]">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
-            <Pill className="w-5 h-5 text-[#0B63E5]" />
+          <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#E8E4DC] text-[#162737] flex items-center justify-center font-bold">
+            <Pill className="w-5 h-5 text-[#162737]" />
           </div>
           <div>
             <h3 className="text-xl font-serif font-bold text-[#1C1917]">Benadryl (Diphenhydramine) Dosage</h3>
@@ -229,8 +229,8 @@ export function XylitolToxicityCalculatorWidget() {
   return (
     <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
       <div className="flex items-center gap-3 pb-4 border-b border-[#E8E4DC]">
-        <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
-          <AlertOctagon className="w-5 h-5 text-rose-400" />
+        <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#E8E4DC] text-[#162737] flex items-center justify-center font-bold">
+          <AlertOctagon className="w-5 h-5 text-rose-700" />
         </div>
         <div>
           <h3 className="text-xl font-serif font-bold text-[#1C1917]">Xylitol (Birch Sugar) Toxicity Calculator</h3>
@@ -282,8 +282,8 @@ export function GrapeToxicityCalculatorWidget() {
   return (
     <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
       <div className="flex items-center gap-3 pb-4 border-b border-[#E8E4DC]">
-        <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
-          <AlertOctagon className="w-5 h-5 text-rose-400" />
+        <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#E8E4DC] text-[#162737] flex items-center justify-center font-bold">
+          <AlertOctagon className="w-5 h-5 text-rose-700" />
         </div>
         <div>
           <h3 className="text-xl font-serif font-bold text-[#1C1917]">Grape &amp; Raisin Toxicity Estimator</h3>
@@ -339,8 +339,8 @@ export function PregnancyDueDateCalculatorWidget() {
   return (
     <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
       <div className="flex items-center gap-3 pb-4 border-b border-[#E8E4DC]">
-        <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
-          <Calendar className="w-5 h-5 text-[#0B63E5]" />
+        <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#E8E4DC] text-[#162737] flex items-center justify-center font-bold">
+          <Calendar className="w-5 h-5 text-[#162737]" />
         </div>
         <div>
           <h3 className="text-xl font-serif font-bold text-[#1C1917]">Canine Pregnancy Due Date Calculator</h3>
@@ -378,8 +378,8 @@ export function WaterIntakeCalculatorWidget() {
   return (
     <div className="bg-white rounded-3xl border border-[#E8E4DC] p-6 md:p-8 max-w-3xl mx-auto my-6 space-y-6 shadow-warm-xs">
       <div className="flex items-center gap-3 pb-4 border-b border-[#E8E4DC]">
-        <div className="w-10 h-10 rounded-2xl bg-[#162737] text-white flex items-center justify-center font-bold shadow-warm-xs">
-          <Droplets className="w-5 h-5 text-[#0B63E5]" />
+        <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] border border-[#E8E4DC] text-[#162737] flex items-center justify-center font-bold">
+          <Droplets className="w-5 h-5 text-[#162737]" />
         </div>
         <div>
           <h3 className="text-xl font-serif font-bold text-[#1C1917]">Daily Dog Water Intake Calculator</h3>

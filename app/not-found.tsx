@@ -9,8 +9,8 @@ export default function NotFound() {
   return (
     <div className="bg-[#FAF8F5] min-h-screen py-16 md:py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-        <div className="w-16 h-16 rounded-2xl bg-[#162737] text-white flex items-center justify-center mx-auto shadow-warm-xs">
-          <Dog className="w-8 h-8 text-[#FDF1D0]" />
+        <div className="w-16 h-16 rounded-2xl bg-[#FAF8F5] border border-[#E8E4DC] text-[#162737] flex items-center justify-center mx-auto shadow-warm-xs">
+          <Dog className="w-8 h-8 text-[#162737]" />
         </div>
 
         <div className="space-y-3">
